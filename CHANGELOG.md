@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/slow/nitro-sniper/compare/v1.2.1...v1.2.2) (2021-01-31)
+
+
+### Bug Fixes
+
+* fire webhook by default when giveaway entered ([a1a35da](https://github.com/slow/nitro-sniper/commit/a1a35da38e18d9ebfbca7b728a77c563bc68e4e1))
+
 ## [1.2.1](https://github.com/slow/nitro-sniper/compare/v1.2.0...v1.2.1) (2021-01-31)
 
 
