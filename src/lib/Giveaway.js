@@ -45,12 +45,16 @@ module.exports = class Giveaway {
 
             // Check for whitelist
             if (whitelistOnly) {
-               let whitelist = prize.toLowerCase().containsAny(whitelistedWords.map(w => w.toLowerCase()));
+               let whitelist = prize.toLowerCase().containsAny(
+                  whitelistedWords.map(w => String(w).toLowerCase())
+               );
                if (!whitelist) return;
             }
 
             // Check for blacklist
-            let blacklist = prize.toLowerCase().containsAny(blacklistedWords.map(w => w.toLowerCase()));
+            let blacklist = prize.toLowerCase().containsAny(
+               blacklistedWords.map(w => String(w).toLowerCase())
+            );
             if (blacklist) return;
 
             // Handle giveaway
