@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/slow/nitro-sniper/compare/v1.0.1...v1.1.0) (2021-01-31)
+
+
+### Features
+
+* per-type customizable pings ([f09793b](https://github.com/slow/nitro-sniper/commit/f09793bdd64403dc3130d108b004ab070993c0dd))
+
 ## [1.0.1](https://github.com/slow/nitro-sniper/compare/v1.0.0...v1.0.1) (2021-01-31)
 
 
