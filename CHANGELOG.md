@@ -1,3 +1,10 @@
+# 1.0.0 (2021-01-31)
+
+
+### Bug Fixes
+
+* version ([3c49381](https://github.com/slow/nitro-sniper/commit/3c493816dc66bbd77e05499e1eec07df17e63a4a))
+
 ## [1.1.11](https://github.com/slow/nitro-sniper/compare/v1.1.10...v1.1.11) (2021-01-31)
 
 
