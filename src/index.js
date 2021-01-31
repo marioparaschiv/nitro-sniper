@@ -83,7 +83,13 @@ async function init() {
       },
       webhook: {
          url: '',
-         successOnly: true,
+         enabled: {
+            codeInvalid: false,
+            codeAlreadyRedeemed: false,
+            codeSuccess: true,
+            giveawayEntered: false,
+            giveawayWin: true
+         },
          mentionEveryone: {
             codeInvalid: false,
             codeAlreadyRedeemed: false,

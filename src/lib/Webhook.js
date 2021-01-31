@@ -20,7 +20,7 @@ module.exports = class Webhook extends WebhookClient {
       ].includes(webhookType)) success = true;
 
       // On Fail
-      if (!success && settings.webhook.successOnly) return;
+      if (!settings.webhook.enabled[webhookType]) return;
 
       let {
          time,
