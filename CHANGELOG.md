@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/slow/nitro-sniper/compare/v1.2.0...v1.2.1) (2021-01-31)
+
+
+### Bug Fixes
+
+* update outdated giveaway react delay ([8c4892b](https://github.com/slow/nitro-sniper/commit/8c4892b393b85b6cb69eb968359902bd27537959))
+
 # [1.2.0](https://github.com/slow/nitro-sniper/compare/v1.1.1...v1.2.0) (2021-01-31)
 
 
