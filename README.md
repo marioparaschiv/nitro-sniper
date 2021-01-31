@@ -68,7 +68,7 @@
    },
    "giveaway": {
       "enabled": true, // Wether or not to activate the giveaway sniper (true/false)
-      "delay": 5, // Delay to react to the giveaway (in seconds)
+      "delay": 30, // Delay to react to the giveaway (in seconds)
       "dm": true, // DM the hoster on giveaway win (true/false)
       "dmMessage": "Hey, i won the giveaway. Could i redeem my prize?", // Message to DM the host
       "dmDelay": 25, // How long to wait to DM (in seconds)
