@@ -87,7 +87,7 @@ async function init() {
             codeInvalid: false,
             codeAlreadyRedeemed: false,
             codeSuccess: true,
-            giveawayEntered: false,
+            giveawayEntered: true,
             giveawayWin: true
          },
          mentionEveryone: {

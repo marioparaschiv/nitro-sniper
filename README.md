@@ -91,7 +91,7 @@
          "codeInvalid": false, // Fire webhook on invalid code (true/false)
          "codeAlreadyRedeemed": false, // Fire webhook on already redeemed code (true/false)
          "codeSuccess": true, // Fire webhook on sniped code (true/false)
-         "giveawayEntered": false, // Fire webhook on giveaway enter (true/false)
+         "giveawayEntered": true, // Fire webhook on giveaway enter (true/false)
          "giveawayWin": true // Fire webhook on giveaway win (true/false)
       }, 
       "mentionEveryone": { 
