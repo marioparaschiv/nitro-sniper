@@ -85,7 +85,7 @@
    },
    "webhook": { 
       "url": "https://discord.com/api/webhooks/.../...", // URL to fire webhook to for notifications
-      "successOnly": true, // Only fire the webhook on success (true/false)
+      "successOnly": true, // Only fire the webhook on success: [codeSuccess, giveawayEntered, giveawayWin] (true/false)
       "mentionEveryone": { 
          "codeInvalid": false, // Mention on invalid code (true/false)
          "codeAlreadyRedeemed": false, // Mention on already redeemed code (true/false)
