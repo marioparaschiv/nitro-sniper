@@ -87,8 +87,11 @@
       "url": "https://discord.com/api/webhooks/.../...", // URL to fire webhook to for notifications
       "successOnly": true, // Only fire the webhook on success (true/false)
       "mentionEveryone": { 
-         "enabled": true, // Mention @everyone when the webhook is fired (true/false)
-         "successOnly": true  // Only mention @everyone when successful (true/false)
+         "codeInvalid": false, // Mention on invalid code (true/false)
+         "codeAlreadyRedeemed": false, // Mention on already redeemed code (true/false)
+         "codeSuccess": true, // Mention on sniped code (true/false)
+         "giveawayEntered": false, // Mention on giveaway enter (true/false)
+         "giveawayWin": true // Mention on giveaway win (true/false)
       }
    }
 }

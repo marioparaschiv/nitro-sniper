@@ -85,8 +85,11 @@ async function init() {
          url: '',
          successOnly: true,
          mentionEveryone: {
-            enabled: true,
-            successOnly: true
+            codeInvalid: false,
+            codeAlreadyRedeemed: false,
+            codeSuccess: true,
+            giveawayEntered: false,
+            giveawayWin: true
          }
       }
    }, settings);

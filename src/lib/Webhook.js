@@ -26,7 +26,6 @@ module.exports = class Webhook extends WebhookClient {
          time,
          code,
          type,
-         account,
          author,
          location,
          server,
@@ -65,9 +64,7 @@ module.exports = class Webhook extends WebhookClient {
 
       // Grab mention settings
       let { webhook: { mentionEveryone } } = settings;
-      let enabled = mentionEveryone?.enabled != null ? mentionEveryone.enabled : true;
-      let successOnly = mentionEveryone?.successOnly != null ? mentionEveryone.successOnly : true;
-      let mention = (enabled && successOnly && success) || (enabled && !successOnly);
+      let mention = mentionEveryone[webhookType];
 
       // Fire webhook
       return this.send(mention ? '@everyone' : '', { embeds: [embed] }).catch(() => logger.error(constants.webhookCantReach));
