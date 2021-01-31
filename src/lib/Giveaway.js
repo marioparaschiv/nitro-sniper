@@ -109,7 +109,7 @@ module.exports = class Giveaway {
                await msg.react('🎉');
                fulfill(true);
             } catch {
-               reject(false);
+               fulfill(false);
             }
          }, timeout);
       });
@@ -172,7 +172,7 @@ module.exports = class Giveaway {
                   await hoster.send(settings.giveaway.dmMessage);
                   fulfill(true);
                } catch {
-                  reject(false);
+                  fulfill(false);
                }
             }, timeout);
          });

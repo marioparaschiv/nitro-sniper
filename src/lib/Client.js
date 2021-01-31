@@ -19,7 +19,6 @@ module.exports = class Sniper extends Client {
       await this.login(token).catch(() => {
          failed = true;
          this.destroy();
-         return null;
       });
 
       return failed ? null : this;
