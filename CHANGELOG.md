@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/slow/nitro-sniper/compare/v1.1.1...v1.2.0) (2021-01-31)
+
+
+### Features
+
+* customizable webhook events ([3f99823](https://github.com/slow/nitro-sniper/commit/3f99823a2fad2bb2680d448e9d30e500c2168feb))
+
 ## [1.1.1](https://github.com/slow/nitro-sniper/compare/v1.1.0...v1.1.1) (2021-01-31)
 
 
