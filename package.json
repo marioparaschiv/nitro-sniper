@@ -1,0 +1,29 @@
+{
+   "name": "nitro-sniper",
+   "version": "2.0.0",
+   "main": "src/index.js",
+   "license": "Unlicensed",
+   "engines": {
+      "node": ">=14.0.0"
+   },
+   "scripts": {
+      "release": "semantic-release"
+   },
+   "dependencies": {
+      "@discordjs/uws": "^10.149.0",
+      "@skyra/timestamp": "^1.0.0",
+      "chalk": "^4.1.0",
+      "discord.js": "slow/discord.js#v11",
+      "dotenv": "^8.2.0",
+      "erlpack": "hammerandchisel/erlpack",
+      "express": "^4.17.1",
+      "phin": "^3.5.1"
+   },
+   "devDependencies": {
+      "@semantic-release/changelog": "^5.0.1",
+      "@semantic-release/git": "^9.0.0",
+      "@semantic-release/github": "^7.2.0",
+      "@semantic-release/npm": "^7.0.10",
+      "semantic-release": "^17.3.6"
+   }
+}
