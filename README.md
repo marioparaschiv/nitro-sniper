@@ -26,8 +26,10 @@
 - Multi-Account Support
 - 3 Modes - `main`, `alts`, `both`
 - Webhook support (Giveaways & Nitro)
-- Option to only fire webhook when successful
-- Ping on webhook message (can be set to success only)
+- Fully customizable webhook
+- Ability to turn the webhook on/off for certain events
+- @everyone ping on webhook message
+- Ability to turn the ping on/off for certain events
 - Whitelist words for the giveaway sniper
 - Blacklist words for the giveaway sniper
 - Whitelisted words only mode for giveaway sniper (Blacklist still applies)
