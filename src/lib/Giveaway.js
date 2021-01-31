@@ -103,7 +103,7 @@ module.exports = class Giveaway {
    async handleGiveawayStart(msg, delay, prize, hoster) {
       // Attempt to react
       let timeout = util.randomInt(delay, delay * 1.5);
-      let reacted = await new Promise((fulfill, reject) => {
+      let reacted = await new Promise((fulfill) => {
          setTimeout(async () => {
             try {
                await msg.react('🎉');
@@ -166,7 +166,7 @@ module.exports = class Giveaway {
          let delay = dmDelay * 1000;
          let timeout = util.randomInt(delay, delay * 1.5);
          let timeTook = `${((timeout % 6e4) / 1e3).toFixed(0)} seconds`;
-         let dmed = await new Promise(async (fulfill, reject) => {
+         let dmed = await new Promise(async (fulfill) => {
             setTimeout(async () => {
                try {
                   await hoster.send(settings.giveaway.dmMessage);
