@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/slow/nitro-sniper/compare/v1.0.0...v1.0.1) (2021-01-31)
+
+
+### Bug Fixes
+
+* promise rejection errors ([3f781a5](https://github.com/slow/nitro-sniper/commit/3f781a545ac6279109a99400746dc43a928c6414))
+
 # 1.0.0 (2021-01-31)
 
 
