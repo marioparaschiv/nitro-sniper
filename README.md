@@ -43,7 +43,7 @@
 
 #### Local
 
-- Make sure [Node](https://nodejs.org/en/) is installed on your system and open a command prompt/terminal.
+- Make sure [Node](https://nodejs.org/en/) and [Git](https://git-scm.com/downloads) are installed on your system and open a command prompt/terminal.
 - Run `cd %userprofile%\Downloads`
 - Run `git clone https://github.com/slow/nitro-sniper nitro-sniper`
 - Run `cd nitro-sniper`
