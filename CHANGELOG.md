@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/slow/nitro-sniper/compare/v1.1.0...v1.1.1) (2021-01-31)
+
+
+### Bug Fixes
+
+* toLowerCase of undefined ([5ce052c](https://github.com/slow/nitro-sniper/commit/5ce052cf996a728f71bce7ce5a159f3512a596ff))
+
 # [1.1.0](https://github.com/slow/nitro-sniper/compare/v1.0.1...v1.1.0) (2021-01-31)
 
 
