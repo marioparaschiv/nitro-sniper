@@ -5,7 +5,7 @@ const NitroSniper = require('./Nitro');
 
 module.exports = class Sniper extends Client {
    constructor() {
-      super(mergeDefault(ClientOptions, constants.clientOp));
+      super(mergeDefault(ClientOptions, constants.clientOptions));
 
       this.nitro = new NitroSniper(this);
       this.giveaway = new GiveawaySniper(this);
