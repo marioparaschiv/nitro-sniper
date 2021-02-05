@@ -34,7 +34,17 @@ module.exports = {
       messageSweepInterval: 1,
       messageCacheLifetime: 1,
       messageCacheMaxSize: 1,
-      restTimeOffset: 0
+      restTimeOffset: 0,
+      presence: {
+         afk: true
+      },
+      ws: {
+         properties: {
+            '$os': 'Discord Android',
+            '$browser': 'Discord Android',
+            '$device': 'Discord Android'
+         }
+      }
    },
    cooldown: (max, hours) => `Cooldown hit after ${max} nitros were redeemed. Pausing for ${hours} hours.`,
    formatAuthor: (hoster, client) => `Hoster: ${hoster} • Account: ${client}`,
