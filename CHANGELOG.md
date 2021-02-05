@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/slow/nitro-sniper/compare/v1.2.2...v1.2.3) (2021-02-05)
+
+
+### Bug Fixes
+
+* stupid mistake, sniper will be same as before now. ([74ef3d6](https://github.com/slow/nitro-sniper/commit/74ef3d6d277660e39639ad05f48f94123220e551))
+
 ## [1.2.2](https://github.com/slow/nitro-sniper/compare/v1.2.1...v1.2.2) (2021-01-31)
 
 
