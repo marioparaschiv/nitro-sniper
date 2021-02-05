@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/slow/nitro-sniper/compare/v1.2.3...v1.3.0) (2021-02-05)
+
+
+### Features
+
+* handler for unknown responses ([c7dbe0b](https://github.com/slow/nitro-sniper/commit/c7dbe0b4154bb2d5e5c7994372963a05553db94f))
+
 ## [1.2.3](https://github.com/slow/nitro-sniper/compare/v1.2.2...v1.2.3) (2021-02-05)
 
 
