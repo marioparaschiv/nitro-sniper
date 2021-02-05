@@ -78,6 +78,8 @@ module.exports = class Sniper {
             } else if (res.body?.message?.includes('Unknown')) {
                logger.error(constants.unknownCode(code, location, author, time));
                if (webhook) webhook.fire('codeInvalid', { time, code, account, author: origin, location });
+            } else if (res.body?.message) {
+               logger.error(constants.unknownResponse(code, location, author, time, res.body.message));
             }
             this.cache.push(code);
             if (this.snipedBucket >= this.bucket) {

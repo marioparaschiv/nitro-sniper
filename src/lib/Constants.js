@@ -57,6 +57,7 @@ module.exports = {
    invalidTokens: 'All tokens provided were invalid, exiting process...',
    userAgent: 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) discord/1.0.21 Chrome/83.0.4103.122 Electron/9.3.5 Safari/537.36',
    ready: (accounts, servers) => `Logged in with ${accounts} ${accounts > 1 ? 'accounts' : 'account'} and ${servers} servers.`,
+   unknownResponse: (code, location, author, end, body) => `Unknown Response | ${body} | Code: ${chalk.bold(code)} | ${location} | ${author} | ${end}`,
    bothModeNoAlts: 'No alts were able to log in, trying to use only main account.',
    bothModeNoMain: "Couldn't log into main account meaning sniping is not possible. Exiting process...",
    noPaymentMethod: 'Main token does not have a billing source, some codes will not be sniped.',
