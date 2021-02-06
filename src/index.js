@@ -135,7 +135,7 @@ async function init() {
    }
 
    // Init webhook
-   if (settings?.webhook?.url) {
+   if (settings.webhook?.url) {
       const webhookToken = /[^/]*$/.exec(settings.webhook.url)[0];
       const webhookId = settings.webhook.url.replace(/^.*\/(?=[^\/]*\/[^\/]*$)|\/[^\/]*$/g, '');
       global.webhook = new Webhook(webhookId, webhookToken);
