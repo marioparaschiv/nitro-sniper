@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/slow/nitro-sniper/compare/v1.3.0...v1.3.1) (2021-02-06)
+
+
+### Bug Fixes
+
+* settings is always defined ([55795ec](https://github.com/slow/nitro-sniper/commit/55795eca862bacad866e82fd7fcb1d8107f63764))
+
 # [1.3.0](https://github.com/slow/nitro-sniper/compare/v1.2.3...v1.3.0) (2021-02-05)
 
 
