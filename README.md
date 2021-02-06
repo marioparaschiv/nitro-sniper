@@ -57,10 +57,12 @@
 ## Default Configuration
 ```js
 {
-   "alts": [
-      "Nz..." // Alt Tokens
-   ],
-   "main": "Nz...", // Main Token
+   "tokens": {
+      "main": "Nz...", // Main Token
+      "alts": [
+         "Nz..." // Alt Tokens
+      ],
+   },
    "mode": "both", // The mode to run the sniper in. Options: main (only main account), alts (only alts), both
    "nitro": {
       "max": 2, // The amount of nitros needed to be sniped for the cooldown to activate

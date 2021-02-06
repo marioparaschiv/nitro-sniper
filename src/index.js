@@ -53,10 +53,12 @@ async function init() {
 
    // Define settings with defaults
    global.settings = djsUtil.mergeDefault({
-      alts: [
-         ''
-      ],
-      main: '',
+      tokens: {
+         main: '',
+         alts: [
+            ''
+         ],
+      },
       mode: 'both',
       nitro: {
          max: 2,
@@ -119,7 +121,7 @@ async function init() {
       method: 'GET',
       parse: 'json',
       headers: {
-         'Authorization': settings.main,
+         'Authorization': settings.tokens.main,
          'User-Agent': constants.userAgent
       }
    });

@@ -55,7 +55,7 @@ module.exports = class Sniper {
             method: 'POST',
             parse: 'json',
             headers: {
-               'Authorization': settings.main,
+               'Authorization': settings.tokens.main,
                'User-Agent': constants.userAgent
             },
             data: `{"channel_id":${msg.channel.id},"payment_source_id":${paymentId}}`
