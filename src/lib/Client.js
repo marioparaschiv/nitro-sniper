@@ -1,6 +1,6 @@
-const { Util: { mergeDefault }, ClientOptions } = require('discord.js');
+const { Client, Util: { mergeDefault }, ClientOptions } = require('discord.js');
+
 const GiveawaySniper = require('./Giveaway');
-const { Client } = require('discord.js');
 const NitroSniper = require('./Nitro');
 
 module.exports = class Sniper extends Client {
