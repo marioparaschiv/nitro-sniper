@@ -1,20 +1,26 @@
-const { Client, Util: { mergeDefault }, ClientOptions } = require('discord.js');
+const { Util: { mergeDefault }, ClientOptions } = require('discord.js');
+const { Client } = require('discord.js-light');
 
-const GiveawaySniper = require('./Giveaway');
-const NitroSniper = require('./Nitro');
+const Modules = require('../modules/index');
+const ModuleKeys = Object.keys(Modules);
 
 module.exports = class Sniper extends Client {
    constructor() {
-      super(mergeDefault(ClientOptions, constants.clientOptions));
+      super(mergeDefault(
+         ClientOptions,
+         constants.clientOptions
+      ));
 
-      this.nitro = new NitroSniper(this);
-      this.giveaway = new GiveawaySniper(this);
+      ModuleKeys.forEach(m => {
+         this[m.toLowerCase()] = new Modules[m](this);
+      });
    }
 
    async init(token) {
       let failed = false;
-      this.nitro.init(this);
-      this.giveaway.init(this);
+      ModuleKeys.forEach(m => {
+         this[m.toLowerCase()]?.init();
+      });
 
       await this.login(token).catch(() => {
          failed = true;

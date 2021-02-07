@@ -47,6 +47,68 @@ module.exports = {
       }
    },
    cooldown: (max, hours) => `Cooldown hit after ${max} nitros were redeemed. Pausing for ${hours} hours.`,
+   defaultSettings: {
+      tokens: {
+         main: '',
+         alts: [
+            ''
+         ],
+      },
+      mode: 'both',
+      nitro: {
+         max: 2,
+         cooldown: 24,
+      },
+      giveaway: {
+         enabled: true,
+         delay: 30,
+         dm: true,
+         dmMessage: 'Hey, i won the giveaway. Could i redeem my prize?',
+         dmDelay: 25,
+         blacklistedWords: [
+            'bot',
+            'test',
+            'ban'
+         ],
+         whitelistOnly: false,
+         whitelistedWords: [
+            'nitro'
+         ],
+         blacklistedServers: [
+            ''
+         ]
+      },
+      invite: {
+         enabled: false,
+         delay: {
+            min: 10,
+            max: 20
+         },
+         members: {
+            min: 5000,
+            max: 20000
+         },
+         max: 10,
+         cooldown: 6
+      },
+      webhook: {
+         url: '',
+         enabled: {
+            codeInvalid: false,
+            codeAlreadyRedeemed: false,
+            codeSuccess: true,
+            giveawayEntered: true,
+            giveawayWin: true
+         },
+         mentionEveryone: {
+            codeInvalid: false,
+            codeAlreadyRedeemed: false,
+            codeSuccess: true,
+            giveawayEntered: false,
+            giveawayWin: true
+         }
+      }
+   },
    formatAuthor: (hoster, client) => `Hoster: ${hoster} • Account: ${client}`,
    webhookCantReach: 'Unable to reach your webhook.',
    invalidConfig: 'Invalid settings object, if you require more help visit https://github.com/slow/nitro-sniper for the default configuration. Exiting process...',

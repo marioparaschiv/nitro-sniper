@@ -52,55 +52,7 @@ async function init() {
    }
 
    // Define settings with defaults
-   global.settings = djsUtil.mergeDefault({
-      tokens: {
-         main: '',
-         alts: [
-            ''
-         ],
-      },
-      mode: 'both',
-      nitro: {
-         max: 2,
-         cooldown: 24,
-      },
-      giveaway: {
-         enabled: true,
-         delay: 30,
-         dm: true,
-         dmMessage: 'Hey, i won the giveaway. Could i redeem my prize?',
-         dmDelay: 25,
-         blacklistedWords: [
-            'bot',
-            'test',
-            'ban'
-         ],
-         whitelistOnly: false,
-         whitelistedWords: [
-            'nitro'
-         ],
-         blacklistedServers: [
-            ''
-         ]
-      },
-      webhook: {
-         url: '',
-         enabled: {
-            codeInvalid: false,
-            codeAlreadyRedeemed: false,
-            codeSuccess: true,
-            giveawayEntered: true,
-            giveawayWin: true
-         },
-         mentionEveryone: {
-            codeInvalid: false,
-            codeAlreadyRedeemed: false,
-            codeSuccess: true,
-            giveawayEntered: false,
-            giveawayWin: true
-         }
-      }
-   }, settings);
+   global.settings = djsUtil.mergeDefault(constants.defaultSettings, settings);
 
    if (!settings.mode) return logger.critical(constants.noMode);
    if (!Object.keys(modes).includes(settings.mode)) return logger.critical(constants.invalidMode);

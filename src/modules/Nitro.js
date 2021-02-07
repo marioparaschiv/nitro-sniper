@@ -19,6 +19,11 @@ module.exports = class Sniper {
       this.snipedBucket = 0;
       this.bucket = settings.nitro.max;
 
+      this.headers = {
+         'Authorization': settings.tokens.main,
+         'User-Agent': constants.userAgent
+      };
+
       this.cache = [];
    }
 
@@ -58,10 +63,7 @@ module.exports = class Sniper {
             url: constants.redeemCodeURL(code),
             method: 'POST',
             parse: 'json',
-            headers: {
-               'Authorization': settings.tokens.main,
-               'User-Agent': constants.userAgent
-            },
+            headers: this.headers,
             data: `{"channel_id":${msg.channel.id},"payment_source_id":${paymentId}}`
          }, (err, res) => {
             // Handle response
@@ -92,7 +94,7 @@ module.exports = class Sniper {
                date.setHours(date.getHours() + settings.nitro.cooldown);
                this.cooldown = date;
                this.snipedBucket = 0;
-               logger.warn(constants.cooldown(settings.nitro.max, settings.nitro.cooldown));
+               logger.warn(constants.cooldown('nitro', settings.nitro.max, settings.nitro.cooldown));
             }
          });
       }
