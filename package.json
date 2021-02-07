@@ -13,7 +13,7 @@
       "@discordjs/uws": "^10.149.0",
       "@skyra/timestamp": "^1.0.0",
       "chalk": "^4.1.0",
-      "discord.js": "slow/discord.js#v11",
+      "discord.js-light": "github:slow/discord.js-light",
       "dotenv": "^8.2.0",
       "erlpack": "hammerandchisel/erlpack",
       "express": "^4.17.1",

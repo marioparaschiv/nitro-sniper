@@ -111,8 +111,11 @@ async function init() {
 
    if (!snipers.length) return logger.critical(constants.invalidTokens);
 
-   // Count guilds
-   let guildCount = snipers.map((s) => s.guilds.size).reduce((a, b) => a + b, 0);
+   // Counters
+   let guildCount = snipers
+      .map((s) => s.guilds.cache.size)
+      .reduce((a, b) => a + b, 0);
+
    let sniperCount = snipers.length;
 
    // Get payment method

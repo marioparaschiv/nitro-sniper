@@ -38,9 +38,9 @@ module.exports = class Giveaway {
                ?.match(/[0-9]{17,20}/gim)[0];
 
             if (!hoster) return;
-            let fetch = await this.client.fetchUser(hoster);
+            let fetch = await this.client.users.fetch(hoster).catch(() => null);
             if (!fetch) return;
-            hoster = this.client.users.get(hoster);
+            hoster = this.client.users.cache.get(hoster);
             if (!hoster) return;
 
             // Check for whitelist
@@ -79,7 +79,10 @@ module.exports = class Giveaway {
          let messageLinks = msg.content.match(this.regex.messageLink);
          if (!messageLinks || !messageLinks.length) return;
          let messageId = messageLinks[0]?.split('/')[6];
-         let message = await msg.channel.fetchMessage(messageId).catch(() => null);
+         let message = await msg.channel.messages.fetch({ limit: 1, around: messageId })
+            .then(i => i.first())
+            .catch(() => null);
+
          if (!message) return;
 
          let embed = message.embeds[0];
@@ -95,14 +98,14 @@ module.exports = class Giveaway {
 
          // Fetch hoster
          if (!hoster) return;
-         let fetch = await this.client.fetchUser(hoster).catch(() => null);
+         let fetch = await this.client.users.fetch(hoster).catch(() => null);
          if (!fetch) return;
-         hoster = this.client.users.get(hoster);
+         hoster = this.client.users.cache.get(hoster);
          if (!hoster) return;
 
          return await this.handleGiveawayWin(msg, hoster, prize);
       });
-   }
+   };
 
    async handleGiveawayStart(msg, delay, prize, hoster) {
       // Attempt to react
