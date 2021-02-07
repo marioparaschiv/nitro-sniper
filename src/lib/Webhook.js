@@ -1,4 +1,4 @@
-const { WebhookClient, RichEmbed } = require('discord.js');
+const { WebhookClient, MessageEmbed } = require('discord.js');
 
 module.exports = class Webhook extends WebhookClient {
    constructor(...args) {
@@ -10,7 +10,7 @@ module.exports = class Webhook extends WebhookClient {
 
       let success = false;
       let fields = [];
-      let embed = new RichEmbed();
+      let embed = new MessageEmbed();
 
       // On Success 
       if ([

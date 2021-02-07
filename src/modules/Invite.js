@@ -53,7 +53,7 @@ module.exports = class Invite {
          const { invite: { delay: { min, max } } } = settings;
          let waited = util.randomInt(min * 1000, max * 1000);
          let timeTook = `${((waited % 6e4) / 1e3).toFixed(0)} seconds`;
-         let a = await util.sleep(waited);
+         await util.sleep(waited);
 
          // Fetch invite information
          let res = await phin({
