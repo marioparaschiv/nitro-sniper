@@ -17,6 +17,7 @@ module.exports = class Invite {
    }
 
    init() {
+      if (!settings.invite.enabled) return;
       this.client.on('message', (msg) => {
          if (this.cooldown && this.cooldown > new Date()) return;
          this.cooldown = null;
