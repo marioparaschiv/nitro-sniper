@@ -34,6 +34,7 @@ module.exports = {
       messageSweepInterval: 1,
       messageCacheLifetime: 1,
       messageCacheMaxSize: 1,
+      cacheChannels: true,
       restTimeOffset: 0,
       presence: {
          afk: true
