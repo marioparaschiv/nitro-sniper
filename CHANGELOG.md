@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/slow/nitro-sniper/compare/v1.4.0...v1.4.1) (2021-02-07)
+
+
+### Bug Fixes
+
+* handle cooldown on messages with multiple codes ([e71b238](https://github.com/slow/nitro-sniper/commit/e71b23886c005590bae8fa6051ea36b2d92b8aa2))
+
 # [1.4.0](https://github.com/slow/nitro-sniper/compare/v1.3.1...v1.4.0) (2021-02-07)
 
 
