@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/slow/nitro-sniper/compare/v1.5.3...v1.6.0) (2021-02-07)
+
+
+### Features
+
+* webhook support for invite join ([bf5b38c](https://github.com/slow/nitro-sniper/commit/bf5b38c04a8bc172e2feb35c9896a57229ed7acc))
+
 ## [1.5.3](https://github.com/slow/nitro-sniper/compare/v1.5.2...v1.5.3) (2021-02-07)
 
 
