@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/slow/nitro-sniper/compare/v1.4.1...v1.5.0) (2021-02-07)
+
+
+### Features
+
+* invite sniper ([3955351](https://github.com/slow/nitro-sniper/commit/39553517b51ef9dcba5a6d7c7c7ccfefccd0d14b))
+
 ## [1.4.1](https://github.com/slow/nitro-sniper/compare/v1.4.0...v1.4.1) (2021-02-07)
 
 
