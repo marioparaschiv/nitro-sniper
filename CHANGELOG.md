@@ -1,3 +1,10 @@
+## [1.5.3](https://github.com/slow/nitro-sniper/compare/v1.5.2...v1.5.3) (2021-02-07)
+
+
+### Bug Fixes
+
+* readme type ([d2f6c79](https://github.com/slow/nitro-sniper/commit/d2f6c793b30ce9e9328289d6eedc26bcdedf6c06))
+
 ## [1.5.2](https://github.com/slow/nitro-sniper/compare/v1.5.1...v1.5.2) (2021-02-07)
 
 
