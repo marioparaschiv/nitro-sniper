@@ -8,7 +8,7 @@
 
 <p align="center">
    A lightweight, fast and efficient discord nitro sniper & giveaway sniper.
-   <img src="https://media.wtf/66492755" />
+   <img src="https://media.wtf/11603354" />
 </p>
 
 # Features
@@ -35,6 +35,12 @@
 - Whitelisted words only mode for giveaway sniper (Blacklist still applies)
 - Blacklist servers from the giveaway sniper
 - Announce nitro type on snipe
+- Invite Sniper
+- Minimum member count for invite sniper
+- Maximum member count for invite sniper
+- Limit invite joins (e.g. 10 invites / 6 hours)
+- Minimum delay before sniping invite
+- Maximum delay before sniping invite
 
 ## Installation
 #### Heroku 
