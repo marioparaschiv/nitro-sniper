@@ -42,6 +42,7 @@ module.exports = class Invite {
 
       let author = msg.author.tag;
       let account = this.client.user.tag;
+      let origin = `Author: ${author} • Account: ${account}`;
       let location = msg.guild ? `${msg.guild.name} > #${msg.channel.name}` : 'DMs';
 
       // Loop over the invites
@@ -89,6 +90,14 @@ module.exports = class Invite {
 
          // Alert 
          if (joined?.body?.guild) {
+            if (webhook) webhook.fire('inviteJoin', {
+               invite: invite.code,
+               server: invite.guild.name,
+               author: origin,
+               location,
+               timeTook
+            });
+
             logger.success(constants.joinedServer(
                invite.code,
                invite.guild.name,

@@ -113,14 +113,16 @@
          "codeAlreadyRedeemed": false, // Fire webhook on already redeemed code (true/false)
          "codeSuccess": true, // Fire webhook on sniped code (true/false)
          "giveawayEntered": true, // Fire webhook on giveaway enter (true/false)
-         "giveawayWin": true // Fire webhook on giveaway win (true/false)
+         "giveawayWin": true, // Fire webhook on giveaway win (true/false)
+         "inviteJoin": false // Fire webhook on invite join (true/false)
       }, 
       "mentionEveryone": { 
          "codeInvalid": false, // Mention on invalid code (true/false)
          "codeAlreadyRedeemed": false, // Mention on already redeemed code (true/false)
          "codeSuccess": true, // Mention on sniped code (true/false)
          "giveawayEntered": false, // Mention on giveaway enter (true/false)
-         "giveawayWin": true // Mention on giveaway win (true/false)
+         "giveawayWin": true, // Mention on giveaway win (true/false)
+         "inviteJoin": false // Mention on invite join (true/false)
       }
    }
 }

@@ -98,14 +98,16 @@ module.exports = {
             codeAlreadyRedeemed: false,
             codeSuccess: true,
             giveawayEntered: true,
-            giveawayWin: true
+            giveawayWin: true,
+            inviteJoin: false
          },
          mentionEveryone: {
             codeInvalid: false,
             codeAlreadyRedeemed: false,
             codeSuccess: true,
             giveawayEntered: false,
-            giveawayWin: true
+            giveawayWin: true,
+            inviteJoin: false
          }
       }
    },
@@ -140,7 +142,7 @@ module.exports = {
    alreadyRedeemedCode: (code, from, author, end) => `Already Redeemed | Code: ${chalk.bold(code)} | ${from} | ${author} | ${end}`,
    snipedCode: (code, type, from, author, end) => `Success | Code: ${chalk.bold(code)} | ${type} | ${from} | ${author} | ${end}`,
    duplicateFound: (code, location, author) => `Avoiding Duplicate | Code: ${chalk.bold(code)} | ${location} | ${author}`,
-   webhookTypes: ['codeInvalid', 'codeAlreadyRedeemed', 'codeSuccess', 'giveawayEntered', 'giveawayWin'],
+   webhookTypes: ['codeInvalid', 'codeAlreadyRedeemed', 'codeSuccess', 'giveawayEntered', 'giveawayWin', 'inviteJoin'],
    initSniper: 'Initializing sniper...',
    fields: {
       codeFail: (time, code, location) => [
@@ -162,6 +164,12 @@ module.exports = {
       giveawayWin: (server, channel, prize) => [
          { key: 'Location', value: `${server} > #${channel}` },
          { key: 'Prize', value: prize },
+      ],
+      inviteJoin: (location, invite, server, timeTook) => [
+         { key: 'Location', value: location },
+         { key: 'Server Joined', value: server },
+         { key: 'Invite Used', value: invite },
+         { key: 'Time Waited', value: timeTook }
       ]
    },
    titles: {
@@ -170,6 +178,7 @@ module.exports = {
       codeSuccess: 'Nitro Sniped',
       giveawayEntered: 'Giveaway Entered',
       giveawayWin: 'Giveaway Won',
+      inviteJoin: 'Joined Server'
    },
    colors: {
       error: '#FF0000',

@@ -29,6 +29,7 @@ module.exports = class Webhook extends WebhookClient {
          author,
          location,
          server,
+         invite,
          channel,
          timeTook,
          prize
@@ -48,6 +49,9 @@ module.exports = class Webhook extends WebhookClient {
             break;
          case 'giveawayWin':
             fields = constants.fields.giveawayWin(server, channel, prize);
+            break;
+         case 'inviteJoin':
+            fields = constants.fields.inviteJoin(location, invite, server, timeTook);
             break;
       }
 
