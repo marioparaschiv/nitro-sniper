@@ -1,3 +1,10 @@
+## [1.6.1](https://github.com/slow/nitro-sniper/compare/v1.6.0...v1.6.1) (2021-02-07)
+
+
+### Bug Fixes
+
+* low iq ([d5fb5f5](https://github.com/slow/nitro-sniper/commit/d5fb5f544cb5aea0e8966398b5785f7d618064e6))
+
 # [1.6.0](https://github.com/slow/nitro-sniper/compare/v1.5.3...v1.6.0) (2021-02-07)
 
 
