@@ -46,7 +46,6 @@ module.exports = {
          }
       }
    },
-   cooldown: (max, hours) => `Cooldown hit after ${max} nitros were redeemed. Pausing for ${hours} hours.`,
    defaultSettings: {
       tokens: {
          main: '',
@@ -109,6 +108,7 @@ module.exports = {
          }
       }
    },
+   cooldown: (type, max, hours) => `Cooldown hit after ${max} ${type}s were redeemed. Pausing for ${hours} hours.`,
    formatAuthor: (hoster, client) => `Hoster: ${hoster} • Account: ${client}`,
    webhookCantReach: 'Unable to reach your webhook.',
    invalidConfig: 'Invalid settings object, if you require more help visit https://github.com/slow/nitro-sniper for the default configuration. Exiting process...',
