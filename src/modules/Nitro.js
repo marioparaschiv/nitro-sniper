@@ -19,11 +19,6 @@ module.exports = class Sniper {
       this.snipedBucket = 0;
       this.bucket = settings.nitro.max;
 
-      this.headers = {
-         'Authorization': settings.tokens.main,
-         'User-Agent': constants.userAgent
-      };
-
       this.cache = [];
    }
 
@@ -63,12 +58,15 @@ module.exports = class Sniper {
             url: constants.redeemCodeURL(code),
             method: 'POST',
             parse: 'json',
-            headers: this.headers,
+            headers: {
+               'Authorization': settings.tokens.main,
+               'User-Agent': constants.userAgent
+            },
             data: `{"channel_id":${msg.channel.id},"payment_source_id":${paymentId}}`
          }, (err, res) => {
             // Handle response
             let time = `${new Date() - start}ms`;
-            let type = res?.body?.subscription_plan?.name;
+            let type = res.body?.subscription_plan?.name;
 
             if (err) {
                return logger.error(constants.phinError(err, code, location, author, time));
