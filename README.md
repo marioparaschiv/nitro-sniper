@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-   A lightweight, fast and efficient discord nitro sniper & giveaway sniper.
+   A lightweight, fast and efficient discord nitro sniper, giveaway sniper & invite sniper. 
    <img src="https://media.wtf/11603354" />
 </p>
 
