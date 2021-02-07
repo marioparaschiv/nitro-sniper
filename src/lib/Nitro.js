@@ -27,7 +27,11 @@ module.exports = class Sniper {
          if (this.cooldown && this.cooldown > new Date()) return;
          this.cooldown = null;
          let codes = msg.content.match(this.regex.gift);
-         if (codes && codes.length) await this.handleMessage(msg, codes);
+         if (codes?.length + this.snipedBucket > this.bucket) {
+            let index = (codes.length + this.snipedBucket) - this.bucket;
+            codes.splice(0, index);
+         }
+         if (codes?.length) await this.handleMessage(msg, codes);
       });
    }
 
@@ -81,6 +85,7 @@ module.exports = class Sniper {
             } else if (res.body?.message) {
                logger.error(constants.unknownResponse(code, location, author, time, res.body.message));
             }
+            // Handle bucket & cache
             this.cache.push(code);
             if (this.snipedBucket >= this.bucket) {
                let date = new Date();
