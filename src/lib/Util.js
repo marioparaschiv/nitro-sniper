@@ -1,7 +1,11 @@
 
-module.exports = {
-   randomInt(min, max) {
+module.exports = class Util {
+   static randomInt(min, max) {
       return Math.floor(Math.random() * (max - min + 1)) + min;
+   }
+
+   static sleep(t) {
+      return new Promise((f) => setTimeout(f, t));
    }
 };
 

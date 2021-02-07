@@ -85,8 +85,8 @@ module.exports = {
             max: 20
          },
          members: {
-            min: 5000,
-            max: 20000
+            min: 1500,
+            max: 50000
          },
          max: 10,
          cooldown: 6
@@ -109,7 +109,9 @@ module.exports = {
          }
       }
    },
-   cooldown: (type, max, hours) => `Cooldown hit after ${max} ${type}s were redeemed. Pausing for ${hours} hours.`,
+   cooldown: (type, max, hours) => `Cooldown hit after ${max} ${type}s were sniped. Pausing the ${type} sniper for ${hours} hours.`,
+   xSuperProperties: 'eyJvcyI6IldpbmRvd3MiLCJicm93c2VyIjoiRGlzY29yZCBDbGllbnQiLCJyZWxlYXNlX2NoYW5uZWwiOiJjYW5hcnkiLCJjbGllbnRfdmVyc2lvbiI6IjEuMC4yMSIsIm9zX3ZlcnNpb24iOiIxMC4wLjE5MDQyIiwib3NfYXJjaCI6Ing2NCIsInN5c3RlbV9sb2NhbGUiOiJlbi1VUyIsImNsaWVudF9idWlsZF9udW1iZXIiOjc1NjU3LCJjbGllbnRfZXZlbnRfc291cmNlIjpudWxsfQ==',
+   xContextProperties: 'eyJsb2NhdGlvbiI6Ikludml0ZSBCdXR0b24gRW1iZWQiLCJsb2NhdGlvbl9ndWlsZF9pZCI6bnVsbCwibG9jYXRpb25fY2hhbm5lbF9pZCI6IjgwNzgyMTYwMDM1ODc5MzI1NiIsImxvY2F0aW9uX2NoYW5uZWxfdHlwZSI6MSwibG9jYXRpb25fbWVzc2FnZV9pZCI6IjgwNzgyMTY5ODUwMTA1MDQzOSJ9',
    formatAuthor: (hoster, client) => `Hoster: ${hoster} • Account: ${client}`,
    webhookCantReach: 'Unable to reach your webhook.',
    invalidConfig: 'Invalid settings object, if you require more help visit https://github.com/slow/nitro-sniper for the default configuration. Exiting process...',
@@ -125,6 +127,7 @@ module.exports = {
    bothModeNoMain: "Couldn't log into main account meaning sniping is not possible. Exiting process...",
    noPaymentMethod: 'Main token does not have a billing source, some codes will not be sniped.',
    invalidWebhookType: 'Invalid Webhook type.',
+   joinedServer: (invite, server, location, author, account, time) => `${account} joined ${server} after ${time} | Invite: ${invite} | ${location} | ${author}`,
    giveawayWon: (prize, hoster, guild, channel) => `Won giveaway of ${chalk.bold(prize)} from ${hoster} in (${guild} > #${channel}).`,
    failedGiveawayReact: (prize, hoster, guild, channel, timeTook) => `Failed to react to giveaway of ${chalk.bold(prize)} from ${hoster.tag} in (${guild} > #${channel}) after ${timeTook}.`,
    reactedGiveaway: (prize, hoster, guild, channel, timeTook) => `Reacted to giveaway of ${chalk.bold(prize)} from ${hoster} in (${guild} > #${channel}) after ${timeTook}.`,
@@ -174,5 +177,7 @@ module.exports = {
       warn: '#FFF000'
    },
    paymentSourceURL: 'https://discord.com/api/v6/users/@me/billing/payment-sources',
-   redeemCodeURL: (code) => `https://discord.com/api/v6/entitlements/gift-codes/${code}/redeem`
+   redeemCodeURL: (code) => `https://discord.com/api/v6/entitlements/gift-codes/${code}/redeem`,
+   inviteFetchURL: (invite) => `https://discord.com/api/v6/invites/${encodeURIComponent(invite)}?with_counts=true`,
+   joinURL: (invite) => `https://discord.com/api/v6/invites/${invite}`
 };

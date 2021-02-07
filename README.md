@@ -87,6 +87,19 @@
          ""
       ]
    },
+   "invite": {
+      "enabled": false, // Wether or not to activate the invite sniper (true/false)
+      "delay": {
+         "min": 10, // Minimum delay to join the server
+         "max": 20 // Maximum delay to join the server
+      },
+      "members": {
+         "min": 1500, // The minimum member count the server should have
+         "max": 50000 // The maximum member count the server should have
+      },
+      "max": 10, // The amount of joined invites needed for the cooldown to activate
+      "cooldown": 6 // Cooldown to activate after max joined invites has been hit (in hours)
+   },
    "webhook": { 
       "url": "https://discord.com/api/webhooks/.../...", // URL to fire webhook to for notifications
       "enabled": {
