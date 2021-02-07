@@ -96,8 +96,8 @@
    "invite": {
       "enabled": false, // Wether or not to activate the invite sniper (true/false)
       "delay": {
-         "min": 10, // Minimum delay to join the server
-         "max": 20 // Maximum delay to join the server
+         "min": 10, // Minimum delay to join the server (in seconds)
+         "max": 20 // Maximum delay to join the server (in seconds)
       },
       "members": {
          "min": 1500, // The minimum member count the server should have
