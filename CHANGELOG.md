@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/slow/nitro-sniper/compare/v1.5.0...v1.5.1) (2021-02-07)
+
+
+### Bug Fixes
+
+* check for max servers ([0e6c21c](https://github.com/slow/nitro-sniper/commit/0e6c21c73772b9d400ce5786218efc6cdfb85df2))
+
 # [1.5.0](https://github.com/slow/nitro-sniper/compare/v1.4.1...v1.5.0) (2021-02-07)
 
 
