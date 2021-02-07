@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/slow/nitro-sniper/compare/v1.3.1...v1.4.0) (2021-02-07)
+
+
+### Features
+
+* cacheless discord v12 upgrade ([09b283a](https://github.com/slow/nitro-sniper/commit/09b283afd12b8a5610fc67da8425678198068090))
+
 ## [1.3.1](https://github.com/slow/nitro-sniper/compare/v1.3.0...v1.3.1) (2021-02-06)
 
 
