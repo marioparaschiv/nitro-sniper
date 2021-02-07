@@ -46,6 +46,9 @@ module.exports = class Invite {
 
       // Loop over the invites
       for (const i of invites) {
+         // Max server check
+         if (this.client.guilds.cache.size >= 100) break;
+
          // Wait the delay
          const { invite: { delay: { min, max } } } = settings;
          let waited = util.randomInt(min * 1000, max * 1000);
