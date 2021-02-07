@@ -1,3 +1,10 @@
+## [1.5.2](https://github.com/slow/nitro-sniper/compare/v1.5.1...v1.5.2) (2021-02-07)
+
+
+### Bug Fixes
+
+* unverified accs ([2e70cc6](https://github.com/slow/nitro-sniper/commit/2e70cc67552e733220afb854c7ae78ae3c3c16da))
+
 ## [1.5.1](https://github.com/slow/nitro-sniper/compare/v1.5.0...v1.5.1) (2021-02-07)
 
 
