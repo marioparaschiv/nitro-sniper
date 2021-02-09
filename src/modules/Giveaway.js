@@ -91,9 +91,12 @@ module.exports = class Giveaway {
 
          // Get info from embed
          let prize = embed.author?.name;
-         let hoster = embed.description
+
+         let description = embed.description
             ?.replace(/\r/g, "")
-            ?.split('\n')[1]
+            ?.split('\n');
+
+         let hoster = description[description.length - 1]
             ?.match(/[0-9]{17,20}/gim)[0];
 
          // Fetch hoster
