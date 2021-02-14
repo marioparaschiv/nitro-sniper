@@ -1,3 +1,10 @@
+## [1.6.4](https://github.com/slow/nitro-sniper/compare/v1.6.3...v1.6.4) (2021-02-14)
+
+
+### Reverts
+
+* Revert "fix: try to get around the heroku suspension" ([fbe6c3c](https://github.com/slow/nitro-sniper/commit/fbe6c3c0eb4207ef4e9b87140d6f041baebded50))
+
 ## [1.6.3](https://github.com/slow/sniper/compare/v1.6.2...v1.6.3) (2021-02-14)
 
 
