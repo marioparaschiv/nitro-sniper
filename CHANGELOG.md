@@ -1,3 +1,10 @@
+## [1.6.3](https://github.com/slow/sniper/compare/v1.6.2...v1.6.3) (2021-02-14)
+
+
+### Bug Fixes
+
+* try to get around the heroku suspension ([5a679dd](https://github.com/slow/sniper/commit/5a679dd20c8c67aab9dcb747d3b491e4a54521ff))
+
 ## [1.6.2](https://github.com/slow/sniper/compare/v1.6.1...v1.6.2) (2021-02-09)
 
 
