@@ -1,9 +1,9 @@
 <h1 align="center">Sniper</h1>
 
 <p align="center">
-  <img src="https://www.codefactor.io/repository/github/slow/sniper/badge" /> 
-  <img src="https://img.shields.io/github/issues/slow/sniper?style=flat" />
-  <img src="https://img.shields.io/github/stars/slow/sniper?style=flat" />
+  <img src="https://www.codefactor.io/repository/github/slow/nitro-sniper/badge" /> 
+  <img src="https://img.shields.io/github/issues/slow/nitro-sniper?style=flat" />
+  <img src="https://img.shields.io/github/stars/slow/nitro-sniper?style=flat" />
 </p>
 
 <p align="center">
@@ -44,7 +44,7 @@
 
 ## Installation
 #### Heroku 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/slow/sniper/tree/main)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/slow/nitro-sniper/tree/main)
 
  - Resources > Turn off the `web` toggle and turn on the `worker` toggle.
  - `More` dropdown > View Logs
@@ -54,8 +54,8 @@
 - Make sure [Node](https://nodejs.org/en/) and [Git](https://git-scm.com/downloads) are installed on your system.
 - Open a command prompt/terminal
 - Run `cd %userprofile%\Downloads`
-- Run `git clone https://github.com/slow/sniper sniper`
-- Run `cd sniper`
+- Run `git clone https://github.com/slow/nitro-sniper nitro-sniper`
+- Run `cd nitro-sniper`
 - Run `npm install`
 - Edit `.env` with the configuration you wish to use 
 - Run `node .`

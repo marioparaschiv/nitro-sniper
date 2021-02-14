@@ -1,6 +1,6 @@
 {
    "branches": "main",
-   "repositoryUrl": "https://github.com/slow/sniper",
+   "repositoryUrl": "https://github.com/slow/nitro-sniper",
    "debug": "true",
    "plugins": [
       "@semantic-release/commit-analyzer",
