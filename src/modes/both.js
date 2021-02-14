@@ -36,5 +36,5 @@ module.exports = async () => {
    if (alts <= 0 && (!settings.tokens.alts?.length || settings.tokens.alts[0] != '')) {
       logger.warn(constants.bothModeNoAlts);
    }
-   if (!main) logger.critical(constants.bothModeNoMain);
+   if (!main) return logger.critical(constants.bothModeNoMain);
 };

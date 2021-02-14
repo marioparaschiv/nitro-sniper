@@ -23,8 +23,13 @@ module.exports = class Logger {
       return console.log(chalk`{bgRed.white [${new Timestamp('YYYY-MM-DD HH:mm:ss')}]} {red ${text}}`, ...args);
    }
 
-   critical(text, ...args) {
+   async critical(text, ...args) {
       console.log(chalk`{bgRed.white [${new Timestamp('YYYY-MM-DD HH:mm:ss')}]} {red ${text}}`, ...args);
-      return process.exit(-1);
+      return new Promise((fulfill, reject) => {
+         setTimeout(() => {
+            fulfill();
+            process.exit(-1);
+         }, 5000);
+      });
    }
 };
