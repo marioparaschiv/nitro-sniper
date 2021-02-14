@@ -23,9 +23,9 @@ module.exports = class Logger {
       return console.log(chalk`{bgRed.white [${new Timestamp('YYYY-MM-DD HH:mm:ss')}]} {red ${text}}`, ...args);
    }
 
-   async critical(text, ...args) {
+   critical(text, ...args) {
       console.log(chalk`{bgRed.white [${new Timestamp('YYYY-MM-DD HH:mm:ss')}]} {red ${text}}`, ...args);
-      return new Promise((fulfill, reject) => {
+      return new Promise((fulfill) => {
          setTimeout(() => {
             fulfill();
             process.exit(-1);
