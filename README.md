@@ -44,7 +44,7 @@
 
 ## Installation
 #### Heroku 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/slow/nitro-sniper/tree/heroku)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/slow/nitro-sniper/tree/main)
 
  - Resources > Turn off the `web` toggle and turn on the `worker` toggle.
  - `More` dropdown > View Logs
