@@ -38,13 +38,6 @@ module.exports = {
       restTimeOffset: 0,
       presence: {
          afk: true
-      },
-      ws: {
-         properties: {
-            '$os': 'Discord Android',
-            '$browser': 'Discord Android',
-            '$device': 'Discord Android'
-         }
       }
    },
    defaultSettings: {
