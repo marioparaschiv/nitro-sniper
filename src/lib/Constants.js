@@ -121,7 +121,7 @@ module.exports = {
    noMain: 'No main account token provided, exiting process...',
    noAlts: 'No alt tokens were provided, exiting process...',
    invalidTokens: 'All tokens provided were invalid, exiting process...',
-   userAgent: 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) discord/1.0.21 Chrome/83.0.4103.122 Electron/9.3.5 Safari/537.36',
+   userAgent: 'Sniper (https://github.com/slow/nitro-sniper/)',
    ready: (accounts, servers) => `Logged in with ${accounts} ${accounts > 1 ? 'accounts' : 'account'} and ${servers} servers.`,
    unknownResponse: (code, location, author, end, body) => `Unknown Response | ${body} | Code: ${chalk.bold(code)} | ${location} | ${author} | ${end}`,
    bothModeNoAlts: 'No alts were able to log in, trying to use only main account.',

@@ -1,0 +1,13 @@
+{
+   "name": "Nitro Sniper",
+   "description": "A nitro sniper for discord.",
+   "repository": "https://github.com/slow/nitro-sniper",
+   "logo": "https://discord.com/assets/2c21aeda16de354ba5334551a883b481.png",
+   "env": {
+      "settings": {
+         "description": "Your configuration for the sniper.",
+         "required": true,
+         "value": "{\r\n  \"tokens\": {\r\n    \"main\": \"\",\r\n    \"alts\": [\r\n      \"\"\r\n    ]\r\n  },\r\n  \"mode\": \"both\",\r\n  \"nitro\": {\r\n    \"max\": 2,\r\n    \"cooldown\": 24\r\n  },\r\n  \"giveaway\": {\r\n    \"enabled\": true,\r\n    \"delay\": 30,\r\n    \"dm\": true,\r\n    \"dmMessage\": \"Hey, i won the giveaway. Could i redeem my prize?\",\r\n    \"dmDelay\": 25,\r\n    \"blacklistedWords\": [\r\n      \"bot\",\r\n      \"test\",\r\n      \"ban\"\r\n    ],\r\n    \"whitelistOnly\": false,\r\n    \"whitelistedWords\": [\r\n      \"nitro\"\r\n    ],\r\n    \"blacklistedServers\": [\r\n      \"\"\r\n    ]\r\n  },\r\n  \"invite\": {\r\n    \"enabled\": false,\r\n    \"delay\": {\r\n      \"min\": 10,\r\n      \"max\": 20\r\n    },\r\n    \"members\": {\r\n      \"min\": 1500,\r\n      \"max\": 50000\r\n    },\r\n    \"max\": 10,\r\n    \"cooldown\": 6\r\n  },\r\n  \"webhook\": {\r\n    \"url\": \"\",\r\n    \"enabled\": {\r\n      \"codeInvalid\": false,\r\n      \"codeAlreadyRedeemed\": false,\r\n      \"codeSuccess\": true,\r\n      \"giveawayEntered\": true,\r\n      \"giveawayWin\": true,\r\n      \"inviteJoin\": false\r\n    },\r\n    \"mentionEveryone\": {\r\n      \"codeInvalid\": false,\r\n      \"codeAlreadyRedeemed\": false,\r\n      \"codeSuccess\": true,\r\n      \"giveawayEntered\": false,\r\n      \"giveawayWin\": true,\r\n      \"inviteJoin\": false\r\n    }\r\n  }\r\n}"
+      }
+   }
+}
