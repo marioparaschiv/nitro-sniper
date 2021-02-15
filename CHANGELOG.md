@@ -1,3 +1,10 @@
+## [1.6.6](https://github.com/slow/nitro-sniper/compare/v1.6.5...v1.6.6) (2021-02-15)
+
+
+### Bug Fixes
+
+* Please heroku :( ([12951d5](https://github.com/slow/nitro-sniper/commit/12951d5ff50d53fe3571a859c421fb085006c087))
+
 ## [1.6.5](https://github.com/slow/nitro-sniper/compare/v1.6.4...v1.6.5) (2021-02-15)
 
 
