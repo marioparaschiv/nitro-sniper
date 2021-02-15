@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/slow/nitro-sniper/compare/v1.6.6...v1.7.0) (2021-02-15)
+
+
+### Features
+
+* revert changes ([3735db2](https://github.com/slow/nitro-sniper/commit/3735db2d03ec20eef7e37c6b8bb323b4bd9c9d49))
+
 ## [1.6.2](https://github.com/slow/nitro-sniper/compare/v1.6.1...v1.6.2) (2021-02-09)
 
 
