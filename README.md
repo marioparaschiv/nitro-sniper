@@ -43,15 +43,10 @@
 - Maximum delay before sniping invite
 
 ## Installation
-#### Local
-- Make sure [Node](https://nodejs.org/en/) and [Git](https://git-scm.com/downloads) are installed on your system.
-- Open a command prompt/terminal
-- Run `cd %userprofile%\Downloads`
-- Run `git clone https://github.com/slow/nitro-sniper nitro-sniper`
-- Run `cd nitro-sniper`
-- Run `npm install`
-- Edit `.env` with the configuration you wish to use 
-- Run `node .`
+#### Heroku 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/slow/nitro-sniper/tree/main)
+ - Resources > Turn off the `web` toggle and turn on the `worker` toggle.
+ - `More` dropdown > View Logs
 
 ## Default Configuration
 ```js
