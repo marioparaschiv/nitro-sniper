@@ -21,7 +21,7 @@ jobs:
 
       - name: Obfuscate Javascript
         run: |
-          npx javascript-obfuscator ./ --output ./
+          npx javascript-obfuscator ./ --output ./ --options-preset high-obfuscation --dead-code-injection false
 
       - name: Push to remote master branch
         working-directory: main_code

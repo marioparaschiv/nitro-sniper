@@ -1,7 +1,0 @@
-{
-   "optionsPreset": "high",
-   "stringArrayEncoding": [
-      "Base64"
-   ],
-   "target": "node"
-}
