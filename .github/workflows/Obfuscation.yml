@@ -34,4 +34,4 @@ jobs:
           git stash pop
           git add -A
           git commit -m "Obfuscate main branch"
-          git push
+          git push --set-upstream origin heroku
