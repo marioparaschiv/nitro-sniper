@@ -4,7 +4,6 @@
   <img src="https://www.codefactor.io/repository/github/slow/nitro-sniper/badge" /> 
   <img src="https://img.shields.io/github/issues/slow/nitro-sniper?style=flat" />
   <img src="https://img.shields.io/github/stars/slow/nitro-sniper?style=flat" />
-  <img src="https://img.shields.io/github/downloads/slow/nitro-sniper/total" />
 </p>
 
 <p align="center">
