@@ -43,6 +43,7 @@
 - Maximum delay before sniping invite
 
 ## Installation
+https://github.com/slow/nitro-sniper/wiki/Installation
 
 ## Default Configuration
 ```js
