@@ -19,7 +19,7 @@ jobs:
           ref: main
           path: main_code
 
-      - name: Obfuscate-Javascript
+      - name: Obfuscate Javascript
         run: |
           npx javascript-obfuscator ./ --output ./
 
