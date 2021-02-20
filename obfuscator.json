@@ -3,5 +3,5 @@
    "stringArrayEncoding": [
       "Base64"
    ],
-   "target": "node",
+   "target": "node"
 }
