@@ -54,7 +54,7 @@ You can then see logs by clicking on `More` (top right) and then `View logs`.<br
 - Run `git clone https://github.com/giorgiobrux/nitro-sniper-enhanced nitro-sniper`
 - Run `cd nitro-sniper`
 - Run `npm install`
-- Edit the dotenv file.
+- Edit the .env file.
 - Run `node .`
 
 ## Default Configuration
