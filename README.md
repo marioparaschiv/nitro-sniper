@@ -118,3 +118,5 @@ https://github.com/Tyrrrz/DiscordChatExporter/wiki/Obtaining-Token-and-Channel-I
 - This is technically a self-bot: mentioning this in a discord chat is enough to make your account reportable to Trust & Safety.
 - Running more than one instance or different snipers is an easy way to get your account deactivated.
 - Before using, consider the moral implications of stealing gifts from communities you have nothing to do with.
+
+> If you like my project, please consider starring the repo :)
