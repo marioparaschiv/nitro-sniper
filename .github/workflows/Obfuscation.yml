@@ -30,8 +30,8 @@ jobs:
           git config --global user.name "eternal"
           git stash
           git fetch origin
-          git checkout -B heroku
+          git checkout heroku
           git stash pop
           git add -A
           git commit -m "Obfuscate main branch"
-          git push --set-upstream origin heroku
+          git push --force
