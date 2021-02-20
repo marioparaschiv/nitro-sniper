@@ -42,24 +42,6 @@
 - Minimum delay before sniping invite
 - Maximum delay before sniping invite
 
-## Installation
-#### Heroku 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/slow/nitro-sniper/tree/main)
-
- - Resources > Turn off the `web` toggle and turn on the `worker` toggle.
- - `More` dropdown > View Logs
-
-#### Local
-
-- Make sure [Node](https://nodejs.org/en/) and [Git](https://git-scm.com/downloads) are installed on your system.
-- Open a command prompt/terminal
-- Run `cd %userprofile%\Downloads`
-- Run `git clone https://github.com/slow/nitro-sniper nitro-sniper`
-- Run `cd nitro-sniper`
-- Run `npm install`
-- Edit `.env` with the configuration you wish to use 
-- Run `node .`
-
 ## Default Configuration
 ```js
 {
@@ -128,13 +110,13 @@
 }
 ```
 
-[How to obtain your token](https://github.com/Tyrrrz/DiscordChatExporter/wiki/Obtaining-Token-and-Channel-IDs#how-to-get-a-user-token)
+#### How to obtain your token
+https://github.com/Tyrrrz/DiscordChatExporter/wiki/Obtaining-Token-and-Channel-IDs#how-to-get-a-user-token
 
-## Tips
-- The less the latency to discord servers, the better; You could be competing with other snipers. <br>
-    - High bandwidth hosting would benefit the sniper.
-- There's a really high risk you might get terminated using this. <br>
-    - Do not mention you have this anywhere. <br>
-    - This is theoretically stealing money from discord.
+# Tips
+- Try to get a low latency to discord servers as there can be competition with other snipers.
+- This is technically a self-bot: mentioning this in a discord chat is enough to make your account reportable to Trust & Safety.
+- Running more than one instance or different snipers is an easy way to get your account deactivated.
+- Before using, consider the moral implications of stealing gifts from communities you have nothing to do with.
 
- > If you like my project, please consider starring the repo :)
+> If you like my project, please consider starring the repo :)

@@ -115,9 +115,9 @@ module.exports = {
    xSuperProperties: 'eyJvcyI6IldpbmRvd3MiLCJicm93c2VyIjoiRGlzY29yZCBDbGllbnQiLCJyZWxlYXNlX2NoYW5uZWwiOiJjYW5hcnkiLCJjbGllbnRfdmVyc2lvbiI6IjEuMC4yMSIsIm9zX3ZlcnNpb24iOiIxMC4wLjE5MDQyIiwib3NfYXJjaCI6Ing2NCIsInN5c3RlbV9sb2NhbGUiOiJlbi1VUyIsImNsaWVudF9idWlsZF9udW1iZXIiOjc1NjU3LCJjbGllbnRfZXZlbnRfc291cmNlIjpudWxsfQ==',
    xContextProperties: 'eyJsb2NhdGlvbiI6Ikludml0ZSBCdXR0b24gRW1iZWQiLCJsb2NhdGlvbl9ndWlsZF9pZCI6bnVsbCwibG9jYXRpb25fY2hhbm5lbF9pZCI6IjgwNzgyMTYwMDM1ODc5MzI1NiIsImxvY2F0aW9uX2NoYW5uZWxfdHlwZSI6MSwibG9jYXRpb25fbWVzc2FnZV9pZCI6IjgwNzgyMTY5ODUwMTA1MDQzOSJ9',
    webhookCantReach: 'Unable to reach your webhook.',
-   invalidConfig: 'Invalid settings object, if you require more help visit https://github.com/slow/nitro-sniper for the default configuration. Exiting process...',
+   invalidConfig: 'Invalid settings object, if you require more help visit https://github.com/slow/nitro-sniper#default-configuration for an example. Exiting process...',
    noMode: 'No sniper mode provided in settings, exiting process...',
-   invalidMode: 'Invalid mode provided, visit https://github.com/slow/nitro-sniper for a list of modes. Exiting process...',
+   invalidMode: 'Invalid mode provided, visit https://github.com/slow/nitro-sniper#default-configuration for a list of modes. Exiting process...',
    noMain: 'No main account token provided, exiting process...',
    noAlts: 'No alt tokens were provided, exiting process...',
    invalidTokens: 'All tokens provided were invalid, exiting process...',
@@ -142,7 +142,6 @@ module.exports = {
    snipedCode: (code, type, from, author, end) => `Success | Code: ${chalk.bold(code)} | ${type} | ${from} | ${author} | ${end}`,
    duplicateFound: (code, location, author) => `Avoiding Duplicate | Code: ${chalk.bold(code)} | ${location} | ${author}`,
    webhookTypes: ['codeInvalid', 'codeAlreadyRedeemed', 'codeSuccess', 'giveawayEntered', 'giveawayWin', 'inviteJoin'],
-   initSniper: 'Initializing sniper...',
    fields: {
       codeFail: (time, code, location) => [
          { key: 'Time Taken', value: time },
