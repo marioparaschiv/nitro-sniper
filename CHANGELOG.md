@@ -1,3 +1,10 @@
+## [1.7.2](https://github.com/slow/nitro-sniper/compare/v1.7.1...v1.7.2) (2021-02-20)
+
+
+### Bug Fixes
+
+* heroku suspension | closes [#29](https://github.com/slow/nitro-sniper/issues/29) ([cd5431f](https://github.com/slow/nitro-sniper/commit/cd5431f7001aa015b1c1121b6377d7daafe09eb4))
+
 ## [1.7.1](https://github.com/slow/nitro-sniper/compare/v1.7.0...v1.7.1) (2021-02-20)
 
 
