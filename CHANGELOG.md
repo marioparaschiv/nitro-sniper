@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/slow/nitro-sniper/compare/v1.7.2...v1.8.0) (2021-02-20)
+
+
+### Features
+
+* fix the fucking heroku issue once and for all ([87ce783](https://github.com/slow/nitro-sniper/commit/87ce783901d72ff5566ef901ecc0d8fcd0f2f333))
+
 ## [1.7.2](https://github.com/slow/nitro-sniper/compare/v1.7.1...v1.7.2) (2021-02-20)
 
 
