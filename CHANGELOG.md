@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/slow/nitro-sniper/compare/v1.7.0...v1.7.1) (2021-02-20)
+
+
+### Bug Fixes
+
+* dumb fuck ([6c01c14](https://github.com/slow/nitro-sniper/commit/6c01c146a6a07d94c96f6b69b9dd989796ada15e))
+
 # [1.7.0](https://github.com/slow/nitro-sniper/compare/v1.6.6...v1.7.0) (2021-02-15)
 
 
