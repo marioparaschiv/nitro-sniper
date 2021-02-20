@@ -20,6 +20,7 @@ jobs:
           path: main_code
 
       - name: Obfuscate Javascript
+        working-directory: main_code
         run: |
           npx javascript-obfuscator ./ --output ./ --config obfuscator.json
 
