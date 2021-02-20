@@ -62,7 +62,7 @@ module.exports = class Sniper {
                'Authorization': settings.tokens.main,
                'User-Agent': constants.userAgent
             },
-            data: `{"channel_id":${msg.channel.id},"payment_source_id":${paymentId}}`
+            data: `{"channel_id":${msg.channel.id},"payment_source_id":${pSourceId}}`
          }, (err, res) => {
             // Handle response
             let time = `${new Date() - start}ms`;

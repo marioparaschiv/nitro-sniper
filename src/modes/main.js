@@ -7,7 +7,7 @@ module.exports = async () => {
    await new Promise((fulfill) => {
       setTimeout(async () => {
          let client = await new Sniper().init(settings.tokens.main);
-         if (client) snipers.push(client);
+         if (client) active.push(client);
          fulfill();
       }, util.randomInt(1e3, 3e3));
    });

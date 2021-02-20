@@ -10,7 +10,7 @@ module.exports = async () => {
          let client = await new Sniper().init(settings.tokens.main);
          if (client) {
             main = true;
-            snipers.push(client);
+            active.push(client);
          }
          fulfill();
       }, util.randomInt(1e3, 3e3));
@@ -23,7 +23,7 @@ module.exports = async () => {
          setTimeout(async () => {
             let client = await new Sniper().init(token);
             if (client) {
-               snipers.push(client);
+               active.push(client);
                ++alts;
             }
             fulfill();

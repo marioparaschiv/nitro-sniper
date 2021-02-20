@@ -37,12 +37,12 @@ async function init() {
    `));
 
    // Define globals
-   global.snipers = [];
+   global.active = [];
    global.webhook = null;
    global.constants = Constants;
    global.util = Util;
    global.logger = new Logger({ debug: false });
-   global.paymentId = null;
+   global.pSourceId = null;
 
    // Try to parse settings
    try {
@@ -61,14 +61,14 @@ async function init() {
    logger.debug(constants.initSniper);
    await modes[settings.mode]();
 
-   if (!snipers.length) return logger.critical(constants.invalidTokens);
+   if (!active.length) return logger.critical(constants.invalidTokens);
 
    // Counters
-   let guildCount = snipers
+   let guildCount = active
       .map((s) => s.guilds.cache.size)
       .reduce((a, b) => a + b, 0);
 
-   let sniperCount = snipers.length;
+   let sniperCount = active.length;
 
    // Get payment method
    let res = await phin({
@@ -84,7 +84,7 @@ async function init() {
    if (!res.body || res.body?.length === 0) {
       logger.warn(constants.noPaymentMethod);
    } else if (res.body[0]) {
-      global.paymentId = res.body[0].id;
+      global.pSourceId = res.body[0].id;
    } else {
       logger.warn(constants.paymentMethodFail(res.body));
    }
