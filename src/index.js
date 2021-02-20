@@ -52,7 +52,6 @@ async function init() {
    if (!settings.mode) return logger.critical(constants.noMode);
    if (!Object.keys(modes).includes(settings.mode)) return logger.critical(constants.invalidMode);
 
-   // Init selected mode
    await modes[settings.mode]();
 
    if (!active.length) return logger.critical(constants.invalidTokens);

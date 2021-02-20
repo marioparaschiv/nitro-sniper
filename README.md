@@ -42,21 +42,6 @@
 - Minimum delay before sniping invite
 - Maximum delay before sniping invite
 
-## Installation
-#### Heroku (recommended)
-Click on the image below and login to continue the setup.<br>
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/slow/nitro-sniper/tree/main)  
-Make sure you go to your app -> Configure dynos/Resources and turn off `web` and start `worker`.<br>
-You can then see logs by clicking on `More` (top right) and then `View logs`.<br>
-
-#### Local
-- Make sure [Node](https://nodejs.org/en/) is installed on your system and open a command prompt/terminal.
-- Run `git clone https://github.com/giorgiobrux/nitro-sniper-enhanced nitro-sniper`
-- Run `cd nitro-sniper`
-- Run `npm install`
-- Edit the .env file.
-- Run `node .`
-
 ## Default Configuration
 ```js
 {
@@ -133,5 +118,3 @@ https://github.com/Tyrrrz/DiscordChatExporter/wiki/Obtaining-Token-and-Channel-I
 - This is technically a self-bot: mentioning this in a discord chat is enough to make your account reportable to Trust & Safety.
 - Running more than one instance or different snipers is an easy way to get your account deactivated.
 - Before using, consider the moral implications of stealing gifts from communities you have nothing to do with.
-
-> If you like my project, please consider starring the repo :)
