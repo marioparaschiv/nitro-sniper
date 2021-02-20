@@ -26,12 +26,13 @@ jobs:
       - name: Push to remote master branch
         working-directory: main_code
         run: |
+          COMMIT_NAME=$(git log -1 --format=%s) 
           git config --global user.email "73202350+slow@users.noreply.github.com"
           git config --global user.name "eternal"
           git stash
           git fetch origin
           git checkout heroku
-          git stash pop
+          git merge --squash --allow-unrelated-histories -Xtheirs stash
           git add -A
-          git commit -m "Obfuscate main branch"
-          git push -f
+          git commit -m "${COMMIT_NAME}"
+          git push
