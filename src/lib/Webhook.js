@@ -42,7 +42,7 @@ module.exports = class Webhook extends WebhookClient {
             fields = constants.fields.codeFail(time, code, location);
             break;
          case 'codeSuccess':
-            fields = constants.fields.codeSuccess(time, code, type, location);
+            fields = constants.fields.codeSuccess(time, type, code, location);
             break;
          case 'giveawayEntered':
             fields = constants.fields.giveawayEntered(server, channel, timeTook, prize);
