@@ -1,7 +1,9 @@
 <h1 align="center">Sniper</h1>
 
 <p align="center">
-  <img src="https://www.codefactor.io/repository/github/slow/nitro-sniper/badge" /> 
+  <a href="#">
+    <img src="https://www.codefactor.io/repository/github/slow/nitro-sniper/badge" /> 
+  </a>
   <a href="https://github.com/slow/nitro-sniper/issues">
     <img src="https://img.shields.io/github/issues/slow/nitro-sniper?style=flat" />
   </a>
