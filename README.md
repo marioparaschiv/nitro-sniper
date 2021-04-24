@@ -2,8 +2,12 @@
 
 <p align="center">
   <img src="https://www.codefactor.io/repository/github/slow/nitro-sniper/badge" /> 
-  <img src="https://img.shields.io/github/issues/slow/nitro-sniper?style=flat" />
-  <img src="https://img.shields.io/github/stars/slow/nitro-sniper?style=flat" />
+  <a href="https://github.com/slow/nitro-sniper/issues">
+    <img src="https://img.shields.io/github/issues/slow/nitro-sniper?style=flat" />
+  </a>
+  <a href="https://github.com/slow/nitro-sniper/stargazers">
+    <img src="https://img.shields.io/github/stars/slow/nitro-sniper?style=flat" />
+  </a>
 </p>
 
 <p align="center">
