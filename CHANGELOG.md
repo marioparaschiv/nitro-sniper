@@ -1,3 +1,10 @@
+## [1.8.1](https://github.com/slow/nitro-sniper/compare/v1.8.0...v1.8.1) (2021-04-24)
+
+
+### Bug Fixes
+
+* npm semver ([9fb7e78](https://github.com/slow/nitro-sniper/commit/9fb7e7865cd1f8be0ff8275f527e3b1d815e2c8e))
+
 # [1.8.0](https://github.com/slow/nitro-sniper/compare/v1.7.2...v1.8.0) (2021-02-20)
 
 
