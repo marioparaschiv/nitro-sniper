@@ -126,7 +126,7 @@ module.exports = class Giveaway {
       });
 
       // Check if reaction was successful
-      let timeTook = `${((timeout % 6e4) / 1e3).toFixed(0)} seconds`;
+      let timeTook = `${(timeout / 1000).toFixed(0)} second(s)`;
       if (!reacted) {
          return logger.error(constants.failedGiveawayReact(
             prize,
@@ -177,7 +177,7 @@ module.exports = class Giveaway {
          const { giveaway: { dmDelay } } = settings;
          let delay = dmDelay * 1000;
          let timeout = util.randomInt(delay, delay * 1.5);
-         let timeTook = `${((timeout % 6e4) / 1e3).toFixed(0)} seconds`;
+         let timeTook = `${(timeout / 1000).toFixed(0)} second(s)`;
          let dmed = await new Promise(async (fulfill) => {
             setTimeout(async () => {
                try {
