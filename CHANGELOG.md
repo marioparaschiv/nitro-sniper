@@ -1,3 +1,10 @@
+## [1.8.2](https://github.com/slow/nitro-sniper/compare/v1.8.1...v1.8.2) (2021-06-07)
+
+
+### Bug Fixes
+
+* force release ([13217c6](https://github.com/slow/nitro-sniper/commit/13217c6e44f4134f43327a6c16359bedfcff7b4f))
+
 ## [1.8.1](https://github.com/slow/nitro-sniper/compare/v1.8.0...v1.8.1) (2021-04-24)
  
 
