@@ -54,7 +54,7 @@ module.exports = class Invite {
          // Wait the delay
          const { invite: { delay: { min, max } } } = settings;
          let waited = util.randomInt(min * 1000, max * 1000);
-         let timeTook = `${((waited % 6e4) / 1e3).toFixed(0)} seconds`;
+         let timeTook = `${(waited / 1000).toFixed(0)} seconds`;
          await util.sleep(waited);
 
          // Fetch invite information
@@ -72,8 +72,8 @@ module.exports = class Invite {
 
          // Check member count against min and max settings
          if (
-            invite.approximate_member_count >= settings.invite.min &&
-            invite.approximate_member_count <= settings.invite.max
+            invite.approximate_member_count >= settings.invite.members.min &&
+            invite.approximate_member_count <= settings.invite.members.max
          ) continue;
 
          // Check if the user is already in the guild
