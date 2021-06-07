@@ -76,7 +76,7 @@ module.exports = class Giveaway {
             msg.content.toLowerCase().includes(`<@${this.client.user.id}>`)
          )) return;
 
-         let messageLinks = msg.content.match(this.regex.messageLink);
+         let messageLinks = msg.embeds?.[0]?.description?.match(this.regex.messageLink);
          if (!messageLinks || !messageLinks.length) return;
          let messageId = messageLinks[0]?.split('/')[6];
          let message = await msg.channel.messages.fetch({ limit: 1, around: messageId })
