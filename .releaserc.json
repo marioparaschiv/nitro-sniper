@@ -20,7 +20,7 @@
                "package-lock.json",
                "CHANGELOG.md"
             ],
-            "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+            "message": "[${nextRelease.version}] Release [skip ci]\n\n${nextRelease.notes}"
          }
       ],
       [
