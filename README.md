@@ -48,7 +48,7 @@ https://github.com/slow/nitro-sniper/wiki/Installation
 
 ## Default Configuration
 ```js
-settings="{
+{
    tokens: {
       // Main Token
       main: 'Nz...', 
