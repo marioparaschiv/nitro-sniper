@@ -1,4 +1,5 @@
 const { Util: djsUtil } = require('discord.js');
+const JSON5 = require('json5');
 
 async function init() {
    // Requires
@@ -11,7 +12,7 @@ async function init() {
    const phin = require('phin');
 
    // Call dotenv to recognize env vars
-   require('dotenv').config();
+   require('dotenv').config({ multiline: 'line-breaks' });
 
    console.log(chalk.green(`
                                            ╓╖,
@@ -46,7 +47,7 @@ async function init() {
 
    // Try to parse settings
    try {
-      global.settings = JSON.parse(process.env.settings);
+      global.settings = JSON5.parse(process.env.settings);
    } catch {
       return logger.critical(constants.invalidConfig);
    }

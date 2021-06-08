@@ -48,70 +48,105 @@ https://github.com/slow/nitro-sniper/wiki/Installation
 
 ## Default Configuration
 ```js
-{
-   "tokens": {
-      "main": "Nz...", // Main Token
-      "alts": [
-         "Nz..." // Alt Tokens
+settings="{
+   tokens: {
+      // Main Token
+      main: 'Nz...', 
+      // Alt Tokens
+      alts: [
+         'Nz...',
+         'Nz...'
       ],
    },
-   "mode": "both", // The mode to run the sniper in. Options: main (only main account), alts (only alts), both
-   "nitro": {
-      "max": 2, // The amount of nitros needed to be sniped for the cooldown to activate
-      "cooldown": 24 // Cooldown to activate after max nitro has been hit (in hours)
+   // The mode to run the sniper in. Options: main (only main account), alts (only alts), both
+   mode: 'both', 
+   nitro: {
+      // The amount of nitros needed to be sniped for the cooldown to activate
+      max: 2,
+      // Cooldown to activate after max nitro has been hit (in hours)
+      cooldown: 24
    },
-   "giveaway": {
-      "enabled": true, // Wether or not to activate the giveaway sniper (true/false)
-      "delay": 30, // Delay to react to the giveaway (in seconds)
-      "dm": true, // DM the hoster on giveaway win (true/false)
-      "dmMessage": "Hey, i won the giveaway. Could i redeem my prize?", // Message to DM the host
-      "dmDelay": 25, // How long to wait to DM (in seconds)
-      "blacklistedWords": [ // Blacklisted words for giveaway prizes
-         "bot",
-         "test",
-         "ban"
+   giveaway: {
+      // Wether or not to activate the giveaway sniper (true/false)
+      enabled: true, 
+      // Delay to react to the giveaway (in seconds)
+      delay: 30,
+      // DM the hoster on giveaway win (true/false)
+      dm: true,
+      // Message to DM the host
+      dmMessage: 'Hey, i won the giveaway. Could i redeem my prize?',
+      // How long to wait to DM (in seconds)
+      dmDelay: 25, 
+      // Blacklisted words for giveaway prizes
+      blacklistedWords: [ 
+         'bot',
+         'test',
+         'ban'
       ],
-      "whitelistOnly": false, // Only react to whitelisted giveaway prizes (true/false)
-      "whitelistedWords": [ // Whitelisted words for giveaway prizes
-         "nitro"
+      // Only react to whitelisted giveaway prizes (true/false)
+      whitelistOnly: false, 
+      // Whitelisted words for giveaway prizes
+      whitelistedWords: [
+         'nitro'
       ],
-      "blacklistedServers": [ // Blacklisted Server IDs to not snipe giveaways on
-         ""
+      // Blacklisted Server IDs to not snipe giveaways on
+      blacklistedServers: [
+         ''
       ]
    },
-   "invite": {
-      "enabled": false, // Wether or not to activate the invite sniper (true/false)
-      "delay": {
-         "min": 10, // Minimum delay to join the server (in seconds)
-         "max": 20 // Maximum delay to join the server (in seconds)
+   invite: {
+      // Wether or not to activate the invite sniper (true/false)
+      enabled: false,
+      delay: {
+         // Minimum delay to join the server (in seconds)
+         min: 10,
+         // Maximum delay to join the server (in seconds) 
+         max: 20 
       },
-      "members": {
-         "min": 1500, // The minimum member count the server should have
-         "max": 50000 // The maximum member count the server should have
+      members: {
+         // The minimum member count the server should have
+         min: 1500, 
+         // The maximum member count the server should have
+         max: 50000 
       },
-      "max": 10, // The amount of joined invites needed for the cooldown to activate
-      "cooldown": 6 // Cooldown to activate after max joined invites has been hit (in hours)
+      // The amount of joined invites needed for the cooldown to activate
+      max: 10,
+      // Cooldown to activate after max joined invites has been hit (in hours) 
+      cooldown: 6 
    },
-   "webhook": { 
-      "url": "https://discord.com/api/webhooks/.../...", // URL to fire webhook to for notifications
-      "enabled": {
-         "codeInvalid": false, // Fire webhook on invalid code (true/false)
-         "codeAlreadyRedeemed": false, // Fire webhook on already redeemed code (true/false)
-         "codeSuccess": true, // Fire webhook on sniped code (true/false)
-         "giveawayEntered": true, // Fire webhook on giveaway enter (true/false)
-         "giveawayWin": true, // Fire webhook on giveaway win (true/false)
-         "inviteJoin": false // Fire webhook on invite join (true/false)
+   webhook: { 
+      // URL to fire webhook to for notifications
+      url: 'https://discord.com/api/webhooks/.../...',
+      enabled: {
+         // Fire webhook on invalid code (true/false)
+         codeInvalid: false, 
+         // Fire webhook on already redeemed code (true/false)
+         codeAlreadyRedeemed: false, 
+         // Fire webhook on sniped code (true/false)
+         codeSuccess: true,
+         // Fire webhook on giveaway enter (true/false)
+         giveawayEntered: true,
+         // Fire webhook on giveaway win (true/false) 
+         giveawayWin: true,
+         // Fire webhook on invite join (true/false) 
+         inviteJoin: false 
       }, 
-      "mentionEveryone": { 
-         "codeInvalid": false, // Mention on invalid code (true/false)
-         "codeAlreadyRedeemed": false, // Mention on already redeemed code (true/false)
-         "codeSuccess": true, // Mention on sniped code (true/false)
-         "giveawayEntered": false, // Mention on giveaway enter (true/false)
-         "giveawayWin": true, // Mention on giveaway win (true/false)
-         "inviteJoin": false // Mention on invite join (true/false)
+      mentionEveryone: { 
+         // Mention on invalid code (true/false)
+         codeInvalid: false, 
+         // Mention on already redeemed code (true/false)
+         codeAlreadyRedeemed: false,
+         // Mention on sniped code (true/false) 
+         codeSuccess: true, 
+         // Mention on giveaway enter (true/false)
+         giveawayEntered: false,
+         // Mention on giveaway win (true/false) 
+         giveawayWin: true,
+         // Mention on invite join (true/false)
+         inviteJoin: false 
       }
    }
-}
+}"
 ```
 
 #### How to obtain your token
