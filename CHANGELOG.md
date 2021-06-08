@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/slow/nitro-sniper/compare/v1.8.2...v1.9.0) (2021-06-08)
+
+
+### Features
+
+* new parsing system to make it easier ([a68ca0f](https://github.com/slow/nitro-sniper/commit/a68ca0f7b1ca093e5edabfb405e51ea810f9dc7c))
+
 ## [1.8.2](https://github.com/slow/nitro-sniper/compare/v1.8.1...v1.8.2) (2021-06-07)
 
 
