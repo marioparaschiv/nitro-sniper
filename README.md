@@ -146,7 +146,7 @@ https://github.com/slow/nitro-sniper/wiki/Installation
          inviteJoin: false 
       }
    }
-}"
+}
 ```
 
 #### How to obtain your token
