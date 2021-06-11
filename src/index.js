@@ -84,7 +84,8 @@ async function init() {
    if (!res.body?.length) {
       logger.warn(constants.noPaymentMethod);
    } else if (res.body[0]) {
-      global.paymentSourceId = res.body[0].id;
+      let method = res.body.find?.(p => p.default)?.id
+      global.paymentSourceId = method;
    } else {
       logger.warn(constants.paymentMethodFail(res.body));
    }
