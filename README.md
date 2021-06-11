@@ -13,14 +13,16 @@
 </p>
 
 # Features
+
 - Light, fast & efficient
 - Nitro sniper
 - Giveaway sniper
 - Limit nitro redeems (e.g. 2 codes / 24 hours)
-- Custom giveaway reaction delay (randomized between **delay** and (**delay** * 1.5))
+- Custom giveaway reaction delay (randomized between **delay** and (**delay** \* 1.5))
 - DM host on giveaway win
 - Custom DM Delay
 - Custom DM Message
+- Status Changer
 - One-click Deploy
 - Duplicate Protection
 - Fake Code Detection
@@ -29,29 +31,28 @@
 - Webhook support (Giveaways & Nitro)
 - Fully customizable webhook
 - Ability to turn the webhook on/off for certain events
-- @everyone ping on webhook message
+- Ability to decide when the webhook should ping @everyone
 - Ability to turn the ping on/off for certain events
-- Whitelist words for the giveaway sniper
-- Blacklist words for the giveaway sniper
-- Whitelisted words only mode for giveaway sniper (Blacklist still applies)
+- Whitelist and blacklist words for the giveaway sniper
+- Whitelist only mode for giveaway sniper (Blacklist still applies)
 - Blacklist servers from the giveaway sniper
 - Announce nitro type on snipe
 - Invite Sniper
-- Minimum member count for invite sniper
-- Maximum member count for invite sniper
+- Minimum and maximum member count for invite sniper
 - Limit invite joins (e.g. 10 invites / 6 hours)
-- Minimum delay before sniping invite
-- Maximum delay before sniping invite
+- Minimum and maximum delay before sniping invite
 
 ## Installation
+
 https://github.com/slow/nitro-sniper/wiki/Installation
 
 ## Default Configuration
+
 ```js
 {
    tokens: {
       // Main Token
-      main: 'Nz...', 
+      main: 'Nz...',
       // Alt Tokens
       alts: [
          'Nz...',
@@ -60,7 +61,7 @@ https://github.com/slow/nitro-sniper/wiki/Installation
    },
    // The mode to run the sniper in. Options: main (only main account), alts (only alts), both
    mode: 'both',
-   /* 
+   /*
       The status the accounts should be on.
       Options: online, dnd, idle, offline, default
       default means the status will not be modified.
@@ -70,7 +71,7 @@ https://github.com/slow/nitro-sniper/wiki/Installation
       main: 'default',
       // The status the logged in alts will have
       alts: 'default'
-   }, 
+   },
    nitro: {
       // The amount of nitros needed to be sniped for the cooldown to activate
       max: 2,
@@ -79,7 +80,7 @@ https://github.com/slow/nitro-sniper/wiki/Installation
    },
    giveaway: {
       // Wether or not to activate the giveaway sniper (true/false)
-      enabled: true, 
+      enabled: true,
       // Delay to react to the giveaway (in seconds)
       delay: 30,
       // DM the hoster on giveaway win (true/false)
@@ -87,15 +88,15 @@ https://github.com/slow/nitro-sniper/wiki/Installation
       // Message to DM the host
       dmMessage: 'Hey, i won the giveaway. Could i redeem my prize?',
       // How long to wait to DM (in seconds)
-      dmDelay: 25, 
+      dmDelay: 25,
       // Blacklisted words for giveaway prizes
-      blacklistedWords: [ 
+      blacklistedWords: [
          'bot',
          'test',
          'ban'
       ],
       // Only react to whitelisted giveaway prizes (true/false)
-      whitelistOnly: false, 
+      whitelistOnly: false,
       // Whitelisted words for giveaway prizes
       whitelistedWords: [
          'nitro'
@@ -111,59 +112,61 @@ https://github.com/slow/nitro-sniper/wiki/Installation
       delay: {
          // Minimum delay to join the server (in seconds)
          min: 10,
-         // Maximum delay to join the server (in seconds) 
-         max: 20 
+         // Maximum delay to join the server (in seconds)
+         max: 20
       },
       members: {
          // The minimum member count the server should have
-         min: 1500, 
+         min: 1500,
          // The maximum member count the server should have
-         max: 50000 
+         max: 50000
       },
       // The amount of joined invites needed for the cooldown to activate
       max: 10,
-      // Cooldown to activate after max joined invites has been hit (in hours) 
-      cooldown: 6 
+      // Cooldown to activate after max joined invites has been hit (in hours)
+      cooldown: 6
    },
-   webhook: { 
+   webhook: {
       // URL to fire webhook to for notifications
       url: 'https://discord.com/api/webhooks/.../...',
       enabled: {
          // Fire webhook on invalid code (true/false)
-         codeInvalid: false, 
+         codeInvalid: false,
          // Fire webhook on already redeemed code (true/false)
-         codeAlreadyRedeemed: false, 
+         codeAlreadyRedeemed: false,
          // Fire webhook on sniped code (true/false)
          codeSuccess: true,
          // Fire webhook on giveaway enter (true/false)
          giveawayEntered: true,
-         // Fire webhook on giveaway win (true/false) 
+         // Fire webhook on giveaway win (true/false)
          giveawayWin: true,
-         // Fire webhook on invite join (true/false) 
-         inviteJoin: false 
-      }, 
-      mentionEveryone: { 
+         // Fire webhook on invite join (true/false)
+         inviteJoin: false
+      },
+      mentionEveryone: {
          // Mention on invalid code (true/false)
-         codeInvalid: false, 
+         codeInvalid: false,
          // Mention on already redeemed code (true/false)
          codeAlreadyRedeemed: false,
-         // Mention on sniped code (true/false) 
-         codeSuccess: true, 
+         // Mention on sniped code (true/false)
+         codeSuccess: true,
          // Mention on giveaway enter (true/false)
          giveawayEntered: false,
-         // Mention on giveaway win (true/false) 
+         // Mention on giveaway win (true/false)
          giveawayWin: true,
          // Mention on invite join (true/false)
-         inviteJoin: false 
+         inviteJoin: false
       }
    }
 }
 ```
 
 #### How to obtain your token
+
 https://github.com/Tyrrrz/DiscordChatExporter/wiki/Obtaining-Token-and-Channel-IDs#how-to-get-a-user-token
 
 # Tips
+
 - Try to get a low latency to discord servers as there can be competition with other snipers.
 - This is technically a self-bot: mentioning this in a discord chat is enough to make your account reportable to Trust & Safety.
 - Running more than one instance or different snipers is an easy way to get your account deactivated.
