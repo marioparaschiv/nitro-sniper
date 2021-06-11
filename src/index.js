@@ -12,7 +12,9 @@ async function init() {
    const phin = require('phin');
 
    // Call dotenv to recognize env vars
-   require('dotenv').config({ multiline: 'line-breaks' });
+   require('dotenv').config({
+      multiline: 'line-breaks'
+   });
 
    console.log(chalk.green(`
                                            ╓╖,
@@ -79,7 +81,7 @@ async function init() {
       }
    });
 
-   if (!res.body || res.body?.length === 0) {
+   if (!res.body?.length) {
       logger.warn(constants.noPaymentMethod);
    } else if (res.body[0]) {
       global.paymentSourceId = res.body[0].id;
