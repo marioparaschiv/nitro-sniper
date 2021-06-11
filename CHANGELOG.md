@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/slow/nitro-sniper/compare/v1.9.0...v1.10.0) (2021-06-11)
+
+
+### Features
+
+* status changer | closes [#130](https://github.com/slow/nitro-sniper/issues/130) ([37295c1](https://github.com/slow/nitro-sniper/commit/37295c1bfbd8131cacb7ee1b4b001976c347b563))
+
 # [1.9.0](https://github.com/slow/nitro-sniper/compare/v1.8.2...v1.9.0) (2021-06-08)
 
 
