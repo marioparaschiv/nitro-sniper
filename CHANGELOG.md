@@ -1,3 +1,10 @@
+## [1.10.1](https://github.com/slow/nitro-sniper/compare/v1.10.0...v1.10.1) (2021-06-11)
+
+
+### Bug Fixes
+
+* missed a place where null propagation can be used ([2396d7b](https://github.com/slow/nitro-sniper/commit/2396d7b3afb548236fb5821dc205434e6a53ee59))
+
 # [1.10.0](https://github.com/slow/nitro-sniper/compare/v1.9.0...v1.10.0) (2021-06-11)
 
 
