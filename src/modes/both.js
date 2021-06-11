@@ -11,6 +11,10 @@ module.exports = async () => {
          if (client) {
             main = true;
             active.push(client);
+
+            if (settings.status.main.toLowerCase() !== 'default') {
+               client.setStatus(settings.status.main.toLowerCase());
+            }
          }
          fulfill();
       }, util.randomInt(1e3, 3e3));
@@ -25,6 +29,10 @@ module.exports = async () => {
             if (client) {
                active.push(client);
                ++alts;
+
+               if (settings.status.alts.toLowerCase() !== 'default') {
+                  client.setStatus(settings.status.alts.toLowerCase());
+               }
             }
             fulfill();
          }, util.randomInt(1e3, 3e3));

@@ -59,7 +59,18 @@ https://github.com/slow/nitro-sniper/wiki/Installation
       ],
    },
    // The mode to run the sniper in. Options: main (only main account), alts (only alts), both
-   mode: 'both', 
+   mode: 'both',
+   /* 
+      The status the accounts should be on.
+      Options: online, dnd, idle, invisible, default
+      default means the status will not be modified.
+   */
+   status: {
+      // The status the main account will have IF it's logged in
+      main: 'default',
+      // The status the logged in alts will have
+      alts: 'default'
+   }, 
    nitro: {
       // The amount of nitros needed to be sniped for the cooldown to activate
       max: 2,

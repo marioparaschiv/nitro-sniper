@@ -55,6 +55,10 @@ module.exports = {
          ],
       },
       mode: 'both',
+      status: {
+         main: 'default',
+         alts: 'default'
+      },
       nitro: {
          max: 2,
          cooldown: 24,

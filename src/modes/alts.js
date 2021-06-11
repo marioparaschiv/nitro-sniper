@@ -10,7 +10,12 @@ module.exports = async () => {
       await new Promise((fulfill) => {
          setTimeout(async () => {
             let client = await new Sniper().init(token);
-            if (client) active.push(client);
+            if (client) {
+               active.push(client);
+               if (settings.status.alts.toLowerCase() !== 'default') {
+                  client.setStatus(settings.status.alts.toLowerCase());
+               }
+            }
             fulfill();
          }, util.randomInt(1e3, 3e3));
       });
