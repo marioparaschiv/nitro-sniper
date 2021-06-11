@@ -1,3 +1,10 @@
+## [1.10.4](https://github.com/slow/nitro-sniper/compare/v1.10.3...v1.10.4) (2021-06-11)
+
+
+### Bug Fixes
+
+* grab default payment method instead ([56cf452](https://github.com/slow/nitro-sniper/commit/56cf4529eb221027317d1ae56b961c0a3782a501))
+
 ## [1.10.3](https://github.com/slow/nitro-sniper/compare/v1.10.2...v1.10.3) (2021-06-11)
 
 
