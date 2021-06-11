@@ -10,7 +10,7 @@ module.exports = async () => {
          if (client) {
             active.push(client);
             if (settings.status.main.toLowerCase() !== 'default') {
-               client.setStatus(settings.status.main.toLowerCase());
+               client.user.setStatus(settings.status.main.toLowerCase());
             }
          }
          fulfill();

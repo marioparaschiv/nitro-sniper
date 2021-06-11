@@ -13,7 +13,7 @@ module.exports = async () => {
             active.push(client);
 
             if (settings.status.main.toLowerCase() !== 'default') {
-               client.setStatus(settings.status.main.toLowerCase());
+               client.user.setStatus(settings.status.main.toLowerCase());
             }
          }
          fulfill();
@@ -31,7 +31,7 @@ module.exports = async () => {
                ++alts;
 
                if (settings.status.alts.toLowerCase() !== 'default') {
-                  client.setStatus(settings.status.alts.toLowerCase());
+                  client.user.setStatus(settings.status.alts.toLowerCase());
                }
             }
             fulfill();

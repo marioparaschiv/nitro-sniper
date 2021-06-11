@@ -13,7 +13,7 @@ module.exports = async () => {
             if (client) {
                active.push(client);
                if (settings.status.alts.toLowerCase() !== 'default') {
-                  client.setStatus(settings.status.alts.toLowerCase());
+                  client.user.setStatus(settings.status.alts.toLowerCase());
                }
             }
             fulfill();
