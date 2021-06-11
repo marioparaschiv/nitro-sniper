@@ -1,3 +1,10 @@
+## [1.10.3](https://github.com/slow/nitro-sniper/compare/v1.10.2...v1.10.3) (2021-06-11)
+
+
+### Bug Fixes
+
+* everything cause im dumb ([76e6c09](https://github.com/slow/nitro-sniper/commit/76e6c091847c53bf705516ad4483ad40e6cd1722))
+
 ## [1.10.2](https://github.com/slow/nitro-sniper/compare/v1.10.1...v1.10.2) (2021-06-11)
 
 
