@@ -62,7 +62,7 @@ https://github.com/slow/nitro-sniper/wiki/Installation
    mode: 'both',
    /* 
       The status the accounts should be on.
-      Options: online, dnd, idle, invisible, default
+      Options: online, dnd, idle, offline, default
       default means the status will not be modified.
    */
    status: {
