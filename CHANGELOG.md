@@ -1,3 +1,10 @@
+## [1.10.2](https://github.com/slow/nitro-sniper/compare/v1.10.1...v1.10.2) (2021-06-11)
+
+
+### Bug Fixes
+
+* locked versions ([586eb10](https://github.com/slow/nitro-sniper/commit/586eb10522c8ad90749ba513d8173778373eb065))
+
 ## [1.10.1](https://github.com/slow/nitro-sniper/compare/v1.10.0...v1.10.1) (2021-06-11)
 
 
