@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/slow/nitro-sniper/compare/v1.10.4...v1.11.0) (2021-06-12)
+
+
+### Features
+
+* message link in embed title ([8153717](https://github.com/slow/nitro-sniper/commit/8153717b438b4dc1645e2b35e9146cb1c00eaba6))
+
 ## [1.10.4](https://github.com/slow/nitro-sniper/compare/v1.10.3...v1.10.4) (2021-06-11)
 
 
