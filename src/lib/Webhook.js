@@ -32,7 +32,8 @@ module.exports = class Webhook extends WebhookClient {
          invite,
          channel,
          timeTook,
-         prize
+         prize,
+         link
       } = args;
 
       // Init fields
@@ -62,6 +63,7 @@ module.exports = class Webhook extends WebhookClient {
 
       // Set misc
       embed.setTitle(constants.titles[webhookType]);
+      embed.setURL(link);
       embed.setColor(success ? constants.colors.success : constants.colors.error);
       if (author) embed.setFooter(author);
       embed.setTimestamp();

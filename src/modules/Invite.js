@@ -45,6 +45,7 @@ module.exports = class Invite {
       let account = this.client.user.tag;
       let origin = `Author: ${author} • Account: ${account}`;
       let location = msg.guild ? `${msg.guild.name} > #${msg.channel.name}` : 'DMs';
+      let link = msg.url;
 
       // Loop over the invites
       for (const i of invites) {
@@ -96,7 +97,8 @@ module.exports = class Invite {
                server: invite.guild.name,
                author: origin,
                location,
-               timeTook
+               timeTook,
+               link
             });
 
             logger.success(constants.joinedServer(

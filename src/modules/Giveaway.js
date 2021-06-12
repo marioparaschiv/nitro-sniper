@@ -112,6 +112,7 @@ module.exports = class Giveaway {
 
    async handleGiveawayStart(msg, delay, prize, hoster) {
       let origin = `Author: ${msg.author.tag} • Account: ${this.client.user.tag}`;
+      let link = msg.url;
       // Attempt to react
       let timeout = util.randomInt(delay, delay * 1.5);
       let reacted = await new Promise((fulfill) => {
@@ -150,13 +151,15 @@ module.exports = class Giveaway {
             channel: msg.channel.name,
             timeTook,
             prize,
-            author: origin
+            author: origin,
+            link
          });
       }
    }
 
    async handleGiveawayWin(msg, hoster, prize) {
       let origin = `Author: ${msg.author.tag} • Account: ${this.client.user.tag}`;
+      let link = msg.url;
       logger.success(constants.giveawayWon(
          prize,
          hoster.tag,
@@ -169,7 +172,8 @@ module.exports = class Giveaway {
          server: msg.guild.name,
          channel: msg.channel.name,
          prize,
-         author: origin
+         author: origin,
+         link
       });
 
       // DM hoster
