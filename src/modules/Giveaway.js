@@ -23,7 +23,7 @@ module.exports = class Giveaway {
       // Giveaway Start
       this.client.on('message', async (msg) => {
          // Cancel if not a server text channel
-         if (msg.channel.type !== 'text') return;
+         if (msg?.channel.type !== 'text') return;
 
          // Check for blacklisted servers
          if (blacklistedServers.includes(msg.guild.id)) return;
