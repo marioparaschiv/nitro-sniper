@@ -1,3 +1,10 @@
+## [1.11.1](https://github.com/slow/nitro-sniper/compare/v1.11.0...v1.11.1) (2021-06-27)
+
+
+### Bug Fixes
+
+* for some reason msg is undefined? ([3adfd02](https://github.com/slow/nitro-sniper/commit/3adfd0210c9131fadb062b22835fbb3a30661465))
+
 # [1.11.0](https://github.com/slow/nitro-sniper/compare/v1.10.4...v1.11.0) (2021-06-12)
 
 
