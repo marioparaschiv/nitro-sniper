@@ -26,7 +26,7 @@ module.exports = class Sniper {
       this.client.prependListener('message', async (msg) => {
          if (this.cooldown && this.cooldown > new Date()) return;
          this.cooldown = null;
-         let codes = msg.content.match(this.regex.gift);
+         let codes = msg?.content.match(this.regex.gift);
          if (codes?.length + this.snipedBucket > this.bucket) {
             let index = (codes.length + this.snipedBucket) - this.bucket;
             codes.splice(0, index);
