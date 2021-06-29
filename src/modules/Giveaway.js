@@ -66,7 +66,7 @@ module.exports = class Giveaway {
       this.client.on('message', async (msg) => {
          // Fake giveaway checks
          if (
-            msg.channel.type !== 'text' ||
+            msg?.channel.type !== 'text' ||
             !msg.author.bot
          ) return;
 
