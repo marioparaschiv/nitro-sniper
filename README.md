@@ -49,7 +49,7 @@ https://github.com/slow/nitro-sniper/wiki/Installation
 ## Default Configuration
 
 ```js
-settings={
+settings="{
    tokens: {
       // Main Token
       main: 'Nz...',
@@ -158,7 +158,7 @@ settings={
          inviteJoin: false
       }
    }
-}
+}"
 ```
 
 #### How to obtain your token
