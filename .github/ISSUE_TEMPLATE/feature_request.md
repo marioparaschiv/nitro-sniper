@@ -1,9 +1,9 @@
 ---
 name: Feature request
-about: Suggest an idea for this project
-title: "[Feature Request] "
-labels: ''
-assignees: ''
+about: Suggest an idea for the sniper
+title: "[Feature Request] **CHANGE THIS TO A TITLE**"
+labels: enhancement
+assignees: slow
 
 ---
 

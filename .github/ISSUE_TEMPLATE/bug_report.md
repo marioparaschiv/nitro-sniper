@@ -1,9 +1,10 @@
 ---
 name: Bug report
-about: Create a report to help us improve
-title: "[Bug] "
-labels: ''
-assignees: ''
+about: " DO NOT OPEN AN ISSUE IF YOU'RE HAVING TROUBLE RUNNING THE SNIPER OPEN A DISCUSSION.
+  ONLY OPEN AN ISSUE FOR BUGS."
+title: "[Bug] **CHANGE THIS TO A TITLE**"
+labels: bug, help wanted
+assignees: slow
 
 ---
 
