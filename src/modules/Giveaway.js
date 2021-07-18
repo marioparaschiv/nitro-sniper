@@ -15,7 +15,9 @@ module.exports = class Giveaway {
             whitelistOnly,
             whitelistedWords,
             blacklistedWords,
-            blacklistedServers
+            blacklistedServers,
+            whitelistedServers,
+            whitelistServersOnly
          }
       } = settings;
 
@@ -24,10 +26,13 @@ module.exports = class Giveaway {
       this.client.on('message', async (msg) => {
          // Cancel if not a server text channel
          if (msg?.channel.type !== 'text') return;
-
+         
+         if (whitelistOnly) {
+            if (!whitelistedServers.includes(msg.guild.id)) return;
+         }
          // Check for blacklisted servers
          if (blacklistedServers.includes(msg.guild.id)) return;
-
+         
          if (msg.content.includes('**GIVEAWAY**') && msg.content.includes(':yay:')) {
             let embed = msg.embeds[0];
             if (!embed) return;
