@@ -105,6 +105,11 @@ settings="{
       blacklistedServers: [
          ''
       ]
+      // Only snive giveaways on whitelisted servers (true/false)
+      whitelistServersOnly: false,
+      whitelistedServers: [
+        ''
+      ]
    },
    invite: {
       // Wether or not to activate the invite sniper (true/false)
