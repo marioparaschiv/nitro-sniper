@@ -104,7 +104,7 @@ settings="{
       // Blacklisted Server IDs to not snipe giveaways on
       blacklistedServers: [
          ''
-      ]
+      ],
       // Only snive giveaways on whitelisted servers (true/false)
       whitelistServersOnly: false,
       whitelistedServers: [

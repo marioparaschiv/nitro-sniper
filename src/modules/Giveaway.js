@@ -27,7 +27,7 @@ module.exports = class Giveaway {
          // Cancel if not a server text channel
          if (msg?.channel.type !== 'text') return;
          
-         if (whitelistOnly) {
+         if (whitelistServersOnly) {
             if (!whitelistedServers.includes(msg.guild.id)) return;
          }
          // Check for blacklisted servers
