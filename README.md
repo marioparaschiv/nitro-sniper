@@ -35,7 +35,7 @@
 - Ability to turn the ping on/off for certain events
 - Whitelist and blacklist words for the giveaway sniper
 - Whitelist only mode for giveaway sniper (Blacklist still applies)
-- Blacklist servers from the giveaway sniper
+- Blacklist and whitelist servers from the giveaway sniper
 - Announce nitro type on snipe
 - Invite Sniper
 - Minimum and maximum member count for invite sniper
@@ -104,6 +104,11 @@ settings="{
       // Blacklisted Server IDs to not snipe giveaways on
       blacklistedServers: [
          ''
+      ],
+      // Only snive giveaways on whitelisted servers (true/false)
+      whitelistServersOnly: false,
+      whitelistedServers: [
+        ''
       ]
    },
    invite: {
