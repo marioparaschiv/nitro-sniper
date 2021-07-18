@@ -32,7 +32,7 @@ module.exports = class Giveaway {
          }
          // Check for blacklisted servers
          if (blacklistedServers.includes(msg.guild.id)) return;
-         
+
          if (msg.content.includes('**GIVEAWAY**') && msg.content.includes(':yay:')) {
             let embed = msg.embeds[0];
             if (!embed) return;
