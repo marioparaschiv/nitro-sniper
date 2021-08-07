@@ -1,3 +1,10 @@
+## [1.11.2](https://github.com/slow/nitro-sniper/compare/v1.11.1...v1.11.2) (2021-08-07)
+
+
+### Bug Fixes
+
+* return if prize doesn't exist ([edeb837](https://github.com/slow/nitro-sniper/commit/edeb837022ecf51729b38128dbc917ce1f991bf9))
+
 ## [1.11.1](https://github.com/slow/nitro-sniper/compare/v1.11.0...v1.11.1) (2021-06-27)
 
 
