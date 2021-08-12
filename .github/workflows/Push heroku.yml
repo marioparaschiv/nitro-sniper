@@ -9,12 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - with:
-        repository: slow/nitro-sniper-heroku
-        token: ${{ secrets.GH_TOKEN }}
       - name: Clone repository
         run: |
-          git clone https://github.com/slow/nitro-sniper
+          git clone https://slow:${{ secrets.GH_TOKEN }}@github.com/slow/nitro-sniper
           cd nitro-sniper
 
       - name: Delete workflows
@@ -32,11 +29,7 @@ jobs:
         run: |
           git add .
           git commit -m "Delete workflows and release"
-
-      - name: Change remote to alternate repository
-        run: |
-          git remote set-url origin https://github.com/slow/nitro-sniper-heroku
-
+          
       - name: Forcefully push to the new origin
         run: |
-          git push --force
+          git push --force "https://slow:${{ secrets.GH_TOKEN }}@github.com/slow/nitro-sniper-heroku" main:main
