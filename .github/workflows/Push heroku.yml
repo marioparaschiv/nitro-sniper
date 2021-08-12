@@ -7,29 +7,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:      
-      - name: Pushes to another repository
-        uses: cpina/github-action-push-to-another-repository@main
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.GH_TOKEN }}
-        with:
-          source-directory: './'
-          destination-github-username: 'slow'
-          destination-repository-name: 'nitro-sniper-heroku'
-          user-email: 73202350+slow@users.noreply.github.com
-          target-branch: main
-
-name: Merge upstream branches
-on:
-  push:
-    branches: [ main ]
-
-jobs:
-  merge:
-    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Merge upstream
+      - name: Commit to nitro-sniper-heroku
         run: |
           git clone https://slow:$GITHUB_TOKEN@github.com/slow/nitro-sniper
           cd nitro-sniper
