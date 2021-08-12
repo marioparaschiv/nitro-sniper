@@ -13,7 +13,7 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.GH_TOKEN }}
         with:
-          source-directory: '.'
+          source-directory: './'
           destination-github-username: 'slow'
           destination-repository-name: 'nitro-sniper-heroku'
           user-email: 73202350+slow@users.noreply.github.com
