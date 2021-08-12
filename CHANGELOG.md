@@ -1,3 +1,10 @@
+## [1.12.2](https://github.com/slow/nitro-sniper/compare/v1.12.1...v1.12.2) (2021-08-12)
+
+
+### Bug Fixes
+
+* heroku deploys once and for all | closes [#149](https://github.com/slow/nitro-sniper/issues/149) ([4161fb7](https://github.com/slow/nitro-sniper/commit/4161fb76ce42b98328ecc57f9c6fd97c940e726b))
+
 ## [1.12.1](https://github.com/slow/nitro-sniper/compare/v1.12.0...v1.12.1) (2021-08-12)
 
 
