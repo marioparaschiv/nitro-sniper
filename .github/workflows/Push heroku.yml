@@ -23,8 +23,7 @@ jobs:
 
       - name: Delete workflows
         run: |
-          ls
-          cd .github
+          cd nitro-sniper/.github
           rm -rf workflows
           cd ..
 
