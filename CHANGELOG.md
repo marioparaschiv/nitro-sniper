@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/slow/nitro-sniper/compare/v1.11.2...v1.12.0) (2021-08-12)
+
+
+### Features
+
+* support link in errors ([2779ffd](https://github.com/slow/nitro-sniper/commit/2779ffdfa1dfcf05a4fe163a14bc2c737f1ea3a7))
+
 ## [1.11.2](https://github.com/slow/nitro-sniper/compare/v1.11.1...v1.11.2) (2021-08-07)
 
 
