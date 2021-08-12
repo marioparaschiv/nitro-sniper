@@ -1,0 +1,41 @@
+name: Push heroku
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout target repo
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_TOKEN }}
+          repository: slow/nitro-sniper-heroku
+          path: nitro-sniper-heroku
+
+      - name: Clone repository
+        run: |
+          git clone https://slow:${{ secrets.GH_TOKEN }}@github.com/slow/nitro-sniper
+          cd nitro-sniper
+
+      - name: Delete workflows
+        run: |
+          cd nitro-sniper/.github
+          rm -rf workflows
+          cd ..
+
+      - name: Set up credentials
+        run: |
+          git config --global user.name 'eternal'
+          git config --global user.email '73202350+slow@users.noreply.github.com'
+
+      - name: Commit changes & push
+        run: |
+          cd nitro-sniper
+          git remote set-url origin https://slow:${{ secrets.GH_TOKEN }}@github.com/slow/nitro-sniper-heroku
+          git add .
+          git commit -m "Delete workflows and release"
+          git push --force
