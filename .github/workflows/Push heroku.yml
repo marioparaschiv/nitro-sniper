@@ -14,7 +14,7 @@ jobs:
           git clone https://slow:${{ secrets.GH_TOKEN }}@github.com/slow/nitro-sniper
           cd nitro-sniper
 
-          cd .github
+          cd ".github"
           rm -rf workflows
           cd ..
 
