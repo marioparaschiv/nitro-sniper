@@ -23,7 +23,7 @@ jobs:
 
       - name: Delete workflows
         run: |
-          cd ".github"
+          cd .github
           rm -rf workflows
           cd ..
 
