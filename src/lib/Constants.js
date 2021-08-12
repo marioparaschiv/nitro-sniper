@@ -118,7 +118,7 @@ module.exports = {
    noMain: 'No main account token provided, exiting process...',
    noAlts: 'No alt tokens were provided, exiting process...',
    invalidTokens: 'All tokens provided were invalid, exiting process...',
-   userAgent: 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) discord/1.0.21 Chrome/83.0.4103.122 Electron/9.3.5 Safari/537.36',
+   userAgent: 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) discord/1.0.37 Chrome/91.0.4472.106 Electron/13.1.4 Safari/537.36',
    ready: (accounts, servers) => `Logged in with ${accounts} ${accounts > 1 ? 'accounts' : 'account'} and ${servers} servers.`,
    unknownResponse: (code, location, author, end, body) => `Unknown Response | ${body} | Code: ${chalk.bold(code)} | ${location} | ${author} | ${end}`,
    bothModeNoAlts: 'No alts were able to log in, trying to use only main account.',
@@ -180,8 +180,8 @@ module.exports = {
       success: '#41FC9F',
       warn: '#FFF000'
    },
-   paymentSourceURL: 'https://discord.com/api/v6/users/@me/billing/payment-sources',
-   redeemCodeURL: (code) => `https://discord.com/api/v6/entitlements/gift-codes/${code}/redeem`,
-   inviteFetchURL: (invite) => `https://discord.com/api/v6/invites/${encodeURIComponent(invite)}?with_counts=true`,
-   joinURL: (invite) => `https://discord.com/api/v6/invites/${invite}`
+   paymentSourceURL: 'https://discord.com/api/v8/users/@me/billing/payment-sources',
+   redeemCodeURL: (code) => `https://discord.com/api/v8/entitlements/gift-codes/${code}/redeem`,
+   inviteFetchURL: (invite) => `https://discord.com/api/v8/invites/${encodeURIComponent(invite)}?with_counts=true`,
+   joinURL: (invite) => `https://discord.com/api/v8/invites/${invite}`
 };
