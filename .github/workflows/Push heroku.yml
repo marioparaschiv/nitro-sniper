@@ -8,10 +8,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      uses: actions/checkout@v2
-      with:
-        token: ${{ secrets.GH_TOKEN }}
-        repo: slow/nitro-sniper-heroku
+      - name: Checkout target repo
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_TOKEN }}
+          repository: slow/nitro-sniper-heroku
+          path: nitro-sniper-heroku
 
       - name: Clone repository
         run: |
@@ -36,4 +39,4 @@ jobs:
           
       - name: Forcefully push to the new origin
         run: |
-          git push --force "https://slow:${{ secrets.GH_TOKEN }}@github.com/slow/nitro-sniper-heroku" main:main
+          git push --force
