@@ -32,11 +32,9 @@ jobs:
           git config --global user.name 'eternal'
           git config --global user.email '73202350+slow@users.noreply.github.com'
 
-      - name: Commit changes
+      - name: Commit changes & push
         run: |
+          cd nitro-sniper
           git add .
           git commit -m "Delete workflows and release"
-          
-      - name: Forcefully push to the new origin
-        run: |
           git push --force
