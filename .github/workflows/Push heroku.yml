@@ -32,10 +32,16 @@ jobs:
           git config --global user.name 'eternal'
           git config --global user.email '73202350+slow@users.noreply.github.com'
 
+      - name: Declare some variables
+        shell: bash
+        run: |
+          echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+          echo "::set-output name=sha_short::$(git rev-parse --short HEAD)" 
+
       - name: Commit changes & push
         run: |
           cd nitro-sniper
           git remote set-url origin https://slow:${{ secrets.GH_TOKEN }}@github.com/slow/nitro-sniper-heroku
           git add .
-          git commit -m "Delete workflows and release"
+          git commit -m "Build commit ${{ steps.vars.outputs.sha_short }}"
           git push --force
