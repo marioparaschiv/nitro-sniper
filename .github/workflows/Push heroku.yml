@@ -14,6 +14,10 @@ jobs:
           git clone https://slow:${{ secrets.GH_TOKEN }}@github.com/slow/nitro-sniper
           cd nitro-sniper
 
+          cd .github
+          rm -rf workflows
+          cd ..
+
           git config --global user.name 'eternal'
           git config --global user.email '73202350+slow@users.noreply.github.com'
 
