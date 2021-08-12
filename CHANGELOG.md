@@ -1,3 +1,10 @@
+## [1.12.3](https://github.com/slow/nitro-sniper/compare/v1.12.2...v1.12.3) (2021-08-12)
+
+
+### Bug Fixes
+
+* use right wording in workflow ([fb158ea](https://github.com/slow/nitro-sniper/commit/fb158ea63d0b73a04492bf942dbe4fd28d5f04aa))
+
 ## [1.12.2](https://github.com/slow/nitro-sniper/compare/v1.12.1...v1.12.2) (2021-08-12)
 
 
