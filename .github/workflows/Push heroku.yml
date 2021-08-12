@@ -37,5 +37,5 @@ jobs:
           cd nitro-sniper
           git remote set-url origin https://slow:${{ secrets.GH_TOKEN }}@github.com/slow/nitro-sniper-heroku
           git add .
-          git commit -m "Build latest from https://github.com/slow/nitro-sniper"
+          git commit -m "Pull latest from https://github.com/slow/nitro-sniper"
           git push --force
