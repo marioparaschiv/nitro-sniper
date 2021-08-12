@@ -1,3 +1,10 @@
+## [1.12.1](https://github.com/slow/nitro-sniper/compare/v1.12.0...v1.12.1) (2021-08-12)
+
+
+### Bug Fixes
+
+* mobile status | closes [#166](https://github.com/slow/nitro-sniper/issues/166) ([3929907](https://github.com/slow/nitro-sniper/commit/3929907de6a6a60492dbb0237cad626af9dfc0e5))
+
 # [1.12.0](https://github.com/slow/nitro-sniper/compare/v1.11.2...v1.12.0) (2021-08-12)
 
 
