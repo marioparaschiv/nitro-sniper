@@ -1,4 +1,4 @@
-<h1 align="center">Sniper</h1>
+<h1 align="center">Nitro/Giveaway/Invite Sniper</h1>
 
 <p align="center">
   <a href="#"><img src="https://www.codefactor.io/repository/github/slow/nitro-sniper/badge" /></a>
@@ -10,6 +10,7 @@
 
 <p align="center">
    A lightweight, fast and efficient discord nitro sniper, giveaway sniper & invite sniper. 
+   If you're forking this and enjoy my projects, consider leaving a star on the repo with the "Star" button in the top right :)
    <img src="https://media.wtf/11603354" />
 </p>
 
@@ -177,5 +178,3 @@ https://github.com/Tyrrrz/DiscordChatExporter/wiki/Obtaining-Token-and-Channel-I
 - This is technically a self-bot: mentioning this in a discord chat is enough to make your account reportable to Trust & Safety.
 - Running more than one instance or different snipers is an easy way to get your account deactivated.
 - Before using, consider the moral implications of stealing gifts from communities you have nothing to do with.
-
-> If you like my project, please consider starring the repo :)
