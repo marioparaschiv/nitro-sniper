@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-   A lightweight, fast and efficient discord nitro sniper, giveaway sniper & invite sniper. 
+   A lightweight, fast and efficient discord nitro sniper, giveaway sniper & invite sniper. <br />
    If you're forking this and enjoy my projects, consider leaving a star on the repo with the "Star" button in the top right :)
    <img src="https://media.wtf/11603354" />
 </p>
