@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/slow/nitro-sniper/compare/v1.12.3...v1.13.0) (2021-08-20)
+
+
+### Features
+
+* installation back in readme ([cd64a2f](https://github.com/slow/nitro-sniper/commit/cd64a2f096836d17a8d2d0c4b46190faf0477840))
+
 ## [1.12.3](https://github.com/slow/nitro-sniper/compare/v1.12.2...v1.12.3) (2021-08-12)
 
 
