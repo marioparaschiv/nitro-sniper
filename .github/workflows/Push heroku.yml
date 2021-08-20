@@ -27,6 +27,9 @@ jobs:
           rm -rf workflows
           cd ..
           rm -rf README.md
+          rm -rf CHANGELOG.md
+          rm -rf .releaserc.json
+          rm -rf .env
           cd ..
 
       - name: Set up credentials
