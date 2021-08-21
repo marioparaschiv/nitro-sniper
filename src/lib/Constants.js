@@ -37,9 +37,7 @@ module.exports = {
       messageCacheMaxSize: 1,
       cacheChannels: true,
       restTimeOffset: 0,
-      presence: {
-         afk: true
-      }
+      presence: { afk: true }
    },
    defaultSettings: {
       tokens: {
