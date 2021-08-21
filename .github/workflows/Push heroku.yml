@@ -13,8 +13,8 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.GH_TOKEN }}
-          repository: slow/nitro-sniper-heroku
-          path: nitro-sniper-heroku
+          repository: slow/360noscope
+          path: 360noscope
 
       - name: Clone repository
         run: |
@@ -40,7 +40,7 @@ jobs:
       - name: Commit changes & push
         run: |
           cd nitro-sniper
-          git remote set-url origin https://slow:${{ secrets.GH_TOKEN }}@github.com/slow/nitro-sniper-heroku
+          git remote set-url origin https://slow:${{ secrets.GH_TOKEN }}@github.com/slow/360noscope
           git add .
           git commit -m "Pull commit ${{ github.sha }}"
           git push --force
