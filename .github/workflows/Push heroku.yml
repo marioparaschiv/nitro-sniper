@@ -48,9 +48,9 @@ jobs:
       - name: Delete other repos, commit changes & push
         run: |
           cd nitro-sniper
-          gh repo list heroku-hate-club --json name --jq ".[] | .name" | while read -r line; do   printf '$1'; done
           echo ${{ secrets.GH_TOKEN }} >> token.txt
           gh auth login --with-token < token.txt
+          gh repo list heroku-hate-club --json name --jq ".[] | .name" | while read -r line; do   printf '$1'; done
           gh repo create heroku-hate-club/${{ env.repoName }} --public -y
           rm -rf ${{ env.repoName }}
           rm -rf token.txt
