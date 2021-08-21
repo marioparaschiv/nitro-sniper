@@ -46,7 +46,7 @@ jobs:
         run: |
           cd nitro-sniper
           git init
-          git remote add origin https://slow:${{ secrets.GH_TOKEN }}@github.com/slow/${{ env.repoName }}
+          git remote add origin https://github.com/slow/${{ env.repoName }}.git
           git add .
           git commit -m "Pull commit ${{ github.sha }}"
           git push --force origin
