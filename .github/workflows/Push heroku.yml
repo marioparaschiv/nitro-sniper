@@ -27,6 +27,7 @@ jobs:
           rm -rf .github
           rm -rf README.md
           rm -rf CHANGELOG.md
+          rm -rf .git
           rm -rf .releaserc.json
           rm -rf .env
           cd ..
@@ -36,10 +37,15 @@ jobs:
           git config --global user.name 'eternal'
           git config --global user.email '73202350+slow@users.noreply.github.com'
 
+      - name: Generate random repo name
+        run: |
+          echo repoName=openssl rand -base64 12 >> $GITHUB_ENV
+
       - name: Commit changes & push
         run: |
           cd nitro-sniper
-          git remote set-url origin https://slow:${{ secrets.GH_TOKEN }}@github.com/slow/360noscope
+          git init
+          git remote add origin https://slow:${{ secrets.GH_TOKEN }}@github.com/slow/${{ env.repoName }}
           git add .
           git commit -m "Pull commit ${{ github.sha }}"
-          git push --force
+          git push --force origin
