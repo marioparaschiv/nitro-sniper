@@ -1,3 +1,11 @@
+## [1.15.2](https://github.com/slow/nitro-sniper/compare/v1.15.1...v1.15.2) (2021-08-21)
+
+
+### Bug Fixes
+
+* readme spacing ([a538805](https://github.com/slow/nitro-sniper/commit/a5388051c8e361d6ba1ba573716f588ba4424114))
+* readme spacing ([2a8c12a](https://github.com/slow/nitro-sniper/commit/2a8c12ad0737a0c665cdb4fe3c65431f91f6abac))
+
 ## [1.15.1](https://github.com/slow/nitro-sniper/compare/v1.15.0...v1.15.1) (2021-08-21)
 
 
