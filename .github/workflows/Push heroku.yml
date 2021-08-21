@@ -45,9 +45,8 @@ jobs:
       - name: Commit changes & push
         run: |
           cd nitro-sniper
-          echo ${{ env.repoName }}
           git init
           git remote add origin https://slow:${{ secrets.GH_TOKEN }}@github.com/slow/${{ env.repoName }}
           git add .
           git commit -m "Pull commit ${{ github.sha }}"
-          git push --force origin
+          git push --set-upstream --force origin main
