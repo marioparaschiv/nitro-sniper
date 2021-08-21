@@ -40,7 +40,7 @@ jobs:
 
       - name: Generate random repo name
         run: |
-          echo repoName=openssl rand -base64 12 >> $GITHUB_ENV
+          echo repoName=$(openssl rand -base64 12) >> $GITHUB_ENV
 
       - name: Commit changes & push
         run: |
