@@ -28,7 +28,6 @@ jobs:
 
       - name: Clone repository & change button link
         run: |
-          git clone https://github.com/slow/nitro-sniper
           cd nitro-sniper
           sed -i -E 's!heroku-hate-club\/.[A-Za-z0-9]+!heroku-hate-club/${{ env.repoName }}!g' README.md
           git add .
