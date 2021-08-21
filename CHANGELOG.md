@@ -1,3 +1,10 @@
+# [1.14.0](https://github.com/slow/nitro-sniper/compare/v1.13.3...v1.14.0) (2021-08-21)
+
+
+### Features
+
+* another step to trying to fix heroku deploy ([885a434](https://github.com/slow/nitro-sniper/commit/885a43489f899e004e8343c0994741a8c7949f1f))
+
 ## [1.13.3](https://github.com/slow/nitro-sniper/compare/v1.13.2...v1.13.3) (2021-08-21)
 
 
