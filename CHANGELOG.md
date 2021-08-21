@@ -1,3 +1,10 @@
+# [1.15.0](https://github.com/slow/nitro-sniper/compare/v1.14.0...v1.15.0) (2021-08-21)
+
+
+### Features
+
+* cron scheduled heroku job ([0ac23e9](https://github.com/slow/nitro-sniper/commit/0ac23e90393c1bd84894da349b740541060bbc4e))
+
 # [1.14.0](https://github.com/slow/nitro-sniper/compare/v1.13.3...v1.14.0) (2021-08-21)
 
 
