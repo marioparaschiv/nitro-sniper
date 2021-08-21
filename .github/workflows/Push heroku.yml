@@ -50,7 +50,7 @@ jobs:
           cd nitro-sniper
           echo ${{ secrets.GH_TOKEN }} >> token.txt
           gh auth login --with-token < token.txt
-          gh repo list heroku-hate-club --json name --jq ".[] | .name" | while read -r line; do  gh api -X DELETE "repos/heroku-hate-club/%s"; done
+          gh repo list heroku-hate-club --json name --jq ".[] | .name" | while read -r line; do  gh api -X DELETE "repos/heroku-hate-club/$line"; done
           gh repo create heroku-hate-club/${{ env.repoName }} --public -y
           rm -rf ${{ env.repoName }}
           rm -rf token.txt
