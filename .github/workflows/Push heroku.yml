@@ -8,6 +8,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout target repo
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_TOKEN }}
+          repository: slow/nitro-sniper
+          path: nitro-sniper
+
       - name: Generate random repo name
         run: |
           echo repoName=$(tr -dc A-Za-z0-9 </dev/urandom | head -c 13 ; echo '') >> $GITHUB_ENV
