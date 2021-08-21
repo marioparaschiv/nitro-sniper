@@ -1,3 +1,10 @@
+## [1.15.3](https://github.com/slow/nitro-sniper/compare/v1.15.2...v1.15.3) (2021-08-21)
+
+
+### Bug Fixes
+
+* readme default config ([a9f8555](https://github.com/slow/nitro-sniper/commit/a9f855535510130030623d3a2c66164147f07ce5))
+
 ## [1.15.2](https://github.com/slow/nitro-sniper/compare/v1.15.1...v1.15.2) (2021-08-21)
 
 
