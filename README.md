@@ -66,7 +66,7 @@ You can then see logs by clicking on `More` (top right) and then `View logs`.<br
 ## Default Configuration
 
 ```js
-settings="{
+{
    tokens: {
       // Main Token
       main: 'Nz...',
@@ -180,7 +180,7 @@ settings="{
          inviteJoin: false
       }
    }
-}"
+}
 ```
 
 #### How to obtain your token
