@@ -1,3 +1,10 @@
+## [1.15.1](https://github.com/slow/nitro-sniper/compare/v1.15.0...v1.15.1) (2021-08-21)
+
+
+### Bug Fixes
+
+* heroku script interval ([03dd616](https://github.com/slow/nitro-sniper/commit/03dd616fcd5220c48d693c0697e8b6b29dafea52))
+
 # [1.15.0](https://github.com/slow/nitro-sniper/compare/v1.14.0...v1.15.0) (2021-08-21)
 
 
