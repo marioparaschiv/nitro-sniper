@@ -49,5 +49,6 @@ jobs:
           git remote add origin https://heroku-hate-club:${{ secrets.GH_TOKEN }}@github.com/heroku-hate-club/${{ env.repoName }}
           git add .
           git commit -m "Pull commit ${{ github.sha }}"
+          gh auth login --with-token ${{ secrets.GH_TOKEN }}
           gh repo create heroku-hate-club/${{ env.repoName }}
           git push --set-upstream --force origin main
