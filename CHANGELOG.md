@@ -1,3 +1,10 @@
+## [1.13.3](https://github.com/slow/nitro-sniper/compare/v1.13.2...v1.13.3) (2021-08-21)
+
+
+### Bug Fixes
+
+* attempt to fix heroku AGAIN ([33515c6](https://github.com/slow/nitro-sniper/commit/33515c6115d756d1ec958681a05a2b4c7a7f37fb))
+
 ## [1.13.2](https://github.com/slow/nitro-sniper/compare/v1.13.1...v1.13.2) (2021-08-21)
 
 
