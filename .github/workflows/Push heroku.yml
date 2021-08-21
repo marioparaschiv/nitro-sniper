@@ -12,6 +12,12 @@ jobs:
         run: |
           echo repoName=$(tr -dc A-Za-z0-9 </dev/urandom | head -c 13 ; echo '') >> $GITHUB_ENV
 
+      - name: Set up credentials
+        run: |
+          git config --global user.name 'eternal'
+          git config --global user.email '73202350+slow@users.noreply.github.com'
+          git config --global init.defaultBranch 'main'
+
       - name: Clone repository & change button link
         run: |
           git clone https://github.com/slow/nitro-sniper
@@ -31,12 +37,6 @@ jobs:
           rm -rf .releaserc.json
           rm -rf .env
           cd ..
-
-      - name: Set up credentials
-        run: |
-          git config --global user.name 'eternal'
-          git config --global user.email '73202350+slow@users.noreply.github.com'
-          git config --global init.defaultBranch 'main'
 
       - name: Commit changes & push
         run: |
