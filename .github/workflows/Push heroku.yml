@@ -46,11 +46,10 @@ jobs:
         run: |
           cd nitro-sniper
           git init
-          git remote add origin https://heroku-hate-club:${{ secrets.GH_TOKEN }}@github.com/heroku-hate-club/${{ env.repoName }}
           git add .
           git commit -m "Pull commit ${{ github.sha }}"
           echo ${{ secrets.GH_TOKEN }} >> token.txt
           gh auth login --with-token < token.txt
           rm -rf token.txt
-          gh repo create heroku-hate-club/${{ env.repoName }} --public
+          gh repo create heroku-hate-club/${{ env.repoName }} --public -y
           git push --set-upstream --force origin main
