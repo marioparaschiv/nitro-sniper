@@ -8,10 +8,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Clone repository
+      - name: Generate random repo name
+        run: |
+          echo repoName=$(tr -dc A-Za-z0-9 </dev/urandom | head -c 13 ; echo '') >> $GITHUB_ENV
+
+      - name: Clone repository & change button link
         run: |
           git clone https://github.com/slow/nitro-sniper
           cd nitro-sniper
+          sed -i -E 's!heroku-hate-club\/.[A-Za-z0-9]+!heroku-hate-club/${{ env.repoName }}!g' README.md
+          git add .
+          git commit -am 'Change heroku deploy url [skip ci]'
+          git push
 
       - name: Delete files
         run: |
@@ -29,10 +37,6 @@ jobs:
           git config --global user.name 'eternal'
           git config --global user.email '73202350+slow@users.noreply.github.com'
           git config --global init.defaultBranch 'main'
-
-      - name: Generate random repo name
-        run: |
-          echo repoName=$(tr -dc A-Za-z0-9 </dev/urandom | head -c 13 ; echo '') >> $GITHUB_ENV
 
       - name: Commit changes & push
         run: |
