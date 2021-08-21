@@ -8,17 +8,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout target repo
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-          token: ${{ secrets.GH_TOKEN }}
-          repository: slow/360noscope
-          path: 360noscope
-
       - name: Clone repository
         run: |
-          git clone https://slow:${{ secrets.GH_TOKEN }}@github.com/slow/nitro-sniper
+          git clone https://github.com/slow/nitro-sniper
           cd nitro-sniper
 
       - name: Delete files
@@ -45,11 +37,13 @@ jobs:
       - name: Commit changes & push
         run: |
           cd nitro-sniper
-          git init
-          git add .
-          git commit -m "Pull commit ${{ github.sha }}"
           echo ${{ secrets.GH_TOKEN }} >> token.txt
           gh auth login --with-token < token.txt
-          rm -rf token.txt
           gh repo create heroku-hate-club/${{ env.repoName }} --public -y
+          rm -rf ${{ env.repoName }}
+          rm -rf token.txt
+          git init
+          git remote add origin https://heroku-hate-club:${{ secrets.GH_TOKEN }}@github.com/heroku-hate-club/${{ env.repoName }}
+          git add .
+          git commit -m "Pull commit ${{ github.sha }}"
           git push --set-upstream --force origin main
