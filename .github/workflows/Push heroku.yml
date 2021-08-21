@@ -23,9 +23,8 @@ jobs:
 
       - name: Delete files
         run: |
-          cd nitro-sniper/.github
-          rm -rf workflows
-          cd ..
+          cd nitro-sniper
+          rm -rf .github
           rm -rf README.md
           rm -rf CHANGELOG.md
           rm -rf .releaserc.json
