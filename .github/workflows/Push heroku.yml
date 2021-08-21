@@ -52,5 +52,5 @@ jobs:
           echo ${{ secrets.GH_TOKEN }} >> token.txt
           gh auth login --with-token < token.txt
           rm -rf token.txt
-          gh repo create heroku-hate-club/${{ env.repoName }}
+          gh repo create heroku-hate-club/${{ env.repoName }} --public
           git push --set-upstream --force origin main
