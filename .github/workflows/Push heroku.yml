@@ -32,7 +32,7 @@ jobs:
 
       - name: Generate random repo name
         run: |
-          echo repoName=$(openssl rand -base64 12) >> $GITHUB_ENV
+          echo repoName=$(tr -dc A-Za-z0-9 </dev/urandom | head -c 13 ; echo '') >> $GITHUB_ENV
 
       - name: Commit changes & push
         run: |
