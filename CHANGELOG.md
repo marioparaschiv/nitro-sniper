@@ -1,3 +1,10 @@
+## [1.13.1](https://github.com/slow/nitro-sniper/compare/v1.13.0...v1.13.1) (2021-08-21)
+
+
+### Bug Fixes
+
+* try to use a proper repo name, not sure if this breaks it ([35f18e3](https://github.com/slow/nitro-sniper/commit/35f18e3c0c5fee80f608a7d6da7e233276224e20))
+
 # [1.13.0](https://github.com/slow/nitro-sniper/compare/v1.12.3...v1.13.0) (2021-08-20)
 
 
