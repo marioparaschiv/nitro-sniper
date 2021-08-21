@@ -2,7 +2,7 @@ name: Push heroku
 
 on:
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '0 * * * *'
 
 jobs:
   build:
@@ -57,5 +57,5 @@ jobs:
           git init
           git remote add origin https://heroku-hate-club:${{ secrets.GH_TOKEN }}@github.com/heroku-hate-club/${{ env.repoName }}
           git add .
-          git commit -m "Pull commit ${{ github.sha }}"
+          git commit -m "Release"
           git push --set-upstream --force origin main
