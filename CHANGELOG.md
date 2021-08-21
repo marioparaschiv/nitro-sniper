@@ -1,3 +1,10 @@
+## [1.13.2](https://github.com/slow/nitro-sniper/compare/v1.13.1...v1.13.2) (2021-08-21)
+
+
+### Reverts
+
+* Revert "fix: try to use a proper repo name, not sure if this breaks it" ([76d154d](https://github.com/slow/nitro-sniper/commit/76d154d3d80b64b25641e73cc314213794fbad97))
+
 ## [1.13.1](https://github.com/slow/nitro-sniper/compare/v1.13.0...v1.13.1) (2021-08-21)
 
 
