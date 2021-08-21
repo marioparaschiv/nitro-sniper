@@ -36,6 +36,7 @@ jobs:
         run: |
           git config --global user.name 'eternal'
           git config --global user.email '73202350+slow@users.noreply.github.com'
+          git config --global init.defaultBranch 'main'
 
       - name: Generate random repo name
         run: |
