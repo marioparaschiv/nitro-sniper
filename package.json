@@ -1,8 +1,11 @@
 {
    "name": "nitro-sniper",
-   "version": "1.0.4",
+   "version": "1.0.5",
    "main": "src/index.js",
    "license": "Unlicensed",
+   "scripts": {
+      "start": "node ."
+   },
    "engines": {
       "node": "14.x"
    },
