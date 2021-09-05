@@ -1,0 +1,22 @@
+{
+   "name": "nitro-sniper",
+   "version": "1.0.0",
+   "main": "src/index.js",
+   "license": "Unlicensed",
+   "engines": {
+      "node": "14.x"
+   },
+   "dependencies": {
+      "@discordjs/uws": "^10.149.0",
+      "@skyra/timestamp": "^1.0.0",
+      "chalk": "^4.1.0",
+      "discord.js": "slow/discord.js#master",
+      "discord.js-light": "slow/discord.js-light#master",
+      "dotenv": "github:andreialecu/dotenv#feat-multiline",
+      "erlpack": "hammerandchisel/erlpack#master",
+      "express": "^4.17.1",
+      "json5": "^2.2.0",
+      "node": "^14.17.4",
+      "phin": "^3.5.1"
+   }
+}
