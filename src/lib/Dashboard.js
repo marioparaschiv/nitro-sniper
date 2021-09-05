@@ -7,7 +7,11 @@ module.exports = class Dashboard {
     this.port = null;
     this.listener = null;
 
-    this.start();
+    const { REPL_SLUG, REPL_OWNER } = process.env;
+
+    if (REPL_SLUG && REPL_OWNER) {
+      this.start();
+    }
   }
   
   keepAlive() {
