@@ -16,7 +16,7 @@ module.exports = class Dashboard {
   
   keepAlive() {
     const { REPL_SLUG, REPL_OWNER } = process.env;
-    // if (!REPL_OWNER || !REPL_SLUG) return;
+    if (!REPL_OWNER || !REPL_SLUG) return;
 
     const url = `https://${REPL_SLUG}.${REPL_OWNER}.repl.co/`;
     setInterval(async () => {
