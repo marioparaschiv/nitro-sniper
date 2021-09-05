@@ -1,4 +1,4 @@
-const { Util: djsUtil } = require('discord.js');
+const { Util: { mergeDefault } } = require('discord.js');
 const JSON5 = require('json5');
 
 async function init() {
@@ -57,7 +57,7 @@ async function init() {
    }
 
    // Define settings with defaults
-   global.settings = djsUtil.mergeDefault(constants.defaultSettings, settings);
+   global.settings = mergeDefault(constants.defaultSettings, settings);
 
    if (!settings.mode) return logger.critical(constants.noMode);
    if (!Object.keys(modes).includes(settings.mode)) return logger.critical(constants.invalidMode);
@@ -68,12 +68,12 @@ async function init() {
    if (!active.length) return logger.critical(constants.invalidTokens);
 
    // Counters
-   let guildCount = active
+   const guildCount = active
       .map((s) => s.guilds.cache.size)
       .reduce((a, b) => a + b, 0);
 
    // Get payment method
-   let res = await phin({
+   const res = await phin({
       url: constants.paymentSourceURL,
       method: 'GET',
       parse: 'json',
@@ -86,7 +86,7 @@ async function init() {
    if (!res.body?.length) {
       logger.warn(constants.noPaymentMethod);
    } else if (res.body[0]) {
-      let method = res.body.find?.(p => p.default)?.id
+      const method = res.body.find?.(p => p.default)?.id;
       global.paymentSourceId = method;
    } else {
       logger.warn(constants.paymentMethodFail(res.body));

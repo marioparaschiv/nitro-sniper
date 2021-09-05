@@ -92,17 +92,16 @@
 ```js
 {
    tokens: {
-      // Main Token
-      main: 'Nz...',
-      // Alt Tokens
+      // Main Token (ex: Nz...)
+      main: '',
+      // Alt Tokens (ex: Nz...)
       alts: [
-         'Nz...',
-         'Nz...'
+         '',
       ],
    },
    // The mode to run the sniper in. Options: main (only main account), alts (only alts), both
    mode: 'both',
-   /*
+   /* 
       The status the accounts should be on.
       Options: online, dnd, idle, offline, default
       default means the status will not be modified.
@@ -146,7 +145,7 @@
       blacklistedServers: [
          ''
       ],
-      // Only snive giveaways on whitelisted servers (true/false)
+      // Only snipe giveaways on whitelisted servers (true/false)
       whitelistServersOnly: false,
       whitelistedServers: [
         ''
@@ -173,8 +172,8 @@
       cooldown: 6
    },
    webhook: {
-      // URL to fire webhook to for notifications
-      url: 'https://discord.com/api/webhooks/.../...',
+      // URL to fire webhook to for notifications (ex: https://discord.com/api/webhooks/.../...)
+      url: '',
       enabled: {
          // Fire webhook on invalid code (true/false)
          codeInvalid: false,

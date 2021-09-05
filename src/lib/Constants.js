@@ -22,7 +22,7 @@ module.exports = {
          'GUILD_MEMBERS_CHUNK',
          'GUILD_ROLE_CREATE',
          'MESSAGE_REACTION_REMOVE_ALL',
-         'USER_UPDATE', 
+         'USER_UPDATE',
          'USER_NOTE_UPDATE',
          'USER_SETTINGS_UPDATE',
          'PRESENCE_UPDATE',
@@ -71,6 +71,10 @@ module.exports = {
             'nitro'
          ],
          blacklistedServers: [
+            ''
+         ],
+         whitelistServersOnly: false,
+         whitelistedServers: [
             ''
          ]
       },

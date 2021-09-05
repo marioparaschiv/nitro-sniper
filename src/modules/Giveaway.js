@@ -26,12 +26,12 @@ module.exports = class Giveaway {
       this.client.on('message', async (msg) => {
          // Cancel if not a server text channel
          if (msg?.channel.type !== 'text') return;
-         
+
          // Check for whitelist 
          if (whitelistServersOnly) {
             if (!whitelistedServers.includes(msg.guild.id)) return;
          }
-         
+
          // Check for blacklisted servers
          if (blacklistedServers.includes(msg.guild.id)) return;
 
@@ -220,4 +220,4 @@ module.exports = class Giveaway {
          }
       }
    }
-}
+};
