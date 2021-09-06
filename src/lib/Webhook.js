@@ -33,7 +33,8 @@ module.exports = class Webhook extends WebhookClient {
          channel,
          timeTook,
          prize,
-         link
+         link,
+         error
       } = args;
 
       // Init fields
@@ -53,6 +54,9 @@ module.exports = class Webhook extends WebhookClient {
             break;
          case 'inviteJoin':
             fields = constants.fields.inviteJoin(location, invite, server, timeTook);
+            break;
+         case 'inviteFail':
+            fields = constants.fields.inviteFail(location, error, invite, server, timeTook);
             break;
       }
 

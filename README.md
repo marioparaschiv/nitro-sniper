@@ -10,12 +10,6 @@
 
 <p align="center">
    A lightweight, fast and efficient discord nitro sniper, giveaway sniper & invite sniper. <br />
-   
-   <b>
-     <p align="center">
-        :warning: I recommend turning off the invite sniper for now as it will lock your account behind a phone/email verification screen or get it terminated.
-     </p> 
-   </b>
    <img src="https://media.wtf/11603354" />
 </p>
 
@@ -169,7 +163,9 @@
       // The amount of joined invites needed for the cooldown to activate
       max: 10,
       // Cooldown to activate after max joined invites has been hit (in hours)
-      cooldown: 6
+      cooldown: 6,
+      // Wether to allow the main token to snipe invites (true/false)
+      onlyAlts: true
    },
    webhook: {
       // URL to fire webhook to for notifications (ex: https://discord.com/api/webhooks/.../...)
@@ -186,7 +182,9 @@
          // Fire webhook on giveaway win (true/false)
          giveawayWin: true,
          // Fire webhook on invite join (true/false)
-         inviteJoin: false
+         inviteJoin: false,
+         // Fire webhook on failure of sniping invite (true/false)
+         inviteFail: false
       },
       mentionEveryone: {
          // Mention on invalid code (true/false)
@@ -200,7 +198,9 @@
          // Mention on giveaway win (true/false)
          giveawayWin: true,
          // Mention on invite join (true/false)
-         inviteJoin: false
+         inviteJoin: false,
+         // Mention on failure of sniping invite (true/false)
+         inviteFail: false
       }
    }
 }

@@ -89,7 +89,8 @@ module.exports = {
             max: 50000
          },
          max: 10,
-         cooldown: 6
+         cooldown: 6,
+         onlyAlts: true
       },
       webhook: {
          url: '',
@@ -99,7 +100,8 @@ module.exports = {
             codeSuccess: true,
             giveawayEntered: true,
             giveawayWin: true,
-            inviteJoin: false
+            inviteJoin: false,
+            inviteFail: false
          },
          mentionEveryone: {
             codeInvalid: false,
@@ -107,7 +109,8 @@ module.exports = {
             codeSuccess: true,
             giveawayEntered: false,
             giveawayWin: true,
-            inviteJoin: false
+            inviteJoin: false,
+            inviteFail: false
          }
       }
    },
@@ -141,7 +144,8 @@ module.exports = {
    alreadyRedeemedCode: (code, from, author, end) => `Already Redeemed | Code: ${chalk.bold(code)} | ${from} | ${author} | ${end}`,
    snipedCode: (code, type, from, author, end) => `Success | Code: ${chalk.bold(code)} | ${type} | ${from} | ${author} | ${end}`,
    duplicateFound: (code, location, author) => `Avoiding Duplicate | Code: ${chalk.bold(code)} | ${location} | ${author}`,
-   webhookTypes: ['codeInvalid', 'codeAlreadyRedeemed', 'codeSuccess', 'giveawayEntered', 'giveawayWin', 'inviteJoin'],
+   webhookTypes: ['codeInvalid', 'codeAlreadyRedeemed', 'codeSuccess', 'giveawayEntered', 'giveawayWin', 'inviteJoin', 'inviteFail'],
+   inviteFail: (invite, server, location, error, author, account, time) => `${account} failed to join ${server} after ${time} | ${error} | Invite: ${invite} | ${location} | ${author}`,
    fields: {
       codeFail: (time, code, location) => [
          { key: 'Time Taken', value: time },
@@ -168,6 +172,13 @@ module.exports = {
          { key: 'Server Joined', value: server },
          { key: 'Invite Used', value: invite },
          { key: 'Time Waited', value: timeTook }
+      ],
+      inviteFail: (location, error, invite, server, timeTook) => [
+         { key: 'Location', value: location },
+         { key: 'Server', value: server },
+         { key: 'Invite Used', value: invite },
+         { key: 'Time Waited', value: timeTook },
+         { key: 'Error', value: error }
       ]
    },
    titles: {
@@ -176,7 +187,8 @@ module.exports = {
       codeSuccess: 'Nitro Sniped',
       giveawayEntered: 'Giveaway Entered',
       giveawayWin: 'Giveaway Won',
-      inviteJoin: 'Joined Server'
+      inviteJoin: 'Joined Server',
+      inviteFail: 'Invite Snipe Failed'
    },
    colors: {
       error: '#FF0000',
@@ -186,5 +198,4 @@ module.exports = {
    paymentSourceURL: 'https://discord.com/api/v8/users/@me/billing/payment-sources',
    redeemCodeURL: (code) => `https://discord.com/api/v8/entitlements/gift-codes/${code}/redeem`,
    inviteFetchURL: (invite) => `https://discord.com/api/v8/invites/${encodeURIComponent(invite)}?with_counts=true`,
-   joinURL: (invite) => `https://discord.com/api/v8/invites/${invite}`
 };

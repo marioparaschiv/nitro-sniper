@@ -18,14 +18,23 @@ module.exports = class Sniper extends Client {
 
    async init(token) {
       let failed = false;
-      ModuleKeys.forEach(m => {
-         this[m.toLowerCase()]?.init();
-      });
 
       await this.login(token).catch(() => {
          failed = true;
          this.destroy();
       });
+
+      if (!failed) {
+         ModuleKeys.forEach(m => {
+            if (
+               m == 'Invite' &&
+               settings.invite.onlyAlts &&
+               token == settings.tokens.main
+            ) return;
+
+            this[m.toLowerCase()]?.init();
+         });
+      }
 
       return failed ? null : this;
    }
