@@ -23,7 +23,7 @@ module.exports = class Invite {
 
    async initBot() {
       // Initiate the browser instance
-      const browser = await puppeteer.launch({ headless: false });
+      const browser = await puppeteer.launch();
       this.page = await browser.newPage();
       await this.page.goto('https://discord.com/login');
 
