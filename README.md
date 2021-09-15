@@ -67,6 +67,8 @@
 - You can now use <kbd>CTRL</kbd> + <kbd>ENTER</kbd> or  <kbd>CMD</kbd> + <kbd>ENTER</kbd> to start the sniper or by using the `Run` button at the top of the page.
 
 - Tips:
+   - If you want to keep the sniper running 24/7 even when you shut down your PC, use [uptime robot](https://uptimerobot.com/) to ping the repl.it URL as seen here 
+   ![Image](https://media.wtf/88041379) <br />
    - To see the output of the sniper, go to the `Console` tab. <br />
    ![Image](https://media.wtf/37329719)
    - If you wish to update the sniper when a new version is released you can run `git pull` in the `Shell` tab as seen in this screenshot: <br />

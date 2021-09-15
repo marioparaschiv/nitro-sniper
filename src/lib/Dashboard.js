@@ -7,28 +7,12 @@ module.exports = class Dashboard {
     this.port = null;
     this.listener = null;
 
-    const { REPL_SLUG, REPL_OWNER } = process.env;
-
-    if (REPL_SLUG && REPL_OWNER) {
-      this.start();
-    }
-  }
-
-  keepAlive() {
-    const { REPL_SLUG, REPL_OWNER } = process.env;
-    if (!REPL_OWNER || !REPL_SLUG) return;
-
-    const url = `https://${REPL_SLUG}.${REPL_OWNER}.repl.co/`;
-    setInterval(async () => {
-      const res = await phin({ url, method: 'GET' });
-      if (res.statusCode == 200) logger.debug(`Pinged URL ${url}`);
-    }, 1000);
+    // this.start();
   }
 
   start() {
     this.server = express();
     this.attachListeners();
-    this.keepAlive();
 
     // To be continued...
   }
