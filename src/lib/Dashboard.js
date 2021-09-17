@@ -7,7 +7,7 @@ module.exports = class Dashboard {
     this.port = null;
     this.listener = null;
 
-    // this.start();
+    this.start();
   }
 
   start() {
