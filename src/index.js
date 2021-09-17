@@ -3,12 +3,12 @@ const JSON5 = require('json5');
 
 async function init() {
    // Requires
-   const Constants = require('./lib/Constants');
-   const Dashboard = require('./lib/Dashboard');
-   const Webhook = require('./lib/Webhook');
-   const Logger = require('./lib/Logger');
-   const modes = require('./modes/index');
-   const Util = require('./lib/Util');
+   const Constants = require('./lib/Constants.js');
+   const Dashboard = require('./lib/Dashboard.js');
+   const Webhook = require('./lib/Webhook.js');
+   const Logger = require('./lib/Logger.js');
+   const modes = require('./modes/index.js');
+   const Util = require('./lib/Util.js');
    const chalk = require('chalk');
    const phin = require('phin');
 
