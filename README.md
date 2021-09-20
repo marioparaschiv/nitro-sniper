@@ -5,7 +5,7 @@
   <a href="https://github.com/slow/nitro-sniper/issues"><img src="https://img.shields.io/github/issues/slow/nitro-sniper?style=flat" /></a>
   <a href="https://github.com/slow/nitro-sniper/stargazers"><img src="https://img.shields.io/github/stars/slow/nitro-sniper?style=flat" /></a>
   <a href="https://paypal.me/eternal404"><img src="https://img.shields.io/badge/donate-paypal-blue"></a>
-  <a href="https://t.me/joinchat/fvd0xIa1lgozZjU0"><img src="https://img.shields.io/badge/Support-5c5c5c?logo=telegram" /></a>
+  <a href="https://t.me/nitrosnipers"><img src="https://img.shields.io/badge/support-5c5c5c?logo=telegram" /></a>
 </p>
 
 <p align="center">
