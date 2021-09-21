@@ -1,0 +1,68 @@
+name: Bug Report
+description: File a bug report
+title: '[Feature Request] Idea Here'
+labels: ['enhancement']
+assignees:
+  - slow
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please change your issue title before proceeding to the creation of this issue.
+  - type: textarea
+    id: bug
+    attributes:
+      label: Describe the bug
+      description: A clear and concise description of what the bug is.
+      placeholder: '... happens unexpectedly'
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: To Reproduce
+      description: A clear and concise description of how to reproduce the bug.
+      placeholder: |
+        Steps to reproduce the behavior:
+          1. Go to '...'
+          2. Click on '....'
+          3. Scroll down to '....'
+          4. See error
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: A clear and concise description of the behaviour the sniper SHOULD have.
+      placeholder: "It should've ... instead of ..."
+    validations:
+      required: true
+  - type: textarea
+    id: settings
+    attributes:
+      label: Please provide your snipers settings.
+      description: The sniper settings located in either your .env or in your environment variables on repl.it.
+      placeholder: |
+        {
+          tokens: '...'
+          ...
+        }
+    validations:
+      required: true
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: What platform are you seeing the problem on?
+      multiple: true
+      options:
+        - Local Computer
+        - Repl.it
+        - Other Platform
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log output if applicable.
+      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+      render: shell
