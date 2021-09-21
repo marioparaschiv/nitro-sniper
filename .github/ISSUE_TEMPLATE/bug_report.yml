@@ -1,6 +1,6 @@
 name: Bug Report
 description: File a bug report
-title: '[Feature Request] Idea Here'
+title: '[Bug] Bug Here'
 labels: ['enhancement']
 assignees:
   - slow
