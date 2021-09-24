@@ -52,6 +52,11 @@
 - **Q: How can i obtain my token?**
 - A: [How to obtain your token](https://www.youtube.com/watch?v=rawcwqFJCCE)
 
+<br />
+
+- **Q: I'm getting the `Invalid Settings` error, how can i fix this?**
+- A: [Validate your JSON5](https://jsonformatter.org/json5-validator)
+
 ## Tips
 
 - Try to get a low latency to discord servers as there can be competition with other snipers.
