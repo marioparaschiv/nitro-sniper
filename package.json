@@ -19,7 +19,7 @@
       "erlpack": "hammerandchisel/erlpack#master",
       "express": "^4.17.1",
       "json5": "^2.2.0",
-      "node": "^14.17.4",
+      "node": "^16.9.1",
       "phin": "^3.5.1",
       "puppeteer": "^10.2.0"
    }
