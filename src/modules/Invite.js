@@ -23,7 +23,14 @@ module.exports = class Invite {
 
    async initBot() {
       // Initiate the browser instance
-      const browser = await puppeteer.launch();
+      const browser = await puppeteer.launch({
+         args: [
+            '--no-sandbox',
+            '--disable-setuid-sandbox'
+         ]
+      });
+
+
       this.page = await browser.newPage();
       await this.page.goto('https://discord.com/login');
 
@@ -113,8 +120,8 @@ module.exports = class Invite {
 
          // Check member count against min and max settings
          if (
-            invite.approximate_member_count >= settings.invite.members.min &&
-            invite.approximate_member_count <= settings.invite.members.max
+            invite.approximate_member_count <= settings.invite.members.min &&
+            invite.approximate_member_count >= settings.invite.members.max
          ) continue;
 
          // Check if the user is already in the guild
@@ -171,7 +178,7 @@ module.exports = class Invite {
          }
       }
 
-      // Check Max Bucket 
+      // Check Max Bucket
       if (this.joinedBucket >= this.bucket) {
          let date = new Date();
          date.setHours(date.getHours() + settings.invite.cooldown);

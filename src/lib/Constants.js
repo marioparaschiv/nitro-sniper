@@ -125,7 +125,7 @@ module.exports = {
    noAlts: 'No alt tokens were provided, exiting process...',
    invalidTokens: 'All tokens provided were invalid, exiting process...',
    userAgent: 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) discord/1.0.37 Chrome/91.0.4472.106 Electron/13.1.4 Safari/537.36',
-   ready: (accounts, servers) => `Snipper is running with ${accounts} ${accounts > 1 ? 'accounts' : 'account'} and ${servers} ${servers > 1 ? 'servers' : 'server'}.`,
+   ready: (accounts, servers) => `Sniper is running with ${accounts} ${accounts > 1 ? 'accounts' : 'account'} and ${servers} ${servers > 1 ? 'servers' : 'server'}.`,
    unknownResponse: (code, location, author, end, body) => `Unknown Response | ${body} | Code: ${chalk.bold(code)} | ${location} | ${author} | ${end}`,
    bothModeNoAlts: 'No alts were able to log in, trying to use only main account.',
    bothModeNoMain: "Couldn't log into main account meaning sniping is not possible. Exiting process...",
