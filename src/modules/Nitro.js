@@ -72,7 +72,7 @@ module.exports = class Sniper {
             // Handle response
 
             if (res.body?.retry_after) {
-               const cooldown = moment().add('milliseconds', res.body?.retry_after);
+               const cooldown = moment().add(res.body?.retry_after, 'milliseconds');
                return this.cooldown = new Date(cooldown);
             }
 
