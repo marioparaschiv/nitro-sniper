@@ -1,4 +1,5 @@
 const phin = require('phin').unpromisified;
+const moment = require('moment');
 
 module.exports = class Sniper {
    constructor(client) {
@@ -26,26 +27,27 @@ module.exports = class Sniper {
       this.client.prependListener('message', async (msg) => {
          if (this.cooldown && this.cooldown > new Date()) return;
          this.cooldown = null;
-         let codes = msg?.content.match(this.regex.gift);
+         const codes = msg?.content.match(this.regex.gift);
          if (codes?.length + this.snipedBucket > this.bucket) {
-            let index = (codes.length + this.snipedBucket) - this.bucket;
+            const index = (codes.length + this.snipedBucket) - this.bucket;
             codes.splice(0, index);
          }
+
          if (codes?.length) await this.handleMessage(msg, codes);
       });
    }
 
    async handleMessage(msg, codes) {
       // Define vars
-      let author = msg.author.tag;
-      let account = this.client.user.tag;
-      let origin = `Author: ${author} • Account: ${account}`;
-      let location = msg.guild ? `${msg.guild.name} > #${msg.channel.name}` : 'DMs';
+      const author = msg.author.tag;
+      const account = this.client.user.tag;
+      const origin = `Author: ${author} • Account: ${account}`;
+      const location = msg.guild ? `${msg.guild.name} > #${msg.channel.name}` : 'DMs';
 
       // Run for each code
       for (let code of codes) {
          code = code.replace(this.regex.url, '');
-         let start = new Date();
+         const start = new Date();
 
          // Check if cache contains code
          if (this.cache.indexOf(code) > -1) {
@@ -62,12 +64,21 @@ module.exports = class Sniper {
                'Authorization': settings.tokens.main,
                'User-Agent': constants.userAgent
             },
-            data: `{"channel_id":${msg.channel.id},"payment_source_id":${paymentSourceId}}`
+            data: JSON.stringify({
+               channel_id: msg.channel.id,
+               payment_source_id: paymentSourceId
+            })
          }, (err, res) => {
             // Handle response
-            let time = `${new Date() - start}ms`;
-            let type = res.body?.subscription_plan?.name;
-            let link = msg.url;
+
+            if (res.body?.retry_after) {
+               const cooldown = moment().add('milliseconds', res.body?.retry_after);
+               return this.cooldown = new Date(cooldown);
+            }
+
+            const time = `${new Date() - start}ms`;
+            const type = res.body?.subscription_plan?.name;
+            const link = msg.url;
 
             if (err) {
                return logger.error(constants.phinError(err, code, location, author, time));
@@ -86,10 +97,11 @@ module.exports = class Sniper {
             } else if (res.body?.message) {
                logger.error(constants.unknownResponse(code, location, author, time, res.body.message));
             }
+
             // Handle bucket & cache
             this.cache.push(code);
             if (this.snipedBucket >= this.bucket) {
-               let date = new Date();
+               const date = new Date();
                date.setHours(date.getHours() + settings.nitro.cooldown);
                this.cooldown = date;
                this.snipedBucket = 0;
