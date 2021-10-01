@@ -1,1 +1,5 @@
 blank_issues_enabled: false
+contact_links:
+  - name: Support Chat
+    url: https://t.me/nitrosnipers
+    about: If you require additional support, please join the telegram.
