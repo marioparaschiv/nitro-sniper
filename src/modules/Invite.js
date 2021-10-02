@@ -8,7 +8,7 @@ module.exports = class Invite {
       this.client = client;
 
       this.regex = {
-         invite: /discord(?:\.com|app\.com|\.gg)(\/invite\/|\/)(?:[a-zA-Z0-9\-]{2,32})/gim,
+         invite: /discord(?:\.com|app\.com|\.gg)(\/invite\/|\/)(?:[a-zA-Z0-9\-]+)/gim,
          url: /(discord.gg\/|discord.com\/invite\/|discordapp.com\/invite\/)/gim
       };
 
@@ -46,7 +46,6 @@ module.exports = class Invite {
 
 
       this.pageReady = true;
-      // await browser.close();
    }
 
    init() {
