@@ -1,7 +1,5 @@
 const puppeteer = require('puppeteer');
 const phin = require('phin');
-const { sleep } = require('../lib/Util');
-const { Util } = require('discord.js');
 
 module.exports = class Invite {
    constructor(client) {
@@ -34,31 +32,61 @@ module.exports = class Invite {
       this.page = await browser.newPage();
       await this.page.goto('https://discord.com/login');
 
-      // Login using the provided token
       await this.page.evaluate(async (token) => {
-         const login = Object.values(webpackJsonp.push([[], { "": (e, t, o) => { t.cache = o.c; } }, [[""]]]).cache).find(e => e.exports && e.exports.default && void 0 !== e.exports.default.loginToken).exports.default.loginToken;
-         login(token);
+         // Grab all webpack modules
+         const Modules = Object.values(webpackJsonp.push([[], { '': (e, t, o) => t.cache = o.c }, [['']]]).cache);
 
-         while (!document.querySelector('.container-3baos1')) {
+         // Declare module getter
+         const getModule = (ml) => {
+            const found = Modules.find(e => e?.exports?.[ml] != null || e?.exports?.default?.[ml] != null)?.exports;
+
+            if (found?.default?.[ml] != null) {
+               return found.default;
+            } else if (found?.[ml]) {
+               return found;
+            }
+
+            return null;
+         };
+
+         // Fetch login module & login with it
+         getModule('loginToken')?.loginToken?.(token);
+
+         // Fetch container module
+         const container = getModule('usernameContainer')?.usernameContainer;
+
+         // Fallback to waiting 5 seconds if container module isn't found
+         if (!container) {
+            return await new Promise(f => setTimeout(f, 5e3));
+         }
+
+         // Wait until account is logged in then start sniping invites
+         while (!document.querySelector(`.${container}`)) {
             await new Promise(f => setTimeout(f, 100));
          }
       }, this.client.token);
-
 
       this.pageReady = true;
    }
 
    init() {
+      // Check if the user has it enabled
       if (!settings.invite.enabled) return;
+
+      // Initialize the invite sniper
       this.initBot();
+
+      // Add message handler
       this.client.on('message', (msg) => {
          if (this.cooldown && this.cooldown > new Date()) return;
          this.cooldown = null;
+
          let invites = msg.content.match(this.regex.invite);
          if (invites?.length + this.joinedBucket > this.bucket) {
             let index = (invites.length + this.joinedBucket) - this.bucket;
             invites.splice(0, index);
          }
+
          if (invites?.length) return this.handleInvite(msg,
             invites.map(i => i.replace(this.regex.url, '')).filter(i => !this.cache.includes(i))
          );
@@ -68,9 +96,31 @@ module.exports = class Invite {
    async join(invite) {
       if (!this.page || !this.pageReady) return;
 
+      // Evaluate script
       const joined = await this.page.evaluate(async (invite) => {
-         const accept = Object.values(webpackJsonp.push([[], { "": (e, t, o) => { t.cache = o.c; } }, [[""]]]).cache).find(e => e.exports && e.exports.default && void 0 !== e.exports.default.acceptInvite).exports.default.acceptInvite;
+         // Grab all webpack modules
+         const Modules = Object.values(webpackJsonp.push([[], { '': (e, t, o) => t.cache = o.c }, [['']]]).cache);
+
+         // Declare module getter
+         const getModule = (ml) => {
+            const found = Modules.find(e => e?.exports?.[ml] != null || e?.exports?.default?.[ml] != null)?.exports;
+
+            if (found?.default?.[ml] != null) {
+               return found.default;
+            } else if (found?.[ml]) {
+               return found;
+            }
+
+            return null;
+         };
+
+         // Get module that allows accepting invite without bans/suspensions
+         const accept = getModule('acceptInvite')?.acceptInvite;
+
+         // Throw if not found
+         if (!accept) throw 'No accept module';
          const result = await accept(invite).catch(e => e);
+
          return result;
       }, invite).catch(() => false);
 
@@ -111,6 +161,7 @@ module.exports = class Invite {
             },
             parse: 'json'
          }).catch(() => null);
+
          if (!res?.body?.approximate_member_count) continue;
          const invite = res.body;
 
@@ -155,6 +206,7 @@ module.exports = class Invite {
             ));
          }
 
+         // Fire webhook
          if (joined) {
             if (webhook) webhook.fire('inviteJoin', {
                invite: invite.code,
