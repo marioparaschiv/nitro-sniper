@@ -25,8 +25,10 @@ module.exports = class Sniper {
 
    async init() {
       this.client.prependListener('message', async (msg) => {
+
          if (this.cooldown && this.cooldown > new Date()) return;
          this.cooldown = null;
+
          const codes = msg?.content.match(this.regex.gift);
          if (codes?.length + this.snipedBucket > this.bucket) {
             const index = (codes.length + this.snipedBucket) - this.bucket;
@@ -38,6 +40,11 @@ module.exports = class Sniper {
    }
 
    async handleMessage(msg, codes) {
+      // Wait DM Timer
+      if (msg?.channel?.type == 'dm' && settings.nitro.dm.delay > 0) {
+         await util.sleep(settings.nitro.dm.delay * 1000);
+      }
+
       // Define vars
       const author = msg.author.tag;
       const account = this.client.user.tag;

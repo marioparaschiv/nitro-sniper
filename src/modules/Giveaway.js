@@ -27,7 +27,7 @@ module.exports = class Giveaway {
          // Cancel if not a server text channel
          if (msg?.channel.type !== 'text') return;
 
-         // Check for whitelist 
+         // Check for whitelist
          if (whitelistServersOnly) {
             if (!whitelistedServers.includes(msg.guild.id)) return;
          }
@@ -36,16 +36,16 @@ module.exports = class Giveaway {
          if (blacklistedServers.includes(msg.guild.id)) return;
 
          if (msg.content.includes('**GIVEAWAY**') && msg.content.includes(':yay:')) {
-            let embed = msg.embeds[0];
+            const embed = msg.embeds[0];
             if (!embed) return;
-            let prize = embed.author?.name;
+            const prize = embed.author?.name;
             let hoster = embed.description
                ?.replace(/\r/g, '')
                ?.split('\n')[2]
                ?.match(/[0-9]{17,20}/gim)[0];
 
             if (!hoster) return;
-            let fetch = await this.client.users.fetch(hoster).catch(() => null);
+            const fetch = await this.client.users.fetch(hoster).catch(() => null);
             if (!fetch) return;
             hoster = this.client.users.cache.get(hoster);
             if (!hoster) return;
@@ -59,9 +59,10 @@ module.exports = class Giveaway {
             }
 
             // Check for blacklist
-            let blacklist = prize?.toLowerCase().containsAny(
+            const blacklist = prize?.toLowerCase().containsAny(
                blacklistedWords.map(w => String(w).toLowerCase())
             );
+
             if (blacklist) return;
 
             // Handle giveaway
@@ -83,23 +84,23 @@ module.exports = class Giveaway {
             msg.content.toLowerCase().includes(`<@${this.client.user.id}>`)
          )) return;
 
-         let messageLinks = msg.embeds?.[0]?.description?.match(this.regex.messageLink);
+         const messageLinks = msg.embeds?.[0]?.description?.match(this.regex.messageLink);
          if (!messageLinks || !messageLinks.length) return;
-         let messageId = messageLinks[0]?.split('/')[6];
-         let message = await msg.channel.messages.fetch({ limit: 1, around: messageId })
+         const messageId = messageLinks[0]?.split('/')[6];
+         const message = await msg.channel.messages.fetch({ limit: 1, around: messageId })
             .then(i => i.first())
             .catch(() => null);
 
          if (!message) return;
 
-         let embed = message.embeds[0];
+         const embed = message.embeds[0];
          if (!embed) return;
 
 
          // Get info from embed
-         let prize = embed.author?.name;
+         const prize = embed.author?.name;
 
-         let description = embed.description
+         const description = embed.description
             ?.replace(/\r/g, "")
             ?.split('\n');
 
@@ -108,7 +109,7 @@ module.exports = class Giveaway {
 
          // Fetch hoster
          if (!hoster) return;
-         let fetch = await this.client.users.fetch(hoster).catch(() => null);
+         const fetch = await this.client.users.fetch(hoster).catch(() => null);
          if (!fetch) return;
          hoster = this.client.users.cache.get(hoster);
          if (!hoster) return;
@@ -118,11 +119,11 @@ module.exports = class Giveaway {
    };
 
    async handleGiveawayStart(msg, delay, prize, hoster) {
-      let origin = `Author: ${msg.author.tag} • Account: ${this.client.user.tag}`;
-      let link = msg.url;
+      const origin = `Author: ${msg.author.tag} • Account: ${this.client.user.tag}`;
+      const link = msg.url;
       // Attempt to react
-      let timeout = util.randomInt(delay, delay * 1.5);
-      let reacted = await new Promise((fulfill) => {
+      const timeout = util.randomInt(delay, delay * 1.5);
+      const reacted = await new Promise((fulfill) => {
          setTimeout(async () => {
             try {
                await msg.react('🎉');
@@ -134,7 +135,7 @@ module.exports = class Giveaway {
       });
 
       // Check if reaction was successful
-      let timeTook = `${(timeout / 1000).toFixed(0)} second(s)`;
+      const timeTook = `${(timeout / 1000).toFixed(0)} second(s)`;
       if (!reacted) {
          return logger.error(constants.failedGiveawayReact(
             prize,
@@ -165,8 +166,9 @@ module.exports = class Giveaway {
    }
 
    async handleGiveawayWin(msg, hoster, prize) {
-      let origin = `Author: ${msg.author.tag} • Account: ${this.client.user.tag}`;
-      let link = msg.url;
+      const origin = `Author: ${msg.author.tag} • Account: ${this.client.user.tag}`;
+      const link = msg.url;
+
       logger.success(constants.giveawayWon(
          prize,
          hoster.tag,
@@ -186,13 +188,19 @@ module.exports = class Giveaway {
       // DM hoster
       if (settings.giveaway.dm) {
          const { giveaway: { dmDelay } } = settings;
-         let delay = dmDelay * 1000;
-         let timeout = util.randomInt(delay, delay * 1.5);
-         let timeTook = `${(timeout / 1000).toFixed(0)} second(s)`;
-         let dmed = await new Promise(async (fulfill) => {
+         const delay = dmDelay * 1000;
+         const timeout = util.randomInt(delay, delay * 1.5);
+         const timeTook = `${(timeout / 1000).toFixed(0)} second(s)`;
+         const channel = await hoster.createDM(true);
+
+         const success = await new Promise(async (fulfill) => {
             setTimeout(async () => {
                try {
-                  await hoster.send(settings.giveaway.dmMessage);
+                  for (const message of settings.giveaway.dmMessages) {
+                     await channel.send(message);
+                     await util.sleep(settings.giveaway.messageDelay * 1000);
+                  }
+
                   fulfill(true);
                } catch {
                   fulfill(false);
@@ -201,7 +209,7 @@ module.exports = class Giveaway {
          });
 
          // Check if DM sent
-         if (dmed) {
+         if (success) {
             logger.success(constants.dmHosterSuccess(
                hoster.tag,
                prize,

@@ -54,13 +54,20 @@ module.exports = {
       nitro: {
          max: 2,
          cooldown: 24,
+         dm: {
+            delay: 10
+         }
       },
       giveaway: {
          enabled: true,
          delay: 30,
          dm: true,
-         dmMessage: 'Hey, i won the giveaway. Could i redeem my prize?',
+         dmMessages: [
+            'Hey, i won the giveaway.',
+            'Could i redeem my prize?'
+         ],
          dmDelay: 25,
+         messageDelay: 2,
          blacklistedWords: [
             'bot',
             'test',
