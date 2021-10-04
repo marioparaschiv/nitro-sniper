@@ -71,30 +71,30 @@ module.exports = class Sniper {
          }, (err, res) => {
             // Handle response
 
-            if (res.body?.retry_after) {
+            if (res?.body?.retry_after) {
                const cooldown = moment().add(res.body?.retry_after, 'milliseconds');
                return this.cooldown = new Date(cooldown);
             }
 
             const time = `${new Date() - start}ms`;
-            const type = res.body?.subscription_plan?.name;
+            const type = res?.body?.subscription_plan?.name;
             const link = msg.url;
 
             if (err) {
                return logger.error(constants.phinError(err, code, location, author, time));
-            } else if (res.body?.message?.includes('Unauthorized')) {
+            } else if (res?.body?.message?.includes('Unauthorized')) {
                return logger.critical(constants.invalidTokenOnSnipe(code, location, author, time));
-            } else if (res.body?.message?.includes('redeemed already')) {
+            } else if (res?.body?.message?.includes('redeemed already')) {
                logger.error(constants.alreadyRedeemedCode(code, location, author, time));
                if (webhook) webhook.fire('codeAlreadyRedeemed', { time, code, account, author: origin, location, link });
-            } else if ('subscription_plan' in res.body) {
+            } else if ('subscription_plan' in res?.body) {
                logger.success(constants.snipedCode(code, type, location, author, time));
                if (webhook) webhook.fire('codeSuccess', { time, type, code, account, author: origin, location, link });
                ++this.snipedBucket;
-            } else if (res.body?.message?.includes('Unknown')) {
+            } else if (res?.body?.message?.includes('Unknown')) {
                logger.error(constants.unknownCode(code, location, author, time));
                if (webhook) webhook.fire('codeInvalid', { time, code, account, author: origin, location, link });
-            } else if (res.body?.message) {
+            } else if (res?.body?.message) {
                logger.error(constants.unknownResponse(code, location, author, time, res.body.message));
             }
 
