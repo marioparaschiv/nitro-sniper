@@ -1,12 +1,13 @@
 const Sniper = require('../lib/Client');
 
 module.exports = async () => {
-   if (!settings.tokens.alts?.length || settings.tokens.alts[0] == '') {
+   if (!settings.tokens.main || !settings.tokens.main?.length) return logger.critical(constants.noMain);
+   if (!util.cleanTokens().length) {
       return logger.critical(constants.noAlts);
    }
 
    // Alts
-   for (const token of settings.tokens.alts) {
+   for (const token of util.cleanTokens()) {
       await new Promise((fulfill) => {
          setTimeout(async () => {
             let client = await new Sniper().init(token);

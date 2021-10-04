@@ -3,7 +3,7 @@ const Sniper = require('../lib/Client');
 module.exports = async () => {
    // Main
    let main = false;
-   if (!settings.tokens.main) return logger.critical(constants.noMain);
+   if (!settings.tokens.main || !settings.tokens.main?.length) return logger.critical(constants.noMain);
 
    await new Promise((fulfill) => {
       setTimeout(async () => {
@@ -23,7 +23,7 @@ module.exports = async () => {
 
    // Alts
    let alts = 0;
-   for (const token of settings.tokens.alts) {
+   for (const token of util.cleanTokens()) {
       await new Promise((fulfill) => {
          setTimeout(async () => {
             let client = await new Sniper().init(token);
@@ -43,8 +43,10 @@ module.exports = async () => {
 
    // Check if any logged in
    if (!main && alts <= 0) return;
-   if (alts <= 0 && (!settings.tokens.alts?.length || settings.tokens.alts[0] != '')) {
+
+   if (util.cleanTokens().length > 0 && alts <= 0) {
       logger.warn(constants.bothModeNoAlts);
    }
+
    if (!main) return logger.critical(constants.bothModeNoMain);
 };

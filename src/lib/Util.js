@@ -7,6 +7,27 @@ module.exports = class Util {
    static sleep(t) {
       return new Promise((f) => setTimeout(f, t));
    }
+
+   static cleanTokens(tokens = settings.tokens.alts) {
+      // Set => Cleans duplicates => Revert back to array
+      const cleaned = [...new Set(tokens)];
+
+      // Remove main token from alts if it exists
+      if (cleaned.includes(settings.tokens.main)) {
+         const index = cleaned.indexOf(settings.tokens.main);
+
+         cleaned.splice(index, 1);
+      }
+
+      // Clean empty strings
+      while (cleaned.includes('')) {
+         const index = cleaned.indexOf('');
+
+         cleaned.splice(index, 1);
+      }
+
+      return cleaned;
+   }
 };
 
 String.prototype.containsAny = function (arr) {
