@@ -19,14 +19,9 @@ module.exports = class Util {
          cleaned.splice(index, 1);
       }
 
-      // Clean empty strings
-      while (cleaned.includes('')) {
-         const index = cleaned.indexOf('');
+      // Clean empty strings & return
 
-         cleaned.splice(index, 1);
-      }
-
-      return cleaned;
+      return cleaned.filter(t => t !== '');
    }
 };
 
