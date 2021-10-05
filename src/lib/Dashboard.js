@@ -1,5 +1,4 @@
 const express = require('express');
-const phin = require('phin');
 
 module.exports = class Dashboard {
   constructor() {
