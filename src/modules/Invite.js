@@ -58,7 +58,7 @@ module.exports = class Invite {
          await util.sleep(waited);
 
          // Fetch invite information
-         const invite = await this.client.user.getInvite(i);
+         const invite = await this.client.user.getInvite(i).catch(() => null);
 
          if (!invite?.approximate_member_count) continue;
 
