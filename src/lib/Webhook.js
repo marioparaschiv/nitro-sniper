@@ -12,7 +12,7 @@ module.exports = class Webhook extends WebhookClient {
       let fields = [];
       let embed = new MessageEmbed();
 
-      // On Success 
+      // On Success
       if ([
          'giveawayWin',
          'codeSuccess',
@@ -77,6 +77,8 @@ module.exports = class Webhook extends WebhookClient {
       let mention = mentionEveryone[webhookType];
 
       // Fire webhook
-      return this.send(mention ? '@everyone' : '', { embeds: [embed] }).catch(() => logger.error(constants.webhookCantReach));
+      return this.send(mention ? '@everyone' : '', { embeds: [embed] }).catch((e) => {
+         logger.error(constants.webhookCantReach(e.message));
+      });
    }
 };
