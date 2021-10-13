@@ -6,7 +6,7 @@ module.exports = class Sniper {
       this.client = client;
 
       this.regex = {
-         gift: /(discord.gift|discord.com|discordapp.com\/gifts)\/\w{16,25}/gim,
+         gift: /(discord.gift|discord\.com\/gifts\/|discordapp\.com\/gifts\/\w{16,25}/gim,
          url: /(discord\.gift\/|discord\.com\/gifts\/|discordapp\.com\/gifts\/)/gim
       };
 
