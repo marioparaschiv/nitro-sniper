@@ -41,7 +41,7 @@ body:
   - type: textarea
     id: settings
     attributes:
-      render: shell
+      render: javascript
       label: Please provide your snipers settings.
       description: The sniper settings located in either your .env or in your environment variables on repl.it.
       placeholder: |
