@@ -67,7 +67,7 @@ module.exports = class Invite {
 
          // Check member count against min and max settings
          if (
-            invite.approximate_member_count <= settings.invite.members.min &&
+            invite.approximate_member_count <= settings.invite.members.min ||
             invite.approximate_member_count >= settings.invite.members.max
          ) continue;
 
