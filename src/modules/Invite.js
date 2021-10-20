@@ -56,6 +56,7 @@ module.exports = class Invite {
          const waited = util.randomInt(min * 1000, max * 1000);
          const timeTook = `${(waited / 1000).toFixed(0)} second(s)`;
          await util.sleep(waited);
+         if (this.cooldown && this.cooldown > new Date()) return;
 
          // Fetch invite information
          const invite = await this.client.user.getInvite(i).catch(() => null);
