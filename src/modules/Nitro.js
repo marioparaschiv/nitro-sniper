@@ -43,6 +43,7 @@ module.exports = class Sniper {
       // Wait DM Timer
       if (msg?.channel?.type == 'dm' && settings.nitro.dm.delay > 0) {
          await util.sleep(settings.nitro.dm.delay * 1000);
+         if (this.cooldown && this.cooldown > new Date()) return;
       }
 
       // Define vars
