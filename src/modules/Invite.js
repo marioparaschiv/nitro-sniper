@@ -49,7 +49,8 @@ module.exports = class Invite {
       // Loop over the invites
       for (const i of invites) {
          // Max server check
-         if (this.client.guilds.cache.size >= 100) break;
+         const maximum = this.client.user.premiumType == 2 ? 200 : 100;
+         if (this.client.guilds.cache.size >= maximum) break;
 
          // Wait the delay
          const { invite: { delay: { min, max } } } = settings;
