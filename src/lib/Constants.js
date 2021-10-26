@@ -97,6 +97,7 @@ module.exports = {
          },
          max: 10,
          cooldown: 6,
+         queue: true,
          onlyAlts: true
       },
       webhook: {

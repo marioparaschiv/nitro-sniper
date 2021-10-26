@@ -10,7 +10,7 @@ module.exports = async () => {
    for (const token of util.cleanTokens()) {
       await new Promise((fulfill) => {
          setTimeout(async () => {
-            let client = await new Sniper().init(token);
+            const client = await new Sniper().init(token);
             if (client) {
                active.push(client);
                if (settings.status.alts.toLowerCase() !== 'default') {

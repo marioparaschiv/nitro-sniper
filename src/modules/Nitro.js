@@ -25,7 +25,6 @@ module.exports = class Sniper {
 
    async init() {
       this.client.prependListener('message', async (msg) => {
-
          if (this.cooldown && this.cooldown > new Date()) return;
          this.cooldown = null;
 

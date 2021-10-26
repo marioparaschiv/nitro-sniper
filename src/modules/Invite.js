@@ -25,7 +25,7 @@ module.exports = class Invite {
 
          const invites = msg.content.match(this.regex.invite);
          if (invites?.length + this.joinedBucket > this.bucket) {
-            let index = (invites.length + this.joinedBucket) - this.bucket;
+            const index = (invites.length + this.joinedBucket) - this.bucket;
             invites.splice(0, index);
          }
 
@@ -48,12 +48,31 @@ module.exports = class Invite {
 
       // Loop over the invites
       for (const i of invites) {
+         const { invite: { delay: { min, max }, queue } } = settings;
+
          // Max server check
          const maximum = this.client.user.premiumType == 2 ? 200 : 100;
-         if (this.client.guilds.cache.size >= maximum) break;
+         if (this.client.guilds.cache.size >= maximum) {
+            if (queue) {
+               // Get account
+               const account = active.some(client => {
+                  if (client.user.id == this.client.user.id) return false;
+
+                  const max = client.user.premiumType == 2 ? 200 : 100;
+                  if (client.guilds.cache.size >= max) return false;
+
+                  return true;
+               });
+
+               // If account is found, join the invite on that account
+               account?.invite.handleInvite(msg, invites);
+            }
+
+            invites = [];
+            break;
+         }
 
          // Wait the delay
-         const { invite: { delay: { min, max } } } = settings;
          const waited = util.randomInt(min * 1000, max * 1000);
          const timeTook = `${(waited / 1000).toFixed(0)} second(s)`;
          await util.sleep(waited);

@@ -8,6 +8,7 @@ module.exports = async () => {
       setTimeout(async () => {
          let client = await new Sniper().init(settings.tokens.main);
          if (client) {
+            client.main = true;
             active.push(client);
             if (settings.status.main.toLowerCase() !== 'default') {
                client.user.setStatus(settings.status.main.toLowerCase());
