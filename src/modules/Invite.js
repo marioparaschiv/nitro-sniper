@@ -55,17 +55,20 @@ module.exports = class Invite {
          if (this.client.guilds.cache.size >= maximum) {
             if (queue) {
                // Get account
-               const account = active.some(client => {
-                  if (client.user.id == this.client.user.id) return false;
+               const account = active.find(client => {
+                  if (client.user.id == this.client.user.id) return null;
 
                   const max = client.user.premiumType == 2 ? 200 : 100;
-                  if (client.guilds.cache.size >= max) return false;
+                  if (
+                     client.guilds.cache.size >= max ||
+                     client.main == true && settings.invite.onlyAlts
+                  ) return null;
 
-                  return true;
+                  return client;
                });
 
                // If account is found, join the invite on that account
-               account?.invite.handleInvite(msg, invites);
+               account?.invite?.handleInvite(msg, invites);
             }
 
             invites = [];
