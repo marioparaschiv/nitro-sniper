@@ -1,6 +1,6 @@
 {
    "name": "nitro-sniper",
-   "version": "1.4.8",
+   "version": "1.4.9",
    "main": "src/index.js",
    "license": "Unlicensed",
    "scripts": {
@@ -21,6 +21,6 @@
       "json5": "^2.2.0",
       "moment": "^2.29.1",
       "node": "^14.17.4",
-      "phin": "^3.5.1"
+      "phin": "github:slow/phin"
    }
 }

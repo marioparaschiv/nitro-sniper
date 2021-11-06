@@ -54,7 +54,6 @@ module.exports = class Sniper {
       // Run for each code
       for (let code of codes) {
          code = code.replace(this.regex.url, '');
-         const start = new Date();
 
          // Check if cache contains code
          if (this.cache.indexOf(code) > -1) {
@@ -67,6 +66,7 @@ module.exports = class Sniper {
             url: constants.redeemCodeURL(code),
             method: 'POST',
             parse: 'json',
+            time: true,
             headers: {
                'Authorization': settings.tokens.main,
                'User-Agent': constants.userAgent
@@ -83,7 +83,7 @@ module.exports = class Sniper {
                return this.cooldown = new Date(cooldown);
             }
 
-            const time = `${new Date() - start}ms`;
+            const time = `${res.time.taken}ms`;
             const type = res?.body?.subscription_plan?.name;
             const link = msg.url;
 
