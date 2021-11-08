@@ -19,23 +19,26 @@ module.exports = class Invite {
       if (!settings.invite.enabled) return;
 
       // Add message handler
-      this.client.on('message', (msg) => {
-         if (this.cooldown && this.cooldown > new Date()) return;
-         this.cooldown = null;
-
-         const invites = msg.content.match(this.regex.invite);
-         if (invites?.length + this.joinedBucket > this.bucket) {
-            const index = (invites.length + this.joinedBucket) - this.bucket;
-            invites.splice(0, index);
-         }
-
-         if (invites?.length) return this.handleInvite(msg,
-            invites.map(i => i.replace(this.regex.url, '')).filter(i => !this.cache.includes(i))
-         );
-      });
+      this.client.on('message', this.handleInvite.bind(this));
    }
 
-   async handleInvite(msg, invites) {
+   async handleInvite(msg) {
+      if (this.cooldown && this.cooldown > new Date()) return;
+
+      this.cooldown = null;
+
+      const invites = msg.content.match(this.regex.invite);
+      if (invites?.length + this.joinedBucket > this.bucket) {
+         const index = (invites.length + this.joinedBucket) - this.bucket;
+         invites.splice(0, index);
+      }
+
+      if (invites?.length) return this.handleCodes(msg,
+         invites.map(i => i.replace(this.regex.url, '')).filter(i => !this.cache.includes(i))
+      );
+   }
+
+   async handleCodes(msg, invites) {
       // Define vars
       const author = msg.author.tag;
       const account = this.client.user.tag;

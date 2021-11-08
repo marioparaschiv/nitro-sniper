@@ -34,7 +34,7 @@ module.exports = class Sniper {
             codes.splice(0, index);
          }
 
-         if (codes?.length) await this.handleMessage(msg, codes);
+         if (codes?.length) return this.handleMessage(msg, codes);
       });
    }
 
