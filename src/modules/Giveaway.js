@@ -197,8 +197,11 @@ module.exports = class Giveaway {
             setTimeout(async () => {
                try {
                   for (const message of settings.giveaway.dmMessages) {
-                     await channel.send(message);
-                     await util.sleep(settings.giveaway.messageDelay * 1000);
+                     const randomMSG = Math.floor(Math.random() * message.length);
+                     await channel.send(randomMSG);
+                     // await channel.send(message);
+                     // await util.sleep(settings.giveaway.messageDelay * 1000);
+                     // added dis just incasesomething breaks
                   }
 
                   fulfill(true);
