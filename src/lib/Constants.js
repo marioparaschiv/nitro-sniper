@@ -63,8 +63,8 @@ module.exports = {
          delay: 30,
          dm: true,
          dmMessages: [
-            'Hey, i won the giveaway.',
-            'Could i redeem my prize?'
+            'السلام عليكم',
+            'كيف حالك'
          ],
          dmDelay: 25,
          messageDelay: 2,
