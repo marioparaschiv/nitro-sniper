@@ -12,7 +12,6 @@ function installAll() {
   echo "$(tput setaf 6)Cloning the latest sniper code..."
   git reset --hard HEAD
   git pull
-  rm -rf settings.env
   echo "$(tput setaf 2)Cloned latest version of the sniper."
   echo "$(tput setaf 6)Installing sniper dependencies..."
   npm install &> /dev/null
@@ -21,6 +20,7 @@ function installAll() {
   npx node ./src/index.js
 }
 
+rm -rf settings.env
 if [ $(compareVersions $PACKAGE_VERSION) -lt $(compareVersions $LATEST_VERSION) ] || [ ! -d "node_modules" || ! -d "node_modules/discord.js" ]; then
   installAll
 else
