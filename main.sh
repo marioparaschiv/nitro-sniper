@@ -1,4 +1,4 @@
-PACKAGE_VERSION=$(node -p -e "try { require('./nitro-sniper/package.json').version } catch { '0.0.0' }")
+PACKAGE_VERSION=$(node -p -e "try { require('./package.json').version } catch { '0.0.0' }")
 LATEST_VERSION=$(curl --silent "https://raw.githubusercontent.com/eternal404/nitro-sniper/main/package.json" | grep '"version":' | sed -E 's/.*"([^"]+)".*/\1/')
 
 function compareVersions {
@@ -12,6 +12,7 @@ function installAll() {
   echo "$(tput setaf 6)Cloning the latest sniper code..."
   git reset --hard HEAD
   git pull
+  rm -rf settings.env
   echo "$(tput setaf 2)Cloned latest version of the sniper."
   echo "$(tput setaf 6)Installing sniper dependencies..."
   npm install &> /dev/null
@@ -20,9 +21,8 @@ function installAll() {
   npx node ./src/index.js
 }
 
-rm -rf settings.env
-if [ $(compareVersions $PACKAGE_VERSION) -lt $(compareVersions $LATEST_VERSION) ] || [ ! -d "node_modules" || ! -d "node_modules/discord.js" ]; then
-  installAll
-else
+if [ $(compareVersions $PACKAGE_VERSION) -eq $(compareVersions $LATEST_VERSION) ] && [ -d "node_modules" ] && [ -d "node_modules/discord.js" ]; then
   npx node ./src/index.js
+else
+  installAll
 fi

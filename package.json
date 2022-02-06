@@ -1,6 +1,6 @@
 {
    "name": "nitro-sniper",
-   "version": "1.5.3",
+   "version": "1.5.4",
    "main": "src/index.js",
    "license": "Unlicensed",
    "scripts": {
