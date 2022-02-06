@@ -1,5 +1,5 @@
 PACKAGE_VERSION=$(node -p -e "try { require('./nitro-sniper/package.json').version } catch { '0.0.0' }")
-LATEST_VERSION=$(curl --silent "https://raw.githubusercontent.com/slow/nitro-sniper/main/package.json" | grep '"version":' | sed -E 's/.*"([^"]+)".*/\1/')
+LATEST_VERSION=$(curl --silent "https://raw.githubusercontent.com/eternal404/nitro-sniper/main/package.json" | grep '"version":' | sed -E 's/.*"([^"]+)".*/\1/')
 
 function compareVersions {
    echo "$@" | awk -F. '{ printf("%d%03d%03d%03d\n", $1,$2,$3,$4); }';

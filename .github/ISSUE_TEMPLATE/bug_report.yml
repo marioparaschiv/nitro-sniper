@@ -3,7 +3,7 @@ description: File a bug report
 title: '[Bug] Bug Here'
 labels: ['bug', 'help wanted']
 assignees:
-  - slow
+  - eternal404
 body:
   - type: markdown
     attributes:
