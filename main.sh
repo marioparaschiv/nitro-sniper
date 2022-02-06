@@ -10,10 +10,9 @@ function installAll() {
   install-pkg "http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/libglib2.0-0_2.56.4-0ubuntu0.18.04.8_amd64.deb" &> /dev/null
   echo "$(tput setaf 2)Installed dependencies."
   echo "$(tput setaf 6)Cloning the latest sniper code..."
-  cd ..
-  rm -rf nitro-sniper &> /dev/null
-  git clone https://github.com/slow/nitro-sniper nitro-sniper &> /dev/null
-  cd nitro-sniper
+  git reset --hard HEAD
+  git pull
+  rm -rf settings.env
   echo "$(tput setaf 2)Cloned latest version of the sniper."
   echo "$(tput setaf 6)Installing sniper dependencies..."
   npm install &> /dev/null
@@ -22,8 +21,7 @@ function installAll() {
   npx node ./src/index.js
 }
 
-cd nitro-sniper
-if [ $(compareVersions $PACKAGE_VERSION) -lt $(compareVersions $LATEST_VERSION) ] || [ ! -d "node_modules" ]; then
+if [ $(compareVersions $PACKAGE_VERSION) -lt $(compareVersions $LATEST_VERSION) ] || [ ! -d "node_modules" || ! -d "node_modules/discord.js" ]; then
   installAll
 else
   npx node ./src/index.js
