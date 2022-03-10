@@ -1,6 +1,6 @@
 {
    "name": "nitro-sniper",
-   "version": "1.5.4",
+   "version": "1.5.6",
    "main": "src/index.js",
    "license": "Unlicensed",
    "scripts": {
@@ -13,13 +13,12 @@
       "@discordjs/uws": "^10.149.0",
       "@skyra/timestamp": "^1.0.0",
       "chalk": "4.1.2",
-      "discord.js": "eternal404/discord.js#master",
-      "discord.js-light": "eternal404/discord.js-light#master",
+      "discord.js": "localip/discord.js#master",
+      "discord.js-light": "localip/discord.js-light#master",
       "dotenv": "github:andreialecu/dotenv#feat-multiline",
-      "erlpack": "hammerandchisel/erlpack#master",
       "express": "^4.17.1",
       "json5": "^2.2.0",
       "moment": "^2.29.1",
-      "phin": "github:eternal404/phin"
+      "phin": "github:localip/phin"
    }
 }
