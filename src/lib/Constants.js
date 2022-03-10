@@ -84,7 +84,11 @@ module.exports = {
          whitelistServersOnly: false,
          whitelistedServers: [
             ''
-         ]
+         ],
+         maxlength: {
+            enabled: false,
+            length: 16
+         }
       },
       invite: {
          enabled: false,
