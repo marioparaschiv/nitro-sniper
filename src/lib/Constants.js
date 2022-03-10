@@ -120,7 +120,8 @@ module.exports = {
             inviteJoin: false,
             inviteFail: false
          }
-      }
+      },
+      log: true
    },
    cooldown: (type, max, hours) => `Cooldown hit after ${max} ${type}s were sniped. Pausing the ${type} sniper for ${hours} hours.`,
    xSuperProperties: 'eyJvcyI6IldpbmRvd3MiLCJicm93c2VyIjoiRGlzY29yZCBDbGllbnQiLCJyZWxlYXNlX2NoYW5uZWwiOiJjYW5hcnkiLCJjbGllbnRfdmVyc2lvbiI6IjEuMC4yMSIsIm9zX3ZlcnNpb24iOiIxMC4wLjE5MDQyIiwib3NfYXJjaCI6Ing2NCIsInN5c3RlbV9sb2NhbGUiOiJlbi1VUyIsImNsaWVudF9idWlsZF9udW1iZXIiOjc1NjU3LCJjbGllbnRfZXZlbnRfc291cmNlIjpudWxsfQ==',
