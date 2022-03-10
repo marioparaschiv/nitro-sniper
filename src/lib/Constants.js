@@ -56,7 +56,8 @@ module.exports = {
          cooldown: 24,
          dm: {
             delay: 10
-         }
+         },
+         blacklistedChannels: ['']
       },
       giveaway: {
          enabled: true,

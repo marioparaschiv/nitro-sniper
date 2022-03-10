@@ -39,6 +39,10 @@ module.exports = class Sniper {
    }
 
    async handleMessage(msg, codes) {
+      // Check for blacklisted channels
+      const blacklisted = settings.nitro?.blacklistedChannels;
+      if (blacklisted?.includes(msg?.channel?.id)) return;
+
       // Wait DM Timer
       if (msg?.channel?.type == 'dm' && settings.nitro.dm.delay > 0) {
          await util.sleep(settings.nitro.dm.delay * 1000);
