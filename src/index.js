@@ -1,5 +1,7 @@
 const { Util: { mergeDefault } } = require('discord.js');
 const JSON5 = require('json5');
+const fs = require("fs")
+const path = require("path")
 
 async function init() {
    // Requires
@@ -59,6 +61,14 @@ async function init() {
 
    // Define settings with defaults
    global.settings = mergeDefault(constants.defaultSettings, settings);
+
+   // Define log file to remove duplicate
+   const log = path.join(__dirname, '..', '..', global.settings?.log.file || 'sniper.log');
+
+   // Remove old log file
+   if(fs.existsSync(log)) {
+      fs.unlinkSync(log)
+   }
 
    if (!settings.mode) return logger.critical(constants.noMode);
    if (!Object.keys(modes).includes(settings.mode)) return logger.critical(constants.invalidMode);

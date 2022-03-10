@@ -1,14 +1,8 @@
 const { Timestamp } = require('@skyra/timestamp');
 const chalk = require('chalk');
 const path = require('path');
-const fs = require('fs');
+const fs = require("fs")
 
-const log = path.join(__dirname, '..', '..', 'sniper.log');
-
-// Delete previous log
-if (fs.existsSync(log)) {
-   fs.unlinkSync(log);
-}
 
 module.exports = class Logger {
    constructor(options) {
@@ -23,25 +17,25 @@ module.exports = class Logger {
    }
 
    warn(text, ...args) {
-      if (global.settings?.log) this.#save('WARNING', text, ...args);
+      if (global.settings?.log.enabled) this.#save('WARNING', text, ...args);
 
       return console.log(chalk`{bgYellow.gray [${new Timestamp('YYYY-MM-DD HH:mm:ss')}]} {yellow ${text}}`, ...args);
    }
 
    success(text, ...args) {
-      if (global.settings?.log) this.#save('SUCCESS', text, ...args);
+      if (global.settings?.log.enabled) this.#save('SUCCESS', text, ...args);
 
       return console.log(chalk`{bgGreenBright.gray [${new Timestamp('YYYY-MM-DD HH:mm:ss')}]} {greenBright ${text}}`, ...args);
    }
 
    error(text, ...args) {
-      if (global.settings?.log) this.#save('ERROR', text, ...args);
+      if (global.settings?.enabled) this.#save('ERROR', text, ...args);
 
       return console.log(chalk`{bgRed.white [${new Timestamp('YYYY-MM-DD HH:mm:ss')}]} {red ${text}}`, ...args);
    }
 
    critical(text, ...args) {
-      if (global.settings?.log) this.#save('CRITICAL', text, ...args);
+      if (global.settings?.log.enabled) this.#save('CRITICAL', text, ...args);
 
       console.log(chalk`{bgRed.white [${new Timestamp('YYYY-MM-DD HH:mm:ss')}]} {red ${text}}`, ...args);
 
@@ -55,6 +49,8 @@ module.exports = class Logger {
 
    #save(prefix, ...content) {
       const timestamp = new Timestamp('YYYY-MM-DD HH:mm:ss');
+
+      const log = path.join(__dirname, '..', '..', global.settings?.log.file || 'sniper.log');
 
       try {
          fs.appendFileSync(log, `${timestamp} ${prefix}: ${content.join(' ')}`);
