@@ -1,7 +1,7 @@
 const { Timestamp } = require('@skyra/timestamp');
 const chalk = require('chalk');
 const path = require('path');
-const fs = require("fs")
+const fs = require('fs')
 
 
 module.exports = class Logger {
