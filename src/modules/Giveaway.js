@@ -196,6 +196,8 @@ module.exports = class Giveaway {
          const success = await new Promise(async (fulfill) => {
             setTimeout(async () => {
                try {
+
+                  // Randomize the message
                   let randomized_message = settings.giveaway.dmMessages.length == 0 ? settings.giveaway.dmMessages[0] : settings.giveaway.dmMessages[Math.floor(Math.random() * settings.giveaway.dmMessages.length)];
 
                   for (const message of randomized_message) {

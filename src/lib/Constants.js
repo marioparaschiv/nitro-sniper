@@ -64,8 +64,10 @@ module.exports = {
          delay: 30,
          dm: true,
          dmMessages: [
-            'Hey, i won the giveaway.',
-            'Could i redeem my prize?'
+            [
+               'Hey, i won the giveaway.',
+               'Could i redeem my prize?'
+            ]
          ],
          dmDelay: 25,
          messageDelay: 2,
