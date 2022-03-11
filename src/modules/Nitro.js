@@ -103,7 +103,7 @@ module.exports = class Sniper {
                case message.includes("redeemed already"):
                   logger.error(constants.alreadyRedeemedCode(code, location, author, time));
                   if (webhook) webhook.fire('codeAlreadyRedeemed', { time, code, account, author: origin, location, link });
-               case message.includes("subscription_plan"):
+               case 'subscription_plan' in res?.body:
                   logger.success(constants.snipedCode(code, type, location, author, time));
                   if (webhook) webhook.fire('codeSuccess', { time, type, code, account, author: origin, location, link });
                   ++this.snipedBucket;
