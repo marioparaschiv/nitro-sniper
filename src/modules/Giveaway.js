@@ -18,7 +18,7 @@ module.exports = class Giveaway {
             blacklistedServers,
             whitelistedServers,
             whitelistServersOnly,
-            maxLength
+            prizeLength
          }
       } = settings;
 
@@ -40,10 +40,14 @@ module.exports = class Giveaway {
             const embed = msg.embeds[0];
             if (!embed) return;
             const prize = embed.author?.name;
-            // Check if the giveaway max length was crossed
-            if(maxLength?.enabled) {
-               if (prize?.length > maxLength?.length) return;
-            };
+
+            // Validate prize length with provided settings
+            const minLength = prizeLength.min || Infinity;
+            const maxLength = prizeLength.max || Infinity;
+
+            if (minLength > prize.length) return;
+            if (maxLength < prize.length) return;
+
             let hoster = embed.description
                ?.replace(/\r/g, '')
                ?.split('\n')[2]

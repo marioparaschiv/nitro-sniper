@@ -85,9 +85,9 @@ module.exports = {
          whitelistedServers: [
             ''
          ],
-         maxlength: {
-            enabled: false,
-            length: 16
+         prizeLength: {
+            min: 4,
+            max: null
          }
       },
       invite: {

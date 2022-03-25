@@ -1,7 +1,5 @@
 const { Util: { mergeDefault } } = require('discord.js');
 const JSON5 = require('json5');
-const fs = require('fs')
-const path = require('path')
 
 async function init() {
    // Requires
