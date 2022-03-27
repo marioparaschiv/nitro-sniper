@@ -40,7 +40,8 @@
 
 ## FAQ
 - **Q: Where can I find the installation steps?**
-- A: [Installation](https://github.com/localip/nitro-sniper/wiki/Installation)
+- A: [Installation](https://github.com/localip/nitro-sniper/wiki/Installation) 
+- A: [![Run on Repl.it](https://repl.it/badge/github/maanya125/sniper-deploy)](https://repl.it/github/maanya125/sniper-deploy)
 
 <br />
 
