@@ -23,7 +23,9 @@ module.exports = class Invite {
    }
 
    async handleInvite(msg) {
-      if (this.cooldown && this.cooldown > new Date()) return;
+      if (!msg || !msg.content || this.cooldown && this.cooldown > new Date()) {
+         return;
+      }
 
       this.cooldown = null;
 
