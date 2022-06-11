@@ -1,0 +1,14 @@
+on:
+  issues:
+    types: [opened]
+jobs:
+  checkForBadIssue:
+    runs-on: ubuntu-latest
+    steps:
+      - if: contains(github.event.issue.title, 'Invalid settings') != 'false' || contains(github.event.issue.body, 'Invalid settings') != 'false'
+        name: Close Issue
+        uses: peter-evans/close-issue@v2
+        with:
+          comment: |
+            You have an invalid config, please do not open issues for this.
+            Auto-closing this issue.
