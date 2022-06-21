@@ -205,7 +205,11 @@ module.exports = class Giveaway {
          const success = await new Promise(async (fulfill) => {
             setTimeout(async () => {
                try {
-                  for (const message of settings.giveaway.dmMessages) {
+
+                  // Randomize the message
+                  let randomized_message = settings.giveaway.dmMessages.length == 0 ? settings.giveaway.dmMessages[0] : settings.giveaway.dmMessages[Math.floor(Math.random() * settings.giveaway.dmMessages.length)];
+
+                  for (const message of randomized_message) {
                      await channel.send(message);
                      await util.sleep(settings.giveaway.messageDelay * 1000);
                   }
