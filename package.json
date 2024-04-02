@@ -1,24 +1,24 @@
 {
-   "name": "nitro-sniper",
-   "version": "1.5.9",
-   "main": "src/index.js",
-   "license": "Unlicensed",
-   "scripts": {
-      "start": "node ."
-   },
-   "engines": {
-      "node": "14.x"
-   },
-   "dependencies": {
-      "@discordjs/uws": "^10.149.0",
-      "@skyra/timestamp": "^1.0.0",
-      "chalk": "4.1.2",
-      "discord.js": "localip/discord.js#master",
-      "discord.js-light": "localip/discord.js-light#master",
-      "dotenv": "github:andreialecu/dotenv#feat-multiline",
-      "express": "^4.17.1",
-      "json5": "^2.2.0",
-      "moment": "^2.29.1",
-      "phin": "github:localip/phin"
-   }
+	"name": "nitro-sniper",
+	"version": "1.5.9",
+	"main": "src/index.js",
+	"license": "Unlicensed",
+	"scripts": {
+		"start": "node ."
+	},
+	"engines": {
+		"node": "14.x"
+	},
+	"dependencies": {
+		"@discordjs/uws": "^10.149.0",
+		"@skyra/timestamp": "^1.0.0",
+		"chalk": "4.1.2",
+		"discord.js": "marioparaschiv/discord.js#master",
+		"discord.js-light": "marioparaschiv/discord.js-light#master",
+		"dotenv": "github:andreialecu/dotenv#feat-multiline",
+		"express": "^4.17.1",
+		"json5": "^2.2.0",
+		"moment": "^2.29.1",
+		"phin": "github:marioparaschiv/phin"
+	}
 }
